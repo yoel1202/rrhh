@@ -14,7 +14,7 @@ namespace RRHH.CONEXION
         SqlConnection cnn;
         public BDconeccion(){
             string connetionString = null;
-            
+            // cadena conexion de la base de datos 
             connetionString = "Server=localhost\\SQLEXPRESS01;Database=bd_RRHH;Trusted_Connection=True;";
             cnn = new SqlConnection(connetionString);
             try
@@ -30,7 +30,7 @@ namespace RRHH.CONEXION
 
         }
 
-
+        // recibe una instruccion sql  devuelve la consulta en un dataset para luego ser mostrados los datos
         public DataSet sqlconsulta(String sql) {
             SqlCommand cmd = new SqlCommand(sql, cnn);
           DataSet ds= new DataSet() ;
@@ -52,6 +52,7 @@ namespace RRHH.CONEXION
             return ds;
      }
 
+        // recibe instruciones sql de insertar, actualizar, y eliminar  
         public bool querycomando( string query)
         {
             SqlCommand cmd = new SqlCommand(query, cnn);
@@ -69,6 +70,8 @@ namespace RRHH.CONEXION
                 return false;
             }
         }
+
+        // esta funcion recibe una instruccion sql de una consulta , ademas si la consulta tiene llave foranea , el nombre del dato a desplegar en el selector
         public void llenarComboBox( string sql, ComboBox  cb,  string id,  string nombre)
         {
             try
