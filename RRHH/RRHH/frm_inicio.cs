@@ -113,6 +113,7 @@ namespace RRHH
 
         private void PictureBox2_Click(object sender, EventArgs e)
         {
+            // boton inicio por medio de la variable se pone en falso y muestra  los modulo y si la variable es verdara oculta los modulos
             if (pn_principal.Visible == true)
             {
                 pn_principal.Controls.RemoveAt(0);
@@ -174,16 +175,18 @@ namespace RRHH
             }
         }
 
+        // cambia la imagen por una mas grande cuando se acarca cuanto se acerca 
         private void PictureBox2_MouseMove(object sender, MouseEventArgs e)
         {
             PictureBox2.Image = Image.FromFile("imagenes/OS_Windows_82.png");
         }
-
+        // cambia la imagen por una mas pequeña cuando se aleja el mouse
         private void PictureBox2_MouseLeave(object sender, EventArgs e)
         {
             PictureBox2.Image = Image.FromFile("imagenes/OS_Windows_8.png");
         }
 
+        // cambia la imagen por una mas grande cuando se acarca cuanto se acerca 
         private void Panel1_MouseMove(object sender, MouseEventArgs e)
         {
             if (pasar)
@@ -191,7 +194,7 @@ namespace RRHH
             else
                 Panel1.BackgroundImage = Image.FromFile("imagenes/ayuda (2).png");
         }
-
+        // cambia la imagen por una mas pequeña cuando se aleja el mouse
         private void Panel1_MouseLeave(object sender, EventArgs e)
         {
             if (pasar)
@@ -199,27 +202,27 @@ namespace RRHH
             else
                 Panel1.BackgroundImage = Image.FromFile("imagenes/ayuda (1).png");
         }
-
+        // cambia la imagen por una mas grande cuando se acarca cuanto se acerca 
         private void pn_empleados_MouseMove(object sender, MouseEventArgs e)
         {
             pn_empleados.BackgroundImage = Image.FromFile("imagenes/funcionario (2).png");
         }
-
+        // cambia la imagen por una mas pequeña cuando se aleja el mouse
         private void pn_empleados_MouseLeave(object sender, EventArgs e)
         {
             pn_empleados.BackgroundImage = Image.FromFile("imagenes/funcionario (1).png");
         }
-
+        // cambia la imagen por una mas grande cuando se acarca cuanto se acerca 
         private void Pn_pagos_MouseMove(object sender, MouseEventArgs e)
         {
             Pn_pagos.BackgroundImage = Image.FromFile("imagenes/pagos 2.png");
         }
-
+        // cambia la imagen por una mas pequeña cuando se aleja el mouse
         private void Pn_pagos_MouseLeave(object sender, EventArgs e)
         {
             Pn_pagos.BackgroundImage = Image.FromFile("imagenes/pagos 1.png");
         }
-
+        // cambia la imagen por una mas pequeña cuando se aleja el mouse
         private void Panel4_MouseLeave(object sender, EventArgs e)
         {
             if (pasar)
@@ -227,7 +230,7 @@ namespace RRHH
             else
                 Panel4.BackgroundImage = Image.FromFile("imagenes/Acerca (2).png");
         }
-
+        // cambia la imagen por una mas grande cuando se acarca cuanto se acerca 
         private void Panel4_MouseMove(object sender, MouseEventArgs e)
         {
            
@@ -236,32 +239,32 @@ namespace RRHH
             else
                 Panel4.BackgroundImage = Image.FromFile("imagenes/Acerca (1).png");
         }
-
+        // cambia la imagen por una mas grande cuando se acarca cuanto se acerca 
         private void Panel5_MouseMove(object sender, MouseEventArgs e)
         {
             Panel5.BackgroundImage = Image.FromFile("imagenes/group.png");
         }
-
+        // cambia la imagen por una mas pequeña cuando se aleja el mouse
         private void Panel5_MouseLeave(object sender, EventArgs e)
         {
             Panel5.BackgroundImage = Image.FromFile("imagenes/group (1).png");
         }
-
+        // cambia la imagen por una mas grande cuando se acarca cuanto se acerca 
         private void pn_configuracion_MouseMove(object sender, MouseEventArgs e)
         {
             pn_configuracion.BackgroundImage = Image.FromFile("imagenes/configuracion (1).png");
         }
-
+        // cambia la imagen por una mas pequeña cuando se aleja el mouse
         private void pn_configuracion_MouseLeave(object sender, EventArgs e)
         {
             pn_configuracion.BackgroundImage = Image.FromFile("imagenes/configuracion (2).png");
         }
-
+        // cambia la imagen por una mas grande cuando se acarca cuanto se acerca 
         private void PictureBox3_MouseMove(object sender, MouseEventArgs e)
         {
             PictureBox3.Image = Image.FromFile("imagenes/unnamed - copia.png");
         }
-
+        // cambia la imagen por una mas pequeña cuando se aleja el mouse
         private void PictureBox3_MouseLeave(object sender, EventArgs e)
         {
             PictureBox3.Image = Image.FromFile("imagenes/unnamed.png");
@@ -269,6 +272,8 @@ namespace RRHH
 
         private void PictureBox5_Click(object sender, EventArgs e)
         {
+
+            // por medio de la variable pasar muestra los modulos de configuracion y ayuda y oculta los que hay en pantalla
             if (pasar)
             {
                 pn_empleados.Hide();

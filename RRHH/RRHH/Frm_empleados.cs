@@ -32,6 +32,7 @@ namespace RRHH
             DataGridView1.Hide();
             ComboBox1.SelectedIndex = 0;
                  conexion.llenarComboBox("SELECT * from tbl_departamentos", cb_departamento, "id_departamento", "nombre");
+            if(cb_departamento.SelectedIndex>0 & cb_nombramiento.SelectedIndex >0)
             cb_departamento.SelectedIndex = 0;
             cb_nombramiento.SelectedIndex = 0;
         }
