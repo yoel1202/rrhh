@@ -22,6 +22,7 @@ namespace RRHH
         private int ID_usuario;
         private void Frm_usuario_Load(object sender, EventArgs e)
         {
+            // oculta elementos de la interfaz
             Button1.Hide();
             Button2.Hide();
             Button3.Hide();
@@ -81,7 +82,7 @@ namespace RRHH
             else
                 return true;
         }
-
+        // cumple la funcion de guardar se llama el metodo querycomando de la clase conexion para insertar los datos 
         private void Button1_Click(object sender, EventArgs e)
         {
             if (validartexbox(tb_codigo) & validartexbox(tb_puesto) )
@@ -101,6 +102,7 @@ namespace RRHH
             else
                 MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
         }
+        //esta funcion actualiza los datos del tabla cuando se inserte se actualize o se elimine
         public void actualizardato()
         {
             DataSet data = conexion.sqlconsulta("Select id_plaza,puesto,codigo,u_p from tbl_plazas");
@@ -110,7 +112,7 @@ namespace RRHH
                 DataGridView1.Columns[0].Visible = false;
             }
         }
-
+        // cumple la funcion de eliminar se llama el metodo querycomando de la clase conexion para eliminar los datos 
         private void Button3_Click(object sender, EventArgs e)
         {
             if (validartexbox(tb_codigo) & validartexbox(tb_puesto)  )
@@ -135,7 +137,7 @@ namespace RRHH
             else
                 MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
         }
-
+        // cumple la funcion de eliminar se llama el metodo querycomando de la clase conexion para eliminar los datos 
         private void Button2_Click(object sender, EventArgs e)
         {
             if (seleccionarusuario)
@@ -156,7 +158,7 @@ namespace RRHH
             else
                 MessageBox.Show("Seleccione un empleado de la lista");
         }
-
+        // medoto seleciona los datos de la datgrieview y los pones en los campos para cumplir con la funcionar actualizar y eliminar
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -178,7 +180,7 @@ namespace RRHH
             DataGridView1.Show();
         actualizardato();
         }
-
+        // busca los datos en la data grieview por medio de los parametro del combo box
         private void tb_busqueda_TextChanged(object sender, EventArgs e)
         {
             if (tb_busqueda.Text != "")
