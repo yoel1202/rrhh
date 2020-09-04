@@ -226,7 +226,7 @@ namespace RRHH
         private void Panel4_MouseLeave(object sender, EventArgs e)
         {
             if (pasar)
-                Panel4.BackgroundImage = Image.FromFile("imagenes/turnos 1.png");
+                Panel4.BackgroundImage = Image.FromFile("imagenes/work (1).png");
             else
                 Panel4.BackgroundImage = Image.FromFile("imagenes/Acerca (2).png");
         }
@@ -235,19 +235,19 @@ namespace RRHH
         {
            
             if (pasar)
-                Panel4.BackgroundImage = Image.FromFile("imagenes/turnos 2.png");
+                Panel4.BackgroundImage = Image.FromFile("imagenes/work.png");
             else
                 Panel4.BackgroundImage = Image.FromFile("imagenes/Acerca (1).png");
         }
         // cambia la imagen por una mas grande cuando se acarca cuanto se acerca 
         private void Panel5_MouseMove(object sender, MouseEventArgs e)
         {
-            Panel5.BackgroundImage = Image.FromFile("imagenes/group.png");
+            Panel5.BackgroundImage = Image.FromFile("imagenes/department (1).png");
         }
         // cambia la imagen por una mas pequeña cuando se aleja el mouse
         private void Panel5_MouseLeave(object sender, EventArgs e)
         {
-            Panel5.BackgroundImage = Image.FromFile("imagenes/group (1).png");
+            Panel5.BackgroundImage = Image.FromFile("imagenes/department.png");
         }
         // cambia la imagen por una mas grande cuando se acarca cuanto se acerca 
         private void pn_configuracion_MouseMove(object sender, MouseEventArgs e)
@@ -371,7 +371,9 @@ namespace RRHH
 
         private void Panel4_Click(object sender, EventArgs e)
         {
-            Frm_plazas myForm = new Frm_plazas();
+            if (pasar)
+            {  
+                Frm_plazas myForm = new Frm_plazas();
             myForm.conexion = this.conexion;
             myForm.TopLevel = false;
             myForm.AutoScroll = true;
@@ -379,6 +381,16 @@ namespace RRHH
             myForm.Show();
 
             pn_principal.Show();
+
+            }else
+            {
+              
+        }
+        }
+
+        private void Panel5_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
