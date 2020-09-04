@@ -22,6 +22,7 @@ namespace RRHH
         private int ID_usuario;
         private void Frm_usuario_Load(object sender, EventArgs e)
         {
+            // oculta elementos de la interfaz  como los botones de guardar actualizar y eliminar
             Button1.Hide();
             Button2.Hide();
             Button3.Hide();
@@ -81,7 +82,7 @@ namespace RRHH
             else
                 return true;
         }
-
+        // cumple la funcion de guardar se llama el metodo querycomando de la clase conexion para insertar los datos 
         private void Button1_Click(object sender, EventArgs e)
         {
             if (validartexbox(tb_codigo) & validartexbox(tb_nombre) )
