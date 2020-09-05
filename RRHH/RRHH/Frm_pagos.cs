@@ -57,9 +57,12 @@ namespace RRHH
         private void Frm_pagos_Load(object sender, EventArgs e)
         {
             tb_monto_actual_presupuesto.Enabled = false;
+            // actualiza los datagrieview con la informacion 
+            actualizardato(dgv_presupuesto, "select id_presupuesto ,tipo_presupuesto as 'TIPO DE PRESUPUESTO',monto_presupuesto as MONTO,monto_actual as 'MONTO ACTUAL'  from tbl_presupuestos");
             actualizardato(dgv_empleado, "Select id_empleado,cedula as CEDULA,TE.nombre AS NOMBRE,apellido AS APELLIDO,fecha_nacimiento AS 'FECHA NACIMIENTO',tipo_nombramiento AS 'TIPO DE NOMBRAMIENTO',TE.codigo AS CODIGO,fecha_escala AS 'FECHA ESCALA',fecha_vacaciones AS 'FECHA DE VACACIONES',puesto AS PUESTO ,TD.nombre AS NOMBRE from tbl_empleados AS TE INNER JOIN tbl_departamentos AS TD on id_departamento=fk_departamento   ");
             actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
-            cb_tipo_renumeracion.SelectedIndex = 0;
+          // inicia los combobox con la informacion
+               cb_tipo_renumeracion.SelectedIndex = 0;
             cb_tipo_extraordinario.SelectedIndex = 0;
             cb_empleado_busqueda.SelectedIndex = 0;
             cb_busqueda_remuneracion.SelectedIndex = 0;
@@ -81,7 +84,8 @@ namespace RRHH
             dtp_fecha_reporte.Hide();
             conexion.llenarComboBox("SELECT * from tbl_departamentos", cb_departamento, "id_departamento", "nombre");
             cb_departamento.SelectedIndex = 0;
-            actualizardato(dgv_presupuesto, "select id_presupuesto ,tipo_presupuesto as 'TIPO DE PRESUPUESTO',monto_presupuesto as MONTO,monto_actual as 'MONTO ACTUAL'  from tbl_presupuestos");
+           
+            // notifica cuando el monto esta apunto de llegar a una cantidad
             notificaciones("Remuneracion por vacaciones", lb_notificaciones_renumeracion, 5000000);
             notificaciones("Extras corrientes medicas", lb_notificacion_extras, 5000000);
             notificaciones("", lb_notificacion_accion_personal, 5000000);
@@ -90,6 +94,7 @@ namespace RRHH
 
         }
 
+        // metodo recibe 3 parametro el primero es el tipo de monto que queremos consultar  y el segundo el monto que es el tope donde debe de estar verifica si el monto es superior va pintar label 
         private void notificaciones(string tipo,Label lb, decimal monto_disponible) {
             DataSet ds;
             ds = conexion.sqlconsulta("select    monto_actual as 'MONTO ACTUAL'  from tbl_presupuestos where tipo_presupuesto='"+tipo+"'");
@@ -131,6 +136,7 @@ namespace RRHH
         {
             try
             {
+                // llena los datos del empleado que se escoge con la celda que pasemos el cursos
                 seleccionarempleado = true;
                 ID_usuario = int.Parse(dgv_empleado.Rows[e.RowIndex].Cells[0].Value.ToString());
                 tb_cedula.Text = dgv_empleado.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -138,6 +144,8 @@ namespace RRHH
                 tb_apellido.Text = dgv_empleado.Rows[e.RowIndex].Cells[3].Value.ToString();
                 tb_codigo_plaza_extras.Text = dgv_empleado.Rows[e.RowIndex].Cells[6].Value.ToString();
                 tb_plaza_extraordinario.Text = dgv_empleado.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+                // actualiza los datagridview dependiendo del empleado que escogemos 
                 actualizardato(dgv_renumeracion, "Select id_remuneracion,numero_movimiento AS 'NUMERO MOVIMIENTO',tipo AS TIPO,fecha_pago AS 'FECHA DE PAGO',monto AS MONTO ,te.nombre AS NOMBRE ,te.apellido AS APELLIDO from tbl_remuneraciones INNER JOIN  tbl_empleados_remuneraciones  ON fk_remuneracion=id_remuneracion INNER JOIN  tbl_empleados as te on id_empleado =fk_empleado where id_empleado ='" + ID_usuario + "'  ");
                 actualizardato(dgv_extras_corrientes, "Select id_extras,fecha_pago AS 'FECHA DE PAGO',codigo_plaza AS 'CODIGO DE PLAZA',cantidad_horas AS 'CANTIDAD DE HORAS',monto_cancelar AS 'MONTO A CANCELAR',te.nombre AS NOMBRE,te.apellido AS APELLIDO from tbl_extras_medicas INNER JOIN  tbl_extras_medicas_empleados  ON fk_extras=id_extras INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
                 actualizardato(dgv_extraordinario, "Select id_extraordinario,tipo_extraordinario AS 'TIPO DE EXTRAORDINARIO',fecha_pago AS 'FECHA DE PAGO',codigo_plaza AS 'CODIGO DE PLAZA',cantidad_horas AS 'CANTIDAD DE HORAS',monto AS MONTO,te.nombre AS NOMBRE,te.apellido AS APELLIDO from tbl_extraordinario INNER JOIN  tbl_extraordinario_empleados  ON fk_extraordinario=id_extraordinario INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
@@ -156,6 +164,7 @@ namespace RRHH
         {
 
         }
+        // valida los textbox de que no esten en blanco
         public bool validartexbox(TextBox tb)
         {
             if (tb.Text == "")
