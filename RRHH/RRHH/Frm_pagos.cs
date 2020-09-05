@@ -175,17 +175,20 @@ namespace RRHH
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            // valida los texbox que no esten en blanco
             if (validartexbox(tb_monto_remuneracion) & validartexbox(tb_movimiento_remuneracion))
             {
+                // verifica si el empleado esta selecciona
                 if (seleccionarempleado)
                 {
+                    // identifica el tipo de renumeracion 
                     if (cb_tipo_renumeracion.SelectedItem.ToString() == "remuneracion por vacaciones")
                     {
+                        // disminuye el monto del presupuesto por medio de este metodo
                         if (actualizarmontodisminuir("Remuneracion por vacaciones", tb_monto_remuneracion))
                         {
 
-
+                            // inserta las renumeraciones 
                             if (conexion.querycomando("Insert into tbl_remuneraciones(tipo,numero_movimiento,fecha_pago,monto,codigo,fecha_registro_renumeracion) VALUES('" + cb_tipo_renumeracion.SelectedItem.ToString() + "','" + tb_movimiento_remuneracion.Text + "','" + dtp_fecha_pago_remuneracion.Value.Date + "','" + tb_monto_remuneracion.Text + "','" + tb_codigo_remuneracion.Text + "',GETDATE())"))
                             {
                                 DataSet ds;

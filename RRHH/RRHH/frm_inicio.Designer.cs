@@ -413,9 +413,6 @@
             this.Controls.Add(this.Pn_pagos);
             this.Controls.Add(this.pn_empleados);
             this.Controls.Add(this.Panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "frm_inicio";
             this.Text = "frm_inicio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
