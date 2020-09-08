@@ -33,17 +33,17 @@
             this.PictureBox11 = new System.Windows.Forms.PictureBox();
             this.Label8 = new System.Windows.Forms.Label();
             this.PictureBox10 = new System.Windows.Forms.PictureBox();
-            this.PictureBox9 = new System.Windows.Forms.PictureBox();
             this.PictureBox8 = new System.Windows.Forms.PictureBox();
             this.Label7 = new System.Windows.Forms.Label();
             this.PictureBox7 = new System.Windows.Forms.PictureBox();
             this.PictureBox6 = new System.Windows.Forms.PictureBox();
+            this.PictureBox9 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // Button1
@@ -97,18 +97,6 @@
             this.PictureBox10.TabStop = false;
             this.PictureBox10.Click += new System.EventHandler(this.PictureBox10_Click);
             // 
-            // PictureBox9
-            // 
-            this.PictureBox9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PictureBox9.BackgroundImage")));
-            this.PictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PictureBox9.Location = new System.Drawing.Point(506, 325);
-            this.PictureBox9.Margin = new System.Windows.Forms.Padding(2);
-            this.PictureBox9.Name = "PictureBox9";
-            this.PictureBox9.Size = new System.Drawing.Size(128, 97);
-            this.PictureBox9.TabIndex = 23;
-            this.PictureBox9.TabStop = false;
-            this.PictureBox9.Click += new System.EventHandler(this.PictureBox9_Click);
-            // 
             // PictureBox8
             // 
             this.PictureBox8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PictureBox8.BackgroundImage")));
@@ -156,6 +144,18 @@
             this.PictureBox6.TabIndex = 19;
             this.PictureBox6.TabStop = false;
             // 
+            // PictureBox9
+            // 
+            this.PictureBox9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PictureBox9.BackgroundImage")));
+            this.PictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PictureBox9.Location = new System.Drawing.Point(506, 325);
+            this.PictureBox9.Margin = new System.Windows.Forms.Padding(2);
+            this.PictureBox9.Name = "PictureBox9";
+            this.PictureBox9.Size = new System.Drawing.Size(128, 97);
+            this.PictureBox9.TabIndex = 23;
+            this.PictureBox9.TabStop = false;
+            this.PictureBox9.Click += new System.EventHandler(this.PictureBox9_Click);
+            // 
             // pantalla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,10 +174,10 @@
             this.Size = new System.Drawing.Size(915, 514);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox9)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,10 +189,10 @@
         internal System.Windows.Forms.PictureBox PictureBox11;
         internal System.Windows.Forms.Label Label8;
         internal System.Windows.Forms.PictureBox PictureBox10;
-        internal System.Windows.Forms.PictureBox PictureBox9;
         internal System.Windows.Forms.PictureBox PictureBox8;
         internal System.Windows.Forms.Label Label7;
         internal System.Windows.Forms.PictureBox PictureBox7;
         internal System.Windows.Forms.PictureBox PictureBox6;
+        internal System.Windows.Forms.PictureBox PictureBox9;
     }
 }

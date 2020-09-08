@@ -373,6 +373,11 @@ namespace RRHH
 
             pn_principal.Show();
         }
+
+        private void PictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
     

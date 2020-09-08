@@ -15,7 +15,7 @@ namespace RRHH.CONEXION
         public BDconeccion(){
             string connetionString = null;
             
-            connetionString = "Server=localhost\\SQLEXPRESS01;Database=bd_RRHH;Trusted_Connection=True;";
+            connetionString = "Server=DESKTOP-SU52LP9;Database=bd_RRHH;Trusted_Connection=True;";
             cnn = new SqlConnection(connetionString);
             try
             {

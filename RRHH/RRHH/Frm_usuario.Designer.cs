@@ -265,7 +265,8 @@
             this.Label6.Name = "Label6";
             this.Label6.Size = new System.Drawing.Size(88, 24);
             this.Label6.TabIndex = 104;
-            this.Label6.Text = "Viachica";
+            this.Label6.Text = "Acciones";
+            this.Label6.Click += new System.EventHandler(this.Label6_Click);
             // 
             // Button3
             // 
