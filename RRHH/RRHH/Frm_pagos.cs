@@ -188,7 +188,7 @@ namespace RRHH
                         if (actualizarmontodisminuir("Remuneracion por vacaciones", tb_monto_remuneracion))
                         {
 
-                            // inserta las renumeraciones 
+                            // inserta las renumeraciones se separa para poder descontar el monto de cada una
                             if (conexion.querycomando("Insert into tbl_remuneraciones(tipo,numero_movimiento,fecha_pago,monto,codigo,fecha_registro_renumeracion) VALUES('" + cb_tipo_renumeracion.SelectedItem.ToString() + "','" + tb_movimiento_remuneracion.Text + "','" + dtp_fecha_pago_remuneracion.Value.Date + "','" + tb_monto_remuneracion.Text + "','" + tb_codigo_remuneracion.Text + "',GETDATE())"))
                             {
                                 DataSet ds;
@@ -227,7 +227,7 @@ namespace RRHH
 
                     }
 
-
+                    // limpia los texbox
 
                     tb_movimiento_remuneracion.Clear();
                     tb_monto_remuneracion.Clear();
@@ -248,6 +248,7 @@ namespace RRHH
                 MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
         }
 
+        // boton hace la funcion de actualizar las renumeraciones para ello aplica funciones para devolver o aumentar el monto
         private void button5_Click(object sender, EventArgs e)
         {
             if (validartexbox(tb_apellido) & validartexbox(tb_nombre) & validartexbox(tb_cedula))
@@ -301,6 +302,7 @@ namespace RRHH
                 MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
         }
 
+        // boton de eliminar de las renumeraciones
         private void button4_Click(object sender, EventArgs e)
         {
             if (seleccionarremuneracion)
@@ -357,7 +359,7 @@ namespace RRHH
 
 
         }
-
+        // seleciona los datos de la datagridview  de renumeraciones y setea los texbox
         private void dgv_renumeracion_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -389,7 +391,7 @@ namespace RRHH
         {
 
         }
-
+        // busca  de las renumeraciones de acuerdo a los datos de los texbox basado en la opcion que se escoba en el combo box hace una consulta y devuelve los datos en la datagridview
         private void textBox13_TextChanged(object sender, EventArgs e)
         {
             string selector = "";
@@ -449,6 +451,7 @@ namespace RRHH
             }
         }
 
+        // boton insertar presupuesto por medio de una consulta sql ademas llama la funcion notificaciones para validar que monto no llegado al limite permitido
         private void button9_Click(object sender, EventArgs e)
         {
             if (validartexbox(tb_monto_presupuesto) & cb_tipo_presupuesto.SelectedIndex >= 0)
