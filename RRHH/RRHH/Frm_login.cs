@@ -20,8 +20,11 @@ namespace RRHH
         {
             InitializeComponent();
         }
+
+        // boton iniciar sesion el cual tiene un timer para que cada segundo ir mostrando como se carga imagenes  hasta iniciar el sistema
         private void btn_iniciar_Click(object sender, EventArgs e)
         {
+
             pb_iniciar.Show();
             lb_iniciar.Show();
 
@@ -37,13 +40,16 @@ namespace RRHH
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            // Esconde elemnetos de la interfaz
             pb_iniciar.Hide();
             ProgressBar1.Hide();
             lb_iniciar.Hide();
            
+            // setea la fecha actual en un label
             Label2.Text = "© " + DateTime.Today.Year.ToString() + " - Todos los derechos reservados";
 
+
+            //  metodo lee las configuraciones del sistema principalmente si el usuario se guardo en las configuraciones del sistema
             StreamReader busqueda = new StreamReader("configuracion.cfg");
 
             string cadena;
@@ -58,14 +64,20 @@ namespace RRHH
                    
                     DataSet ds;
                     ds = conexion.sqlconsulta("Select usuario from tbl_usuarios where id_usuario='" + campos[2] + "'");
-                    tb_usuario.Text = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+                    if(ds.Tables.Count>0)
+                    {
+                        tb_usuario.Text = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+                    }
                 }
                 else if (campos[0].Equals("guardarpass") & campos.Length > 2)
                 {
                  
                     DataSet ds;
                     ds = conexion.sqlconsulta("Select pass from tbl_usuarios where id_usuario='" + campos[2] + "'");
-                    tb_password.Text = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+                    if (ds.Tables.Count > 0)
+                    {
+                        tb_password.Text = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+                    }
                 }
               
             }
@@ -74,11 +86,11 @@ namespace RRHH
             busqueda.Close();
         }
 
+        // metodo implementa en el timer un progressbar para que cada momento va cambiando una imagen de posicion 
         private void timer1_Tick(object sender, EventArgs e)
         {
+           
             ProgressBar1.Increment(2);
-
-
 
             if (ProgressBar1.Value == 0)
             {
@@ -148,6 +160,7 @@ namespace RRHH
             }
             else if (ProgressBar1.Value == 100)
             {
+                // cuando el progressbar llega al final se procede a iniciar sesion  por medio de una consulta sql verificando si el usuario y contraseña ingresados sean correctos
                 lb_iniciar.Text = "Iniciando...";
                 pb_iniciar.Hide();
                 btn_iniciar.Show();
@@ -170,6 +183,7 @@ namespace RRHH
                     {
                         var tipo = ds.Tables[0].Rows[0].ItemArray[1].ToString();
                         int ID = int.Parse(ds.Tables[0].Rows[0].ItemArray[0].ToString());
+                        // verifica el tipo de usuario que corresponde para los permisos necesarios
                         if (tipo.Trim() == "ADMINISTRADOR")
                         {
                             frm_inicio.conexion = this.conexion;
@@ -199,6 +213,7 @@ namespace RRHH
             }
         }
 
+        // metodo cambia una imagen de acuerdo a la ruta de la imagen que le enviemos
         public void cambiar(string ruta)
         {
             pb_iniciar.Image = Image.FromFile(ruta);

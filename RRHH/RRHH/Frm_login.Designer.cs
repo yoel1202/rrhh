@@ -159,6 +159,7 @@
             this.tb_password.Margin = new System.Windows.Forms.Padding(2);
             this.tb_password.Multiline = true;
             this.tb_password.Name = "tb_password";
+            this.tb_password.PasswordChar = '*';
             this.tb_password.Size = new System.Drawing.Size(222, 28);
             this.tb_password.TabIndex = 20;
             // 

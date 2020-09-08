@@ -32,7 +32,9 @@ namespace RRHH
 
         private void frm_inicio_Load(object sender, EventArgs e)
         {
+            // metodo pone un timer a funcionar para ir mostrado la hora en el sistema y se cambie
             timer1.Start();
+            // antes de iniciar el programa implementa parametros para acomodar la interfaz dependiendo de la pantalla de computador
             PictureBox1.SetBounds(Screen.PrimaryScreen.Bounds.Width - 150, 15, PictureBox1.Width, PictureBox1.Height);
             PictureBox2.SetBounds(0, Screen.PrimaryScreen.Bounds.Height - 70, PictureBox2.Width, PictureBox2.Height);
             PictureBox3.SetBounds(Screen.PrimaryScreen.Bounds.Width - 60, 15, PictureBox3.Width, PictureBox3.Height);
@@ -44,17 +46,17 @@ namespace RRHH
             Label11.SetBounds(this.Width - 245, this.Height - 120, Label11.Width, Label11.Height);
             Label12.SetBounds(Screen.PrimaryScreen.Bounds.Width - 60, PictureBox3.Height + 15, Label12.Width, Label12.Height);
             Label4.SetBounds(Screen.PrimaryScreen.Bounds.Width - 220, PictureBox1.Height, Label4.Width, Label4.Height);
-
             pn_principal.SetBounds(PictureBox4.Width + 50, PictureBox4.Height + 40, Panel1.Width +  pn_empleados.Width + Pn_pagos.Width+400, Panel4.Height+ Panel1.Height+100);
             Panel1.SetBounds(PictureBox4.Width + 50, PictureBox4.Height + 40, Panel1.Width, Panel1.Height);
-
             pn_empleados.SetBounds(Panel1.Width + 350, PictureBox4.Height + 40, pn_empleados.Width, pn_empleados.Height);
             Pn_pagos.SetBounds(pn_empleados.Width + 800, PictureBox4.Height + 40, Pn_pagos.Width, Pn_pagos.Height);
-
             Panel4.SetBounds(PictureBox4.Width + 50, Panel1.Height + 200, Panel4.Width, Panel4.Height);
             Panel5.SetBounds(Panel4.Width + 350, Panel1.Height + 200, Panel5.Width, Panel5.Height);
             pn_configuracion.SetBounds(Panel5.Width + 800, Panel1.Height + 200, Panel5.Width, Panel5.Height);
             pn_principal.Hide();
+
+
+            // obtiene los datos del usuario actual por medio de la variable ID 
 
             DataSet ds = conexion.sqlconsulta("Select nombre,puesto,cedula,foto from  tbl_usuarios  where id_usuario='" + ID.ToString() + "'");
             nombre.Text = ds.Tables[0].Rows[0].ItemArray[0].ToString();
@@ -111,6 +113,7 @@ namespace RRHH
 
         private void PictureBox2_Click(object sender, EventArgs e)
         {
+            // boton inicio por medio de la variable se pone en falso y muestra  los modulo y si la variable es verdara oculta los modulos
             if (pn_principal.Visible == true)
             {
                 pn_principal.Controls.RemoveAt(0);
@@ -172,16 +175,18 @@ namespace RRHH
             }
         }
 
+        // cambia la imagen por una mas grande cuando se acarca cuanto se acerca 
         private void PictureBox2_MouseMove(object sender, MouseEventArgs e)
         {
             PictureBox2.Image = Image.FromFile("imagenes/OS_Windows_82.png");
         }
-
+        // cambia la imagen por una mas pequeña cuando se aleja el mouse
         private void PictureBox2_MouseLeave(object sender, EventArgs e)
         {
             PictureBox2.Image = Image.FromFile("imagenes/OS_Windows_8.png");
         }
 
+        // cambia la imagen por una mas grande cuando se acarca cuanto se acerca 
         private void Panel1_MouseMove(object sender, MouseEventArgs e)
         {
             if (pasar)
@@ -189,7 +194,7 @@ namespace RRHH
             else
                 Panel1.BackgroundImage = Image.FromFile("imagenes/ayuda (2).png");
         }
-
+        // cambia la imagen por una mas pequeña cuando se aleja el mouse
         private void Panel1_MouseLeave(object sender, EventArgs e)
         {
             if (pasar)
@@ -197,69 +202,69 @@ namespace RRHH
             else
                 Panel1.BackgroundImage = Image.FromFile("imagenes/ayuda (1).png");
         }
-
+        // cambia la imagen por una mas grande cuando se acarca cuanto se acerca 
         private void pn_empleados_MouseMove(object sender, MouseEventArgs e)
         {
             pn_empleados.BackgroundImage = Image.FromFile("imagenes/funcionario (2).png");
         }
-
+        // cambia la imagen por una mas pequeña cuando se aleja el mouse
         private void pn_empleados_MouseLeave(object sender, EventArgs e)
         {
             pn_empleados.BackgroundImage = Image.FromFile("imagenes/funcionario (1).png");
         }
-
+        // cambia la imagen por una mas grande cuando se acarca cuanto se acerca 
         private void Pn_pagos_MouseMove(object sender, MouseEventArgs e)
         {
             Pn_pagos.BackgroundImage = Image.FromFile("imagenes/pagos 2.png");
         }
-
+        // cambia la imagen por una mas pequeña cuando se aleja el mouse
         private void Pn_pagos_MouseLeave(object sender, EventArgs e)
         {
             Pn_pagos.BackgroundImage = Image.FromFile("imagenes/pagos 1.png");
         }
-
+        // cambia la imagen por una mas pequeña cuando se aleja el mouse
         private void Panel4_MouseLeave(object sender, EventArgs e)
         {
             if (pasar)
-                Panel4.BackgroundImage = Image.FromFile("imagenes/turnos 1.png");
+                Panel4.BackgroundImage = Image.FromFile("imagenes/work (1).png");
             else
                 Panel4.BackgroundImage = Image.FromFile("imagenes/Acerca (2).png");
         }
-
+        // cambia la imagen por una mas grande cuando se acarca cuanto se acerca 
         private void Panel4_MouseMove(object sender, MouseEventArgs e)
         {
            
             if (pasar)
-                Panel4.BackgroundImage = Image.FromFile("imagenes/turnos 2.png");
+                Panel4.BackgroundImage = Image.FromFile("imagenes/work.png");
             else
                 Panel4.BackgroundImage = Image.FromFile("imagenes/Acerca (1).png");
         }
-
+        // cambia la imagen por una mas grande cuando se acarca cuanto se acerca 
         private void Panel5_MouseMove(object sender, MouseEventArgs e)
         {
-            Panel5.BackgroundImage = Image.FromFile("imagenes/group.png");
+            Panel5.BackgroundImage = Image.FromFile("imagenes/department (1).png");
         }
-
+        // cambia la imagen por una mas pequeña cuando se aleja el mouse
         private void Panel5_MouseLeave(object sender, EventArgs e)
         {
-            Panel5.BackgroundImage = Image.FromFile("imagenes/group (1).png");
+            Panel5.BackgroundImage = Image.FromFile("imagenes/department.png");
         }
-
+        // cambia la imagen por una mas grande cuando se acarca cuanto se acerca 
         private void pn_configuracion_MouseMove(object sender, MouseEventArgs e)
         {
             pn_configuracion.BackgroundImage = Image.FromFile("imagenes/configuracion (1).png");
         }
-
+        // cambia la imagen por una mas pequeña cuando se aleja el mouse
         private void pn_configuracion_MouseLeave(object sender, EventArgs e)
         {
             pn_configuracion.BackgroundImage = Image.FromFile("imagenes/configuracion (2).png");
         }
-
+        // cambia la imagen por una mas grande cuando se acarca cuanto se acerca 
         private void PictureBox3_MouseMove(object sender, MouseEventArgs e)
         {
             PictureBox3.Image = Image.FromFile("imagenes/unnamed - copia.png");
         }
-
+        // cambia la imagen por una mas pequeña cuando se aleja el mouse
         private void PictureBox3_MouseLeave(object sender, EventArgs e)
         {
             PictureBox3.Image = Image.FromFile("imagenes/unnamed.png");
@@ -267,6 +272,8 @@ namespace RRHH
 
         private void PictureBox5_Click(object sender, EventArgs e)
         {
+
+            // por medio de la variable pasar muestra los modulos de configuracion y ayuda y oculta los que hay en pantalla
             if (pasar)
             {
                 pn_empleados.Hide();
@@ -364,7 +371,9 @@ namespace RRHH
 
         private void Panel4_Click(object sender, EventArgs e)
         {
-            Frm_plazas myForm = new Frm_plazas();
+            if (pasar)
+            {  
+                Frm_plazas myForm = new Frm_plazas();
             myForm.conexion = this.conexion;
             myForm.TopLevel = false;
             myForm.AutoScroll = true;
@@ -372,6 +381,16 @@ namespace RRHH
             myForm.Show();
 
             pn_principal.Show();
+
+            }else
+            {
+              
+        }
+        }
+
+        private void Panel5_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void PictureBox4_Click(object sender, EventArgs e)

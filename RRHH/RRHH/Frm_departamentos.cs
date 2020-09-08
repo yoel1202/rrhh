@@ -22,6 +22,7 @@ namespace RRHH
         private int ID_usuario;
         private void Frm_usuario_Load(object sender, EventArgs e)
         {
+            // oculta elementos de la interfaz  como los botones de guardar actualizar y eliminar
             Button1.Hide();
             Button2.Hide();
             Button3.Hide();
@@ -81,7 +82,7 @@ namespace RRHH
             else
                 return true;
         }
-
+        // cumple la funcion de guardar se llama el metodo querycomando de la clase conexion para insertar los datos 
         private void Button1_Click(object sender, EventArgs e)
         {
             if (validartexbox(tb_codigo) & validartexbox(tb_nombre) )
@@ -100,6 +101,7 @@ namespace RRHH
             else
                 MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
         }
+        // metodo actualiza los datos de la lista que se encuentra en el datagrievew
         public void actualizardato()
         {
             DataSet data = conexion.sqlconsulta("Select id_departamento,nombre,codigo from tbl_departamentos");
@@ -109,7 +111,7 @@ namespace RRHH
                 DataGridView1.Columns[0].Visible = false;
             }
         }
-
+        // metodo actualiza por medio de una consulta sql 
         private void Button3_Click(object sender, EventArgs e)
         {
             if (validartexbox(tb_codigo) & validartexbox(tb_nombre)  )
@@ -134,7 +136,7 @@ namespace RRHH
             else
                 MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
         }
-
+        // metodo elimina un registro de la base de datos por medio de una consulta sqk
         private void Button2_Click(object sender, EventArgs e)
         {
             if (seleccionarusuario)
@@ -155,6 +157,8 @@ namespace RRHH
             else
                 MessageBox.Show("Seleccione un empleado de la lista");
         }
+
+        // metodo selecciona una celda de la datagridview y la muestra en los campo para poder actualizar o eliminar
 
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -177,7 +181,7 @@ namespace RRHH
             DataGridView1.Show();
         actualizardato();
         }
-
+        // metodo busca resultado por medio textbox a traves de una consulta sql
         private void tb_busqueda_TextChanged(object sender, EventArgs e)
         {
             if (tb_busqueda.Text != "")
