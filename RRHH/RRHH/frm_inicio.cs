@@ -392,6 +392,11 @@ namespace RRHH
         {
 
         }
+
+        private void PictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
     
