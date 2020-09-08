@@ -14,13 +14,8 @@ namespace RRHH.CONEXION
         SqlConnection cnn;
         public BDconeccion(){
             string connetionString = null;
-
-             // cadena conexion de la base de datos 
-            connetionString = "Server=DESKTOP-SU52LP9;Database=bd_RRHH;Trusted_Connection=True;";
-
-           
-        
-
+            // cadena conexion de la base de datos 
+            connetionString = "Server=localhost;Database=bd_RRHH;Trusted_Connection=True;";
             cnn = new SqlConnection(connetionString);
             try
             {

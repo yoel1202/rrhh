@@ -217,10 +217,5 @@ namespace RRHH
         {
 
         }
-
-        private void Label6_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
