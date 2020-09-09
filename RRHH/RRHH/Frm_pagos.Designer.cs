@@ -85,6 +85,9 @@
             this.cb_tipo_presupuesto = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.extras_corrientes = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lb_notificacion_extras = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.cb_extras_busqueda = new System.Windows.Forms.ComboBox();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
@@ -104,6 +107,9 @@
             this.dtp_fecha_pago_extras = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.tiempo_extraordinario = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lb_notificacion_extraordinario = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.cb_departamento = new System.Windows.Forms.ComboBox();
             this.label33 = new System.Windows.Forms.Label();
             this.cb_busqueda_extraordinario = new System.Windows.Forms.ComboBox();
@@ -127,6 +133,9 @@
             this.cb_tipo_extraordinario = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.acciones = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lb_notificacion_accion_personal = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.cb_busqueda_personal = new System.Windows.Forms.ComboBox();
             this.linkLabel17 = new System.Windows.Forms.LinkLabel();
             this.dtp_fechavacaciones_personal = new System.Windows.Forms.DateTimePicker();
@@ -210,15 +219,51 @@
             this.linkLabel30 = new System.Windows.Forms.LinkLabel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dgv_registro = new System.Windows.Forms.DataGridView();
-            this.lb_notificacion_extras = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lb_notificacion_extraordinario = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lb_notificacion_accion_personal = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.linkLabel31 = new System.Windows.Forms.LinkLabel();
+            this.tb_apellido_accion = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.linkLabel32 = new System.Windows.Forms.LinkLabel();
+            this.tb_nombre_accion = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.linkLabel33 = new System.Windows.Forms.LinkLabel();
+            this.tb_cedula_accion = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.linkLabel34 = new System.Windows.Forms.LinkLabel();
+            this.tb_apellido_remuneracion = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.linkLabel35 = new System.Windows.Forms.LinkLabel();
+            this.tb_nombre_renumeracion = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.linkLabel36 = new System.Windows.Forms.LinkLabel();
+            this.tb_cedula_remuneracion = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.linkLabel37 = new System.Windows.Forms.LinkLabel();
+            this.tb_apellido_extras_corriente = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.linkLabel38 = new System.Windows.Forms.LinkLabel();
+            this.tb_nombre_extras_corrientes = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.linkLabel39 = new System.Windows.Forms.LinkLabel();
+            this.tb_cedula_extra_corriente = new System.Windows.Forms.TextBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.linkLabel40 = new System.Windows.Forms.LinkLabel();
+            this.tb_apellido_extraordinario = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.linkLabel41 = new System.Windows.Forms.LinkLabel();
+            this.tb_nombre_extraordinario = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.linkLabel42 = new System.Windows.Forms.LinkLabel();
+            this.tb_cedula_extraordinario = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.linkLabel43 = new System.Windows.Forms.LinkLabel();
+            this.tb_apellido_incapacidades = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.linkLabel44 = new System.Windows.Forms.LinkLabel();
+            this.tb_nombre_incapacidades = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.linkLabel45 = new System.Windows.Forms.LinkLabel();
+            this.tb_cedula_incapacidades = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.empleado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empleado)).BeginInit();
@@ -229,10 +274,16 @@
             this.PRESUPUESTO.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_presupuesto)).BeginInit();
             this.extras_corrientes.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_extras_corrientes)).BeginInit();
             this.tiempo_extraordinario.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_extraordinario)).BeginInit();
             this.acciones.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_personal)).BeginInit();
             this.tp_incapacidades.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_incapacidades)).BeginInit();
@@ -241,12 +292,6 @@
             this.REGISTRO.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_registro)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -263,7 +308,7 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1291, 658);
+            this.tabControl1.Size = new System.Drawing.Size(1291, 783);
             this.tabControl1.TabIndex = 0;
             // 
             // empleado
@@ -460,6 +505,15 @@
             // REMUNERACION
             // 
             this.REMUNERACION.BackColor = System.Drawing.Color.DarkCyan;
+            this.REMUNERACION.Controls.Add(this.linkLabel34);
+            this.REMUNERACION.Controls.Add(this.tb_apellido_remuneracion);
+            this.REMUNERACION.Controls.Add(this.label46);
+            this.REMUNERACION.Controls.Add(this.linkLabel35);
+            this.REMUNERACION.Controls.Add(this.tb_nombre_renumeracion);
+            this.REMUNERACION.Controls.Add(this.label47);
+            this.REMUNERACION.Controls.Add(this.linkLabel36);
+            this.REMUNERACION.Controls.Add(this.tb_cedula_remuneracion);
+            this.REMUNERACION.Controls.Add(this.label48);
             this.REMUNERACION.Controls.Add(this.pn_notificaciones);
             this.REMUNERACION.Controls.Add(this.linkLabel24);
             this.REMUNERACION.Controls.Add(this.tb_codigo_remuneracion);
@@ -484,7 +538,7 @@
             this.REMUNERACION.Location = new System.Drawing.Point(4, 22);
             this.REMUNERACION.Name = "REMUNERACION";
             this.REMUNERACION.Padding = new System.Windows.Forms.Padding(3);
-            this.REMUNERACION.Size = new System.Drawing.Size(1283, 632);
+            this.REMUNERACION.Size = new System.Drawing.Size(1283, 757);
             this.REMUNERACION.TabIndex = 0;
             this.REMUNERACION.Text = "Remuneracion";
             this.REMUNERACION.Click += new System.EventHandler(this.tab_Click);
@@ -526,7 +580,7 @@
             this.linkLabel24.DisabledLinkColor = System.Drawing.Color.SpringGreen;
             this.linkLabel24.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel24.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel24.Location = new System.Drawing.Point(163, 80);
+            this.linkLabel24.Location = new System.Drawing.Point(161, 171);
             this.linkLabel24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel24.Name = "linkLabel24";
             this.linkLabel24.Size = new System.Drawing.Size(158, 8);
@@ -541,7 +595,7 @@
             this.tb_codigo_remuneracion.BackColor = System.Drawing.Color.DarkCyan;
             this.tb_codigo_remuneracion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_codigo_remuneracion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_codigo_remuneracion.Location = new System.Drawing.Point(165, 60);
+            this.tb_codigo_remuneracion.Location = new System.Drawing.Point(163, 151);
             this.tb_codigo_remuneracion.Margin = new System.Windows.Forms.Padding(2);
             this.tb_codigo_remuneracion.Multiline = true;
             this.tb_codigo_remuneracion.Name = "tb_codigo_remuneracion";
@@ -551,7 +605,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(34, 64);
+            this.label34.Location = new System.Drawing.Point(32, 155);
             this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(46, 13);
@@ -577,7 +631,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(258, 259);
+            this.button4.Location = new System.Drawing.Point(241, 341);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(98, 67);
@@ -592,7 +646,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(144, 259);
+            this.button5.Location = new System.Drawing.Point(127, 341);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(108, 67);
@@ -621,7 +675,7 @@
             this.btn_guardar_remuneracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_guardar_remuneracion.Image = ((System.Drawing.Image)(resources.GetObject("btn_guardar_remuneracion.Image")));
             this.btn_guardar_remuneracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_guardar_remuneracion.Location = new System.Drawing.Point(37, 259);
+            this.btn_guardar_remuneracion.Location = new System.Drawing.Point(20, 341);
             this.btn_guardar_remuneracion.Margin = new System.Windows.Forms.Padding(2);
             this.btn_guardar_remuneracion.Name = "btn_guardar_remuneracion";
             this.btn_guardar_remuneracion.Size = new System.Drawing.Size(103, 67);
@@ -666,7 +720,7 @@
             this.linkLabel5.DisabledLinkColor = System.Drawing.Color.SpringGreen;
             this.linkLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel5.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel5.Location = new System.Drawing.Point(160, 233);
+            this.linkLabel5.Location = new System.Drawing.Point(158, 324);
             this.linkLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel5.Name = "linkLabel5";
             this.linkLabel5.Size = new System.Drawing.Size(158, 8);
@@ -681,7 +735,7 @@
             this.tb_monto_remuneracion.BackColor = System.Drawing.Color.DarkCyan;
             this.tb_monto_remuneracion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_monto_remuneracion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_monto_remuneracion.Location = new System.Drawing.Point(162, 213);
+            this.tb_monto_remuneracion.Location = new System.Drawing.Point(160, 304);
             this.tb_monto_remuneracion.Margin = new System.Windows.Forms.Padding(2);
             this.tb_monto_remuneracion.Multiline = true;
             this.tb_monto_remuneracion.Name = "tb_monto_remuneracion";
@@ -694,7 +748,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(31, 217);
+            this.label7.Location = new System.Drawing.Point(29, 308);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 13);
@@ -703,7 +757,7 @@
             // 
             // dtp_fecha_pago_remuneracion
             // 
-            this.dtp_fecha_pago_remuneracion.Location = new System.Drawing.Point(155, 175);
+            this.dtp_fecha_pago_remuneracion.Location = new System.Drawing.Point(153, 266);
             this.dtp_fecha_pago_remuneracion.Name = "dtp_fecha_pago_remuneracion";
             this.dtp_fecha_pago_remuneracion.Size = new System.Drawing.Size(200, 20);
             this.dtp_fecha_pago_remuneracion.TabIndex = 207;
@@ -711,7 +765,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 175);
+            this.label6.Location = new System.Drawing.Point(30, 266);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 13);
@@ -721,7 +775,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 143);
+            this.label4.Location = new System.Drawing.Point(28, 234);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 13);
@@ -734,7 +788,7 @@
             this.cb_tipo_renumeracion.Items.AddRange(new object[] {
             "remuneracion por vacaciones",
             "subsidio de maternidad"});
-            this.cb_tipo_renumeracion.Location = new System.Drawing.Point(155, 140);
+            this.cb_tipo_renumeracion.Location = new System.Drawing.Point(153, 231);
             this.cb_tipo_renumeracion.Margin = new System.Windows.Forms.Padding(2);
             this.cb_tipo_renumeracion.Name = "cb_tipo_renumeracion";
             this.cb_tipo_renumeracion.Size = new System.Drawing.Size(157, 21);
@@ -745,7 +799,7 @@
             this.linkLabel3.DisabledLinkColor = System.Drawing.Color.SpringGreen;
             this.linkLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel3.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel3.Location = new System.Drawing.Point(161, 109);
+            this.linkLabel3.Location = new System.Drawing.Point(159, 200);
             this.linkLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(158, 8);
@@ -760,7 +814,7 @@
             this.tb_movimiento_remuneracion.BackColor = System.Drawing.Color.DarkCyan;
             this.tb_movimiento_remuneracion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_movimiento_remuneracion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_movimiento_remuneracion.Location = new System.Drawing.Point(163, 89);
+            this.tb_movimiento_remuneracion.Location = new System.Drawing.Point(161, 180);
             this.tb_movimiento_remuneracion.Margin = new System.Windows.Forms.Padding(2);
             this.tb_movimiento_remuneracion.Multiline = true;
             this.tb_movimiento_remuneracion.Name = "tb_movimiento_remuneracion";
@@ -770,7 +824,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 93);
+            this.label3.Location = new System.Drawing.Point(30, 184);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(121, 13);
@@ -1007,6 +1061,15 @@
             // extras_corrientes
             // 
             this.extras_corrientes.BackColor = System.Drawing.Color.DarkCyan;
+            this.extras_corrientes.Controls.Add(this.linkLabel37);
+            this.extras_corrientes.Controls.Add(this.tb_apellido_extras_corriente);
+            this.extras_corrientes.Controls.Add(this.label49);
+            this.extras_corrientes.Controls.Add(this.linkLabel38);
+            this.extras_corrientes.Controls.Add(this.tb_nombre_extras_corrientes);
+            this.extras_corrientes.Controls.Add(this.label50);
+            this.extras_corrientes.Controls.Add(this.linkLabel39);
+            this.extras_corrientes.Controls.Add(this.tb_cedula_extra_corriente);
+            this.extras_corrientes.Controls.Add(this.label51);
             this.extras_corrientes.Controls.Add(this.panel1);
             this.extras_corrientes.Controls.Add(this.cb_extras_busqueda);
             this.extras_corrientes.Controls.Add(this.button10);
@@ -1028,9 +1091,41 @@
             this.extras_corrientes.Controls.Add(this.label1);
             this.extras_corrientes.Location = new System.Drawing.Point(4, 22);
             this.extras_corrientes.Name = "extras_corrientes";
-            this.extras_corrientes.Size = new System.Drawing.Size(1283, 632);
+            this.extras_corrientes.Size = new System.Drawing.Size(1283, 757);
             this.extras_corrientes.TabIndex = 2;
             this.extras_corrientes.Text = "Extras corientes medicas";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.Controls.Add(this.lb_notificacion_extras);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Location = new System.Drawing.Point(900, 366);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(328, 138);
+            this.panel1.TabIndex = 245;
+            // 
+            // lb_notificacion_extras
+            // 
+            this.lb_notificacion_extras.AutoSize = true;
+            this.lb_notificacion_extras.BackColor = System.Drawing.Color.Transparent;
+            this.lb_notificacion_extras.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_notificacion_extras.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lb_notificacion_extras.Location = new System.Drawing.Point(36, 68);
+            this.lb_notificacion_extras.Name = "lb_notificacion_extras";
+            this.lb_notificacion_extras.Size = new System.Drawing.Size(104, 19);
+            this.lb_notificacion_extras.TabIndex = 1;
+            this.lb_notificacion_extras.Text = "Monto actual: 0";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(299, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(20, 19);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // cb_extras_busqueda
             // 
@@ -1049,7 +1144,7 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(281, 229);
+            this.button10.Location = new System.Drawing.Point(238, 321);
             this.button10.Margin = new System.Windows.Forms.Padding(2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(98, 67);
@@ -1064,7 +1159,7 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(167, 229);
+            this.button11.Location = new System.Drawing.Point(124, 321);
             this.button11.Margin = new System.Windows.Forms.Padding(2);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(108, 67);
@@ -1093,7 +1188,7 @@
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(60, 229);
+            this.button12.Location = new System.Drawing.Point(17, 321);
             this.button12.Margin = new System.Windows.Forms.Padding(2);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(103, 67);
@@ -1138,7 +1233,7 @@
             this.linkLabel4.DisabledLinkColor = System.Drawing.Color.SpringGreen;
             this.linkLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel4.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel4.Location = new System.Drawing.Point(168, 198);
+            this.linkLabel4.Location = new System.Drawing.Point(157, 303);
             this.linkLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel4.Name = "linkLabel4";
             this.linkLabel4.Size = new System.Drawing.Size(158, 8);
@@ -1153,7 +1248,7 @@
             this.tb_monto_cancelar_extras.BackColor = System.Drawing.Color.DarkCyan;
             this.tb_monto_cancelar_extras.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_monto_cancelar_extras.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_monto_cancelar_extras.Location = new System.Drawing.Point(170, 178);
+            this.tb_monto_cancelar_extras.Location = new System.Drawing.Point(159, 283);
             this.tb_monto_cancelar_extras.Margin = new System.Windows.Forms.Padding(2);
             this.tb_monto_cancelar_extras.Multiline = true;
             this.tb_monto_cancelar_extras.Name = "tb_monto_cancelar_extras";
@@ -1165,7 +1260,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(38, 178);
+            this.label8.Location = new System.Drawing.Point(27, 283);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(90, 13);
@@ -1177,7 +1272,7 @@
             this.linkLabel2.DisabledLinkColor = System.Drawing.Color.SpringGreen;
             this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel2.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel2.Location = new System.Drawing.Point(168, 158);
+            this.linkLabel2.Location = new System.Drawing.Point(157, 263);
             this.linkLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(158, 8);
@@ -1192,7 +1287,7 @@
             this.tb_cantidad_extras.BackColor = System.Drawing.Color.DarkCyan;
             this.tb_cantidad_extras.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_cantidad_extras.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_cantidad_extras.Location = new System.Drawing.Point(170, 138);
+            this.tb_cantidad_extras.Location = new System.Drawing.Point(159, 243);
             this.tb_cantidad_extras.Margin = new System.Windows.Forms.Padding(2);
             this.tb_cantidad_extras.Multiline = true;
             this.tb_cantidad_extras.Name = "tb_cantidad_extras";
@@ -1202,7 +1297,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(38, 138);
+            this.label5.Location = new System.Drawing.Point(27, 243);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 13);
@@ -1214,7 +1309,7 @@
             this.linkLabel1.DisabledLinkColor = System.Drawing.Color.SpringGreen;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel1.Location = new System.Drawing.Point(168, 116);
+            this.linkLabel1.Location = new System.Drawing.Point(157, 221);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(158, 8);
@@ -1229,7 +1324,7 @@
             this.tb_codigo_plaza_extras.BackColor = System.Drawing.Color.DarkCyan;
             this.tb_codigo_plaza_extras.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_codigo_plaza_extras.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_codigo_plaza_extras.Location = new System.Drawing.Point(170, 96);
+            this.tb_codigo_plaza_extras.Location = new System.Drawing.Point(159, 201);
             this.tb_codigo_plaza_extras.Margin = new System.Windows.Forms.Padding(2);
             this.tb_codigo_plaza_extras.Multiline = true;
             this.tb_codigo_plaza_extras.Name = "tb_codigo_plaza_extras";
@@ -1239,7 +1334,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 96);
+            this.label2.Location = new System.Drawing.Point(27, 201);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
@@ -1248,7 +1343,7 @@
             // 
             // dtp_fecha_pago_extras
             // 
-            this.dtp_fecha_pago_extras.Location = new System.Drawing.Point(161, 62);
+            this.dtp_fecha_pago_extras.Location = new System.Drawing.Point(150, 167);
             this.dtp_fecha_pago_extras.Name = "dtp_fecha_pago_extras";
             this.dtp_fecha_pago_extras.Size = new System.Drawing.Size(200, 20);
             this.dtp_fecha_pago_extras.TabIndex = 228;
@@ -1256,7 +1351,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 62);
+            this.label1.Location = new System.Drawing.Point(27, 167);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 13);
@@ -1266,6 +1361,15 @@
             // tiempo_extraordinario
             // 
             this.tiempo_extraordinario.BackColor = System.Drawing.Color.DarkCyan;
+            this.tiempo_extraordinario.Controls.Add(this.linkLabel40);
+            this.tiempo_extraordinario.Controls.Add(this.tb_apellido_extraordinario);
+            this.tiempo_extraordinario.Controls.Add(this.label52);
+            this.tiempo_extraordinario.Controls.Add(this.linkLabel41);
+            this.tiempo_extraordinario.Controls.Add(this.tb_nombre_extraordinario);
+            this.tiempo_extraordinario.Controls.Add(this.label53);
+            this.tiempo_extraordinario.Controls.Add(this.linkLabel42);
+            this.tiempo_extraordinario.Controls.Add(this.tb_cedula_extraordinario);
+            this.tiempo_extraordinario.Controls.Add(this.label54);
             this.tiempo_extraordinario.Controls.Add(this.panel2);
             this.tiempo_extraordinario.Controls.Add(this.cb_departamento);
             this.tiempo_extraordinario.Controls.Add(this.label33);
@@ -1291,15 +1395,47 @@
             this.tiempo_extraordinario.Controls.Add(this.label9);
             this.tiempo_extraordinario.Location = new System.Drawing.Point(4, 22);
             this.tiempo_extraordinario.Name = "tiempo_extraordinario";
-            this.tiempo_extraordinario.Size = new System.Drawing.Size(1283, 632);
+            this.tiempo_extraordinario.Size = new System.Drawing.Size(1283, 757);
             this.tiempo_extraordinario.TabIndex = 3;
             this.tiempo_extraordinario.Text = "Tiempo extraordinario ";
             this.tiempo_extraordinario.Click += new System.EventHandler(this.tiempo_extraordinario_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel2.Controls.Add(this.lb_notificacion_extraordinario);
+            this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Location = new System.Drawing.Point(877, 387);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(328, 138);
+            this.panel2.TabIndex = 258;
+            // 
+            // lb_notificacion_extraordinario
+            // 
+            this.lb_notificacion_extraordinario.AutoSize = true;
+            this.lb_notificacion_extraordinario.BackColor = System.Drawing.Color.Transparent;
+            this.lb_notificacion_extraordinario.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_notificacion_extraordinario.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lb_notificacion_extraordinario.Location = new System.Drawing.Point(36, 68);
+            this.lb_notificacion_extraordinario.Name = "lb_notificacion_extraordinario";
+            this.lb_notificacion_extraordinario.Size = new System.Drawing.Size(104, 19);
+            this.lb_notificacion_extraordinario.TabIndex = 1;
+            this.lb_notificacion_extraordinario.Text = "Monto actual: 0";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(299, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(20, 19);
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            // 
             // cb_departamento
             // 
             this.cb_departamento.FormattingEnabled = true;
-            this.cb_departamento.Location = new System.Drawing.Point(170, 41);
+            this.cb_departamento.Location = new System.Drawing.Point(168, 148);
             this.cb_departamento.Margin = new System.Windows.Forms.Padding(2);
             this.cb_departamento.Name = "cb_departamento";
             this.cb_departamento.Size = new System.Drawing.Size(157, 21);
@@ -1308,7 +1444,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(49, 41);
+            this.label33.Location = new System.Drawing.Point(47, 148);
             this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(74, 13);
@@ -1333,7 +1469,7 @@
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Image = ((System.Drawing.Image)(resources.GetObject("button13.Image")));
             this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(290, 261);
+            this.button13.Location = new System.Drawing.Point(288, 368);
             this.button13.Margin = new System.Windows.Forms.Padding(2);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(98, 67);
@@ -1348,7 +1484,7 @@
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button14.Image = ((System.Drawing.Image)(resources.GetObject("button14.Image")));
             this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.Location = new System.Drawing.Point(176, 261);
+            this.button14.Location = new System.Drawing.Point(174, 368);
             this.button14.Margin = new System.Windows.Forms.Padding(2);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(108, 67);
@@ -1377,7 +1513,7 @@
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button15.Image = ((System.Drawing.Image)(resources.GetObject("button15.Image")));
             this.button15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button15.Location = new System.Drawing.Point(69, 261);
+            this.button15.Location = new System.Drawing.Point(67, 368);
             this.button15.Margin = new System.Windows.Forms.Padding(2);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(103, 67);
@@ -1420,7 +1556,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(49, 106);
+            this.label13.Location = new System.Drawing.Point(47, 213);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(79, 13);
@@ -1429,7 +1565,7 @@
             // 
             // dtp_extraordinario
             // 
-            this.dtp_extraordinario.Location = new System.Drawing.Point(170, 106);
+            this.dtp_extraordinario.Location = new System.Drawing.Point(168, 213);
             this.dtp_extraordinario.Name = "dtp_extraordinario";
             this.dtp_extraordinario.Size = new System.Drawing.Size(200, 20);
             this.dtp_extraordinario.TabIndex = 247;
@@ -1439,7 +1575,7 @@
             this.linkLabel6.DisabledLinkColor = System.Drawing.Color.SpringGreen;
             this.linkLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel6.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel6.Location = new System.Drawing.Point(179, 246);
+            this.linkLabel6.Location = new System.Drawing.Point(177, 353);
             this.linkLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel6.Name = "linkLabel6";
             this.linkLabel6.Size = new System.Drawing.Size(158, 8);
@@ -1454,7 +1590,7 @@
             this.tb_monto_extraordinario.BackColor = System.Drawing.Color.DarkCyan;
             this.tb_monto_extraordinario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_monto_extraordinario.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_monto_extraordinario.Location = new System.Drawing.Point(181, 226);
+            this.tb_monto_extraordinario.Location = new System.Drawing.Point(179, 333);
             this.tb_monto_extraordinario.Margin = new System.Windows.Forms.Padding(2);
             this.tb_monto_extraordinario.Multiline = true;
             this.tb_monto_extraordinario.Name = "tb_monto_extraordinario";
@@ -1466,7 +1602,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(49, 226);
+            this.label10.Location = new System.Drawing.Point(47, 333);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(90, 13);
@@ -1478,7 +1614,7 @@
             this.linkLabel7.DisabledLinkColor = System.Drawing.Color.SpringGreen;
             this.linkLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel7.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel7.Location = new System.Drawing.Point(179, 206);
+            this.linkLabel7.Location = new System.Drawing.Point(177, 313);
             this.linkLabel7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel7.Name = "linkLabel7";
             this.linkLabel7.Size = new System.Drawing.Size(158, 8);
@@ -1493,7 +1629,7 @@
             this.tb_cantidad_extraordinario.BackColor = System.Drawing.Color.DarkCyan;
             this.tb_cantidad_extraordinario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_cantidad_extraordinario.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_cantidad_extraordinario.Location = new System.Drawing.Point(181, 186);
+            this.tb_cantidad_extraordinario.Location = new System.Drawing.Point(179, 293);
             this.tb_cantidad_extraordinario.Margin = new System.Windows.Forms.Padding(2);
             this.tb_cantidad_extraordinario.Multiline = true;
             this.tb_cantidad_extraordinario.Name = "tb_cantidad_extraordinario";
@@ -1503,7 +1639,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(49, 186);
+            this.label11.Location = new System.Drawing.Point(47, 293);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(93, 13);
@@ -1515,7 +1651,7 @@
             this.linkLabel8.DisabledLinkColor = System.Drawing.Color.SpringGreen;
             this.linkLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel8.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel8.Location = new System.Drawing.Point(179, 164);
+            this.linkLabel8.Location = new System.Drawing.Point(177, 271);
             this.linkLabel8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel8.Name = "linkLabel8";
             this.linkLabel8.Size = new System.Drawing.Size(158, 8);
@@ -1530,7 +1666,7 @@
             this.tb_plaza_extraordinario.BackColor = System.Drawing.Color.DarkCyan;
             this.tb_plaza_extraordinario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_plaza_extraordinario.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_plaza_extraordinario.Location = new System.Drawing.Point(181, 144);
+            this.tb_plaza_extraordinario.Location = new System.Drawing.Point(179, 251);
             this.tb_plaza_extraordinario.Margin = new System.Windows.Forms.Padding(2);
             this.tb_plaza_extraordinario.Multiline = true;
             this.tb_plaza_extraordinario.Name = "tb_plaza_extraordinario";
@@ -1540,7 +1676,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(49, 144);
+            this.label12.Location = new System.Drawing.Point(47, 251);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(84, 13);
@@ -1555,7 +1691,7 @@
             "Recargo Nocturno",
             "Guardias Medicas",
             "Disponibilidades Medicas"});
-            this.cb_tipo_extraordinario.Location = new System.Drawing.Point(170, 76);
+            this.cb_tipo_extraordinario.Location = new System.Drawing.Point(168, 183);
             this.cb_tipo_extraordinario.Margin = new System.Windows.Forms.Padding(2);
             this.cb_tipo_extraordinario.Name = "cb_tipo_extraordinario";
             this.cb_tipo_extraordinario.Size = new System.Drawing.Size(157, 21);
@@ -1564,7 +1700,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(49, 67);
+            this.label9.Location = new System.Drawing.Point(47, 174);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(94, 13);
@@ -1575,6 +1711,15 @@
             // 
             this.acciones.AutoScroll = true;
             this.acciones.BackColor = System.Drawing.Color.DarkCyan;
+            this.acciones.Controls.Add(this.linkLabel31);
+            this.acciones.Controls.Add(this.tb_apellido_accion);
+            this.acciones.Controls.Add(this.label43);
+            this.acciones.Controls.Add(this.linkLabel32);
+            this.acciones.Controls.Add(this.tb_nombre_accion);
+            this.acciones.Controls.Add(this.label44);
+            this.acciones.Controls.Add(this.linkLabel33);
+            this.acciones.Controls.Add(this.tb_cedula_accion);
+            this.acciones.Controls.Add(this.label45);
             this.acciones.Controls.Add(this.panel3);
             this.acciones.Controls.Add(this.cb_busqueda_personal);
             this.acciones.Controls.Add(this.linkLabel17);
@@ -1616,10 +1761,42 @@
             this.acciones.Controls.Add(this.label18);
             this.acciones.Location = new System.Drawing.Point(4, 22);
             this.acciones.Name = "acciones";
-            this.acciones.Size = new System.Drawing.Size(1283, 632);
+            this.acciones.Size = new System.Drawing.Size(1283, 757);
             this.acciones.TabIndex = 4;
             this.acciones.Text = "Acciones de personal ";
             this.acciones.Click += new System.EventHandler(this.acciones_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel3.Controls.Add(this.lb_notificacion_accion_personal);
+            this.panel3.Controls.Add(this.pictureBox4);
+            this.panel3.Location = new System.Drawing.Point(825, 304);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(328, 138);
+            this.panel3.TabIndex = 283;
+            // 
+            // lb_notificacion_accion_personal
+            // 
+            this.lb_notificacion_accion_personal.AutoSize = true;
+            this.lb_notificacion_accion_personal.BackColor = System.Drawing.Color.Transparent;
+            this.lb_notificacion_accion_personal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_notificacion_accion_personal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lb_notificacion_accion_personal.Location = new System.Drawing.Point(36, 68);
+            this.lb_notificacion_accion_personal.Name = "lb_notificacion_accion_personal";
+            this.lb_notificacion_accion_personal.Size = new System.Drawing.Size(92, 19);
+            this.lb_notificacion_accion_personal.TabIndex = 1;
+            this.lb_notificacion_accion_personal.Text = "Monto actual:";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Location = new System.Drawing.Point(299, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(20, 19);
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
             // 
             // cb_busqueda_personal
             // 
@@ -1628,7 +1805,7 @@
             "Numero accion",
             "Motivo",
             "Sustitucion"});
-            this.cb_busqueda_personal.Location = new System.Drawing.Point(913, 37);
+            this.cb_busqueda_personal.Location = new System.Drawing.Point(605, 222);
             this.cb_busqueda_personal.Margin = new System.Windows.Forms.Padding(2);
             this.cb_busqueda_personal.Name = "cb_busqueda_personal";
             this.cb_busqueda_personal.Size = new System.Drawing.Size(167, 21);
@@ -1639,7 +1816,7 @@
             this.linkLabel17.DisabledLinkColor = System.Drawing.Color.SpringGreen;
             this.linkLabel17.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel17.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel17.Location = new System.Drawing.Point(160, 348);
+            this.linkLabel17.Location = new System.Drawing.Point(931, 64);
             this.linkLabel17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel17.Name = "linkLabel17";
             this.linkLabel17.Size = new System.Drawing.Size(158, 8);
@@ -1651,14 +1828,14 @@
             // 
             // dtp_fechavacaciones_personal
             // 
-            this.dtp_fechavacaciones_personal.Location = new System.Drawing.Point(154, 391);
+            this.dtp_fechavacaciones_personal.Location = new System.Drawing.Point(925, 107);
             this.dtp_fechavacaciones_personal.Name = "dtp_fechavacaciones_personal";
             this.dtp_fechavacaciones_personal.Size = new System.Drawing.Size(152, 20);
             this.dtp_fechavacaciones_personal.TabIndex = 280;
             // 
             // dtp_fechaescala_personal
             // 
-            this.dtp_fechaescala_personal.Location = new System.Drawing.Point(154, 365);
+            this.dtp_fechaescala_personal.Location = new System.Drawing.Point(925, 81);
             this.dtp_fechaescala_personal.Name = "dtp_fechaescala_personal";
             this.dtp_fechaescala_personal.Size = new System.Drawing.Size(152, 20);
             this.dtp_fechaescala_personal.TabIndex = 279;
@@ -1667,7 +1844,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.CausesValidation = false;
-            this.label26.Location = new System.Drawing.Point(29, 396);
+            this.label26.Location = new System.Drawing.Point(800, 112);
             this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(110, 13);
@@ -1677,7 +1854,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(29, 371);
+            this.label31.Location = new System.Drawing.Point(800, 87);
             this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(122, 13);
@@ -1689,7 +1866,7 @@
             this.tb_dias_personal.BackColor = System.Drawing.Color.DarkCyan;
             this.tb_dias_personal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_dias_personal.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_dias_personal.Location = new System.Drawing.Point(160, 329);
+            this.tb_dias_personal.Location = new System.Drawing.Point(931, 45);
             this.tb_dias_personal.Margin = new System.Windows.Forms.Padding(2);
             this.tb_dias_personal.Multiline = true;
             this.tb_dias_personal.Name = "tb_dias_personal";
@@ -1699,7 +1876,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(29, 339);
+            this.label30.Location = new System.Drawing.Point(800, 55);
             this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(68, 13);
@@ -1711,7 +1888,7 @@
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button16.Image = ((System.Drawing.Image)(resources.GetObject("button16.Image")));
             this.button16.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button16.Location = new System.Drawing.Point(628, 405);
+            this.button16.Location = new System.Drawing.Point(1046, 224);
             this.button16.Margin = new System.Windows.Forms.Padding(2);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(98, 67);
@@ -1726,7 +1903,7 @@
             this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button17.Image = ((System.Drawing.Image)(resources.GetObject("button17.Image")));
             this.button17.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button17.Location = new System.Drawing.Point(514, 405);
+            this.button17.Location = new System.Drawing.Point(932, 224);
             this.button17.Margin = new System.Windows.Forms.Padding(2);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(108, 67);
@@ -1741,7 +1918,7 @@
             this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button18.Image = ((System.Drawing.Image)(resources.GetObject("button18.Image")));
             this.button18.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button18.Location = new System.Drawing.Point(407, 405);
+            this.button18.Location = new System.Drawing.Point(825, 224);
             this.button18.Margin = new System.Windows.Forms.Padding(2);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(103, 67);
@@ -1756,7 +1933,7 @@
             this.linkLabel22.DisabledLinkColor = System.Drawing.Color.SpringGreen;
             this.linkLabel22.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel22.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel22.Location = new System.Drawing.Point(384, 50);
+            this.linkLabel22.Location = new System.Drawing.Point(76, 235);
             this.linkLabel22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel22.Name = "linkLabel22";
             this.linkLabel22.Size = new System.Drawing.Size(525, 8);
@@ -1770,7 +1947,7 @@
             this.tb_busqueda_personal.BackColor = System.Drawing.Color.DarkCyan;
             this.tb_busqueda_personal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_busqueda_personal.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_busqueda_personal.Location = new System.Drawing.Point(384, 30);
+            this.tb_busqueda_personal.Location = new System.Drawing.Point(76, 215);
             this.tb_busqueda_personal.Margin = new System.Windows.Forms.Padding(2);
             this.tb_busqueda_personal.Multiline = true;
             this.tb_busqueda_personal.Name = "tb_busqueda_personal";
@@ -1786,7 +1963,7 @@
             this.dgv_personal.AllowUserToAddRows = false;
             this.dgv_personal.AllowUserToDeleteRows = false;
             this.dgv_personal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_personal.Location = new System.Drawing.Point(375, 78);
+            this.dgv_personal.Location = new System.Drawing.Point(49, 258);
             this.dgv_personal.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_personal.Name = "dgv_personal";
             this.dgv_personal.ReadOnly = true;
@@ -1797,7 +1974,7 @@
             // 
             // rtb_observaciones_personal
             // 
-            this.rtb_observaciones_personal.Location = new System.Drawing.Point(152, 443);
+            this.rtb_observaciones_personal.Location = new System.Drawing.Point(923, 159);
             this.rtb_observaciones_personal.Name = "rtb_observaciones_personal";
             this.rtb_observaciones_personal.Size = new System.Drawing.Size(212, 60);
             this.rtb_observaciones_personal.TabIndex = 267;
@@ -1806,7 +1983,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(27, 446);
+            this.label28.Location = new System.Drawing.Point(798, 162);
             this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(78, 13);
@@ -1816,7 +1993,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(29, 423);
+            this.label27.Location = new System.Drawing.Point(800, 139);
             this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(79, 13);
@@ -1825,7 +2002,7 @@
             // 
             // dtp_fecha_pago_personal
             // 
-            this.dtp_fecha_pago_personal.Location = new System.Drawing.Point(154, 417);
+            this.dtp_fecha_pago_personal.Location = new System.Drawing.Point(925, 133);
             this.dtp_fecha_pago_personal.Name = "dtp_fecha_pago_personal";
             this.dtp_fecha_pago_personal.Size = new System.Drawing.Size(200, 20);
             this.dtp_fecha_pago_personal.TabIndex = 264;
@@ -1833,7 +2010,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(29, 302);
+            this.label25.Location = new System.Drawing.Point(800, 18);
             this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(58, 13);
@@ -1842,7 +2019,7 @@
             // 
             // dtp_hasta_personal
             // 
-            this.dtp_hasta_personal.Location = new System.Drawing.Point(154, 302);
+            this.dtp_hasta_personal.Location = new System.Drawing.Point(925, 18);
             this.dtp_hasta_personal.Name = "dtp_hasta_personal";
             this.dtp_hasta_personal.Size = new System.Drawing.Size(200, 20);
             this.dtp_hasta_personal.TabIndex = 259;
@@ -1850,7 +2027,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(29, 262);
+            this.label24.Location = new System.Drawing.Point(455, 189);
             this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(61, 13);
@@ -1859,7 +2036,7 @@
             // 
             // dtp_desde_personal
             // 
-            this.dtp_desde_personal.Location = new System.Drawing.Point(154, 262);
+            this.dtp_desde_personal.Location = new System.Drawing.Point(580, 189);
             this.dtp_desde_personal.Name = "dtp_desde_personal";
             this.dtp_desde_personal.Size = new System.Drawing.Size(200, 20);
             this.dtp_desde_personal.TabIndex = 257;
@@ -1869,7 +2046,7 @@
             this.linkLabel15.DisabledLinkColor = System.Drawing.Color.SpringGreen;
             this.linkLabel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel15.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel15.Location = new System.Drawing.Point(157, 242);
+            this.linkLabel15.Location = new System.Drawing.Point(583, 169);
             this.linkLabel15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel15.Name = "linkLabel15";
             this.linkLabel15.Size = new System.Drawing.Size(158, 8);
@@ -1884,7 +2061,7 @@
             this.tb_puesto_personal.BackColor = System.Drawing.Color.DarkCyan;
             this.tb_puesto_personal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_puesto_personal.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_puesto_personal.Location = new System.Drawing.Point(159, 222);
+            this.tb_puesto_personal.Location = new System.Drawing.Point(585, 149);
             this.tb_puesto_personal.Margin = new System.Windows.Forms.Padding(2);
             this.tb_puesto_personal.Multiline = true;
             this.tb_puesto_personal.Name = "tb_puesto_personal";
@@ -1894,7 +2071,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(27, 222);
+            this.label23.Location = new System.Drawing.Point(453, 149);
             this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(40, 13);
@@ -1906,7 +2083,7 @@
             this.linkLabel14.DisabledLinkColor = System.Drawing.Color.SpringGreen;
             this.linkLabel14.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel14.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel14.Location = new System.Drawing.Point(159, 202);
+            this.linkLabel14.Location = new System.Drawing.Point(585, 129);
             this.linkLabel14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel14.Name = "linkLabel14";
             this.linkLabel14.Size = new System.Drawing.Size(158, 8);
@@ -1921,7 +2098,7 @@
             this.tb_codigo_personal.BackColor = System.Drawing.Color.DarkCyan;
             this.tb_codigo_personal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_codigo_personal.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_codigo_personal.Location = new System.Drawing.Point(161, 182);
+            this.tb_codigo_personal.Location = new System.Drawing.Point(587, 109);
             this.tb_codigo_personal.Margin = new System.Windows.Forms.Padding(2);
             this.tb_codigo_personal.Multiline = true;
             this.tb_codigo_personal.Name = "tb_codigo_personal";
@@ -1932,7 +2109,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(29, 182);
+            this.label22.Location = new System.Drawing.Point(455, 109);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(84, 13);
@@ -1944,7 +2121,7 @@
             this.linkLabel13.DisabledLinkColor = System.Drawing.Color.SpringGreen;
             this.linkLabel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel13.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel13.Location = new System.Drawing.Point(157, 156);
+            this.linkLabel13.Location = new System.Drawing.Point(583, 83);
             this.linkLabel13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel13.Name = "linkLabel13";
             this.linkLabel13.Size = new System.Drawing.Size(158, 8);
@@ -1959,7 +2136,7 @@
             this.tb_costo_personal.BackColor = System.Drawing.Color.DarkCyan;
             this.tb_costo_personal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_costo_personal.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_costo_personal.Location = new System.Drawing.Point(159, 136);
+            this.tb_costo_personal.Location = new System.Drawing.Point(585, 63);
             this.tb_costo_personal.Margin = new System.Windows.Forms.Padding(2);
             this.tb_costo_personal.Multiline = true;
             this.tb_costo_personal.Name = "tb_costo_personal";
@@ -1971,7 +2148,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(27, 136);
+            this.label21.Location = new System.Drawing.Point(453, 63);
             this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(34, 13);
@@ -1987,7 +2164,7 @@
             "Permisos sin goce",
             "Permiso sin goce",
             "Plaza vacante"});
-            this.cb_sustitucion_personal.Location = new System.Drawing.Point(152, 98);
+            this.cb_sustitucion_personal.Location = new System.Drawing.Point(578, 25);
             this.cb_sustitucion_personal.Margin = new System.Windows.Forms.Padding(2);
             this.cb_sustitucion_personal.Name = "cb_sustitucion_personal";
             this.cb_sustitucion_personal.Size = new System.Drawing.Size(157, 21);
@@ -1996,7 +2173,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(27, 98);
+            this.label20.Location = new System.Drawing.Point(453, 25);
             this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(59, 13);
@@ -2018,7 +2195,7 @@
             "Modificacion de fechas de nombramiento",
             "Exclusion de Planilla",
             "Inclusion de Planilla"});
-            this.cb_motivo_personal.Location = new System.Drawing.Point(152, 55);
+            this.cb_motivo_personal.Location = new System.Drawing.Point(158, 162);
             this.cb_motivo_personal.Margin = new System.Windows.Forms.Padding(2);
             this.cb_motivo_personal.Name = "cb_motivo_personal";
             this.cb_motivo_personal.Size = new System.Drawing.Size(157, 21);
@@ -2027,7 +2204,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(27, 55);
+            this.label19.Location = new System.Drawing.Point(33, 162);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(39, 13);
@@ -2039,7 +2216,7 @@
             this.linkLabel9.DisabledLinkColor = System.Drawing.Color.SpringGreen;
             this.linkLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel9.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel9.Location = new System.Drawing.Point(159, 39);
+            this.linkLabel9.Location = new System.Drawing.Point(165, 146);
             this.linkLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel9.Name = "linkLabel9";
             this.linkLabel9.Size = new System.Drawing.Size(158, 8);
@@ -2054,7 +2231,7 @@
             this.tb_numero_accion_personal.BackColor = System.Drawing.Color.DarkCyan;
             this.tb_numero_accion_personal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_numero_accion_personal.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_numero_accion_personal.Location = new System.Drawing.Point(161, 19);
+            this.tb_numero_accion_personal.Location = new System.Drawing.Point(167, 126);
             this.tb_numero_accion_personal.Margin = new System.Windows.Forms.Padding(2);
             this.tb_numero_accion_personal.Multiline = true;
             this.tb_numero_accion_personal.Name = "tb_numero_accion_personal";
@@ -2064,7 +2241,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(29, 19);
+            this.label18.Location = new System.Drawing.Point(35, 126);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(94, 13);
@@ -2074,6 +2251,15 @@
             // tp_incapacidades
             // 
             this.tp_incapacidades.BackColor = System.Drawing.Color.DarkCyan;
+            this.tp_incapacidades.Controls.Add(this.linkLabel43);
+            this.tp_incapacidades.Controls.Add(this.tb_apellido_incapacidades);
+            this.tp_incapacidades.Controls.Add(this.label55);
+            this.tp_incapacidades.Controls.Add(this.linkLabel44);
+            this.tp_incapacidades.Controls.Add(this.tb_nombre_incapacidades);
+            this.tp_incapacidades.Controls.Add(this.label56);
+            this.tp_incapacidades.Controls.Add(this.linkLabel45);
+            this.tp_incapacidades.Controls.Add(this.tb_cedula_incapacidades);
+            this.tp_incapacidades.Controls.Add(this.label57);
             this.tp_incapacidades.Controls.Add(this.linkLabel26);
             this.tp_incapacidades.Controls.Add(this.tb_puesto_incapacidades);
             this.tp_incapacidades.Controls.Add(this.label36);
@@ -2096,7 +2282,7 @@
             this.tp_incapacidades.Controls.Add(this.label40);
             this.tp_incapacidades.Location = new System.Drawing.Point(4, 22);
             this.tp_incapacidades.Name = "tp_incapacidades";
-            this.tp_incapacidades.Size = new System.Drawing.Size(1283, 632);
+            this.tp_incapacidades.Size = new System.Drawing.Size(1283, 757);
             this.tp_incapacidades.TabIndex = 7;
             this.tp_incapacidades.Text = "Incapacidades";
             // 
@@ -2105,7 +2291,7 @@
             this.linkLabel26.DisabledLinkColor = System.Drawing.Color.SpringGreen;
             this.linkLabel26.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel26.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel26.Location = new System.Drawing.Point(173, 239);
+            this.linkLabel26.Location = new System.Drawing.Point(163, 343);
             this.linkLabel26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel26.Name = "linkLabel26";
             this.linkLabel26.Size = new System.Drawing.Size(158, 8);
@@ -2120,7 +2306,7 @@
             this.tb_puesto_incapacidades.BackColor = System.Drawing.Color.DarkCyan;
             this.tb_puesto_incapacidades.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_puesto_incapacidades.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_puesto_incapacidades.Location = new System.Drawing.Point(175, 219);
+            this.tb_puesto_incapacidades.Location = new System.Drawing.Point(165, 323);
             this.tb_puesto_incapacidades.Margin = new System.Windows.Forms.Padding(2);
             this.tb_puesto_incapacidades.Multiline = true;
             this.tb_puesto_incapacidades.Name = "tb_puesto_incapacidades";
@@ -2130,7 +2316,7 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(44, 223);
+            this.label36.Location = new System.Drawing.Point(34, 327);
             this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(40, 13);
@@ -2155,7 +2341,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(268, 265);
+            this.button3.Location = new System.Drawing.Point(258, 369);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(98, 67);
@@ -2170,7 +2356,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(154, 265);
+            this.button6.Location = new System.Drawing.Point(144, 369);
             this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(108, 67);
@@ -2199,7 +2385,7 @@
             this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button19.Image = ((System.Drawing.Image)(resources.GetObject("button19.Image")));
             this.button19.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button19.Location = new System.Drawing.Point(47, 265);
+            this.button19.Location = new System.Drawing.Point(37, 369);
             this.button19.Margin = new System.Windows.Forms.Padding(2);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(103, 67);
@@ -2242,7 +2428,7 @@
             this.linkLabel28.DisabledLinkColor = System.Drawing.Color.SpringGreen;
             this.linkLabel28.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel28.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel28.Location = new System.Drawing.Point(170, 200);
+            this.linkLabel28.Location = new System.Drawing.Point(160, 304);
             this.linkLabel28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel28.Name = "linkLabel28";
             this.linkLabel28.Size = new System.Drawing.Size(158, 8);
@@ -2257,7 +2443,7 @@
             this.tb_plaza_incapacidades.BackColor = System.Drawing.Color.DarkCyan;
             this.tb_plaza_incapacidades.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_plaza_incapacidades.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_plaza_incapacidades.Location = new System.Drawing.Point(172, 180);
+            this.tb_plaza_incapacidades.Location = new System.Drawing.Point(162, 284);
             this.tb_plaza_incapacidades.Margin = new System.Windows.Forms.Padding(2);
             this.tb_plaza_incapacidades.Multiline = true;
             this.tb_plaza_incapacidades.Name = "tb_plaza_incapacidades";
@@ -2268,7 +2454,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(41, 184);
+            this.label37.Location = new System.Drawing.Point(31, 288);
             this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(88, 13);
@@ -2277,7 +2463,7 @@
             // 
             // dtp_fecha_pago_incapacidades
             // 
-            this.dtp_fecha_pago_incapacidades.Location = new System.Drawing.Point(165, 142);
+            this.dtp_fecha_pago_incapacidades.Location = new System.Drawing.Point(155, 246);
             this.dtp_fecha_pago_incapacidades.Name = "dtp_fecha_pago_incapacidades";
             this.dtp_fecha_pago_incapacidades.Size = new System.Drawing.Size(200, 20);
             this.dtp_fecha_pago_incapacidades.TabIndex = 227;
@@ -2285,7 +2471,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(42, 142);
+            this.label38.Location = new System.Drawing.Point(32, 246);
             this.label38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(79, 13);
@@ -2295,7 +2481,7 @@
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(40, 110);
+            this.label39.Location = new System.Drawing.Point(30, 214);
             this.label39.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(89, 13);
@@ -2312,7 +2498,7 @@
             "Maternidad",
             "Fase Terminal",
             "Cuido niño"});
-            this.cb_incapacidad.Location = new System.Drawing.Point(165, 107);
+            this.cb_incapacidad.Location = new System.Drawing.Point(155, 211);
             this.cb_incapacidad.Margin = new System.Windows.Forms.Padding(2);
             this.cb_incapacidad.Name = "cb_incapacidad";
             this.cb_incapacidad.Size = new System.Drawing.Size(157, 21);
@@ -2323,7 +2509,7 @@
             this.linkLabel29.DisabledLinkColor = System.Drawing.Color.SpringGreen;
             this.linkLabel29.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel29.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel29.Location = new System.Drawing.Point(171, 76);
+            this.linkLabel29.Location = new System.Drawing.Point(161, 180);
             this.linkLabel29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel29.Name = "linkLabel29";
             this.linkLabel29.Size = new System.Drawing.Size(158, 8);
@@ -2338,7 +2524,7 @@
             this.tb_boleta_incapacidades.BackColor = System.Drawing.Color.DarkCyan;
             this.tb_boleta_incapacidades.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_boleta_incapacidades.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_boleta_incapacidades.Location = new System.Drawing.Point(173, 56);
+            this.tb_boleta_incapacidades.Location = new System.Drawing.Point(163, 160);
             this.tb_boleta_incapacidades.Margin = new System.Windows.Forms.Padding(2);
             this.tb_boleta_incapacidades.Multiline = true;
             this.tb_boleta_incapacidades.Name = "tb_boleta_incapacidades";
@@ -2348,7 +2534,7 @@
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(42, 60);
+            this.label40.Location = new System.Drawing.Point(32, 164);
             this.label40.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(91, 13);
@@ -2375,7 +2561,7 @@
             this.Reportes.Controls.Add(this.cb_tipo_reporte);
             this.Reportes.Location = new System.Drawing.Point(4, 22);
             this.Reportes.Name = "Reportes";
-            this.Reportes.Size = new System.Drawing.Size(1283, 632);
+            this.Reportes.Size = new System.Drawing.Size(1283, 757);
             this.Reportes.TabIndex = 6;
             this.Reportes.Text = "Reportes";
             // 
@@ -2557,7 +2743,7 @@
             this.REGISTRO.Controls.Add(this.dgv_registro);
             this.REGISTRO.Location = new System.Drawing.Point(4, 22);
             this.REGISTRO.Name = "REGISTRO";
-            this.REGISTRO.Size = new System.Drawing.Size(1283, 632);
+            this.REGISTRO.Size = new System.Drawing.Size(1283, 757);
             this.REGISTRO.TabIndex = 8;
             this.REGISTRO.Text = "Registro";
             // 
@@ -2645,107 +2831,571 @@
             this.dgv_registro.Size = new System.Drawing.Size(891, 194);
             this.dgv_registro.TabIndex = 240;
             // 
-            // lb_notificacion_extras
+            // linkLabel31
             // 
-            this.lb_notificacion_extras.AutoSize = true;
-            this.lb_notificacion_extras.BackColor = System.Drawing.Color.Transparent;
-            this.lb_notificacion_extras.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_notificacion_extras.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lb_notificacion_extras.Location = new System.Drawing.Point(36, 68);
-            this.lb_notificacion_extras.Name = "lb_notificacion_extras";
-            this.lb_notificacion_extras.Size = new System.Drawing.Size(104, 19);
-            this.lb_notificacion_extras.TabIndex = 1;
-            this.lb_notificacion_extras.Text = "Monto actual: 0";
+            this.linkLabel31.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel31.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel31.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel31.Location = new System.Drawing.Point(161, 110);
+            this.linkLabel31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel31.Name = "linkLabel31";
+            this.linkLabel31.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel31.TabIndex = 292;
+            this.linkLabel31.TabStop = true;
+            this.linkLabel31.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel31.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // pictureBox2
+            // tb_apellido_accion
             // 
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(299, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(20, 19);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.tb_apellido_accion.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_apellido_accion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_apellido_accion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_apellido_accion.Location = new System.Drawing.Point(163, 90);
+            this.tb_apellido_accion.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_apellido_accion.Multiline = true;
+            this.tb_apellido_accion.Name = "tb_apellido_accion";
+            this.tb_apellido_accion.Size = new System.Drawing.Size(148, 17);
+            this.tb_apellido_accion.TabIndex = 290;
             // 
-            // panel1
+            // label43
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel1.Controls.Add(this.lb_notificacion_extras);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Location = new System.Drawing.Point(900, 366);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(328, 138);
-            this.panel1.TabIndex = 245;
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(31, 90);
+            this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(44, 13);
+            this.label43.TabIndex = 291;
+            this.label43.Text = "Apellido";
             // 
-            // lb_notificacion_extraordinario
+            // linkLabel32
             // 
-            this.lb_notificacion_extraordinario.AutoSize = true;
-            this.lb_notificacion_extraordinario.BackColor = System.Drawing.Color.Transparent;
-            this.lb_notificacion_extraordinario.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_notificacion_extraordinario.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lb_notificacion_extraordinario.Location = new System.Drawing.Point(36, 68);
-            this.lb_notificacion_extraordinario.Name = "lb_notificacion_extraordinario";
-            this.lb_notificacion_extraordinario.Size = new System.Drawing.Size(104, 19);
-            this.lb_notificacion_extraordinario.TabIndex = 1;
-            this.lb_notificacion_extraordinario.Text = "Monto actual: 0";
+            this.linkLabel32.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel32.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel32.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel32.Location = new System.Drawing.Point(165, 76);
+            this.linkLabel32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel32.Name = "linkLabel32";
+            this.linkLabel32.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel32.TabIndex = 289;
+            this.linkLabel32.TabStop = true;
+            this.linkLabel32.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel32.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // pictureBox3
+            // tb_nombre_accion
             // 
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(299, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(20, 19);
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
+            this.tb_nombre_accion.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_nombre_accion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_nombre_accion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_nombre_accion.Location = new System.Drawing.Point(167, 56);
+            this.tb_nombre_accion.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_nombre_accion.Multiline = true;
+            this.tb_nombre_accion.Name = "tb_nombre_accion";
+            this.tb_nombre_accion.Size = new System.Drawing.Size(148, 17);
+            this.tb_nombre_accion.TabIndex = 287;
             // 
-            // panel2
+            // label44
             // 
-            this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel2.Controls.Add(this.lb_notificacion_extraordinario);
-            this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Location = new System.Drawing.Point(877, 387);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(328, 138);
-            this.panel2.TabIndex = 258;
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(35, 56);
+            this.label44.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(44, 13);
+            this.label44.TabIndex = 288;
+            this.label44.Text = "Nombre";
             // 
-            // lb_notificacion_accion_personal
+            // linkLabel33
             // 
-            this.lb_notificacion_accion_personal.AutoSize = true;
-            this.lb_notificacion_accion_personal.BackColor = System.Drawing.Color.Transparent;
-            this.lb_notificacion_accion_personal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_notificacion_accion_personal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lb_notificacion_accion_personal.Location = new System.Drawing.Point(36, 68);
-            this.lb_notificacion_accion_personal.Name = "lb_notificacion_accion_personal";
-            this.lb_notificacion_accion_personal.Size = new System.Drawing.Size(92, 19);
-            this.lb_notificacion_accion_personal.TabIndex = 1;
-            this.lb_notificacion_accion_personal.Text = "Monto actual:";
+            this.linkLabel33.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel33.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel33.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel33.Location = new System.Drawing.Point(165, 41);
+            this.linkLabel33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel33.Name = "linkLabel33";
+            this.linkLabel33.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel33.TabIndex = 286;
+            this.linkLabel33.TabStop = true;
+            this.linkLabel33.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel33.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // pictureBox4
+            // tb_cedula_accion
             // 
-            this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(299, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(20, 19);
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
+            this.tb_cedula_accion.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_cedula_accion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_cedula_accion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_cedula_accion.Location = new System.Drawing.Point(167, 21);
+            this.tb_cedula_accion.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_cedula_accion.Multiline = true;
+            this.tb_cedula_accion.Name = "tb_cedula_accion";
+            this.tb_cedula_accion.Size = new System.Drawing.Size(148, 17);
+            this.tb_cedula_accion.TabIndex = 284;
+            this.tb_cedula_accion.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // panel3
+            // label45
             // 
-            this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel3.Controls.Add(this.lb_notificacion_accion_personal);
-            this.panel3.Controls.Add(this.pictureBox4);
-            this.panel3.Location = new System.Drawing.Point(885, 348);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(328, 138);
-            this.panel3.TabIndex = 283;
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(35, 21);
+            this.label45.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(40, 13);
+            this.label45.TabIndex = 285;
+            this.label45.Text = "Cedula";
+            // 
+            // linkLabel34
+            // 
+            this.linkLabel34.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel34.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel34.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel34.Location = new System.Drawing.Point(158, 138);
+            this.linkLabel34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel34.Name = "linkLabel34";
+            this.linkLabel34.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel34.TabIndex = 301;
+            this.linkLabel34.TabStop = true;
+            this.linkLabel34.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel34.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_apellido_remuneracion
+            // 
+            this.tb_apellido_remuneracion.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_apellido_remuneracion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_apellido_remuneracion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_apellido_remuneracion.Location = new System.Drawing.Point(160, 118);
+            this.tb_apellido_remuneracion.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_apellido_remuneracion.Multiline = true;
+            this.tb_apellido_remuneracion.Name = "tb_apellido_remuneracion";
+            this.tb_apellido_remuneracion.Size = new System.Drawing.Size(148, 17);
+            this.tb_apellido_remuneracion.TabIndex = 299;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(28, 118);
+            this.label46.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(44, 13);
+            this.label46.TabIndex = 300;
+            this.label46.Text = "Apellido";
+            // 
+            // linkLabel35
+            // 
+            this.linkLabel35.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel35.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel35.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel35.Location = new System.Drawing.Point(162, 104);
+            this.linkLabel35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel35.Name = "linkLabel35";
+            this.linkLabel35.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel35.TabIndex = 298;
+            this.linkLabel35.TabStop = true;
+            this.linkLabel35.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel35.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_nombre_renumeracion
+            // 
+            this.tb_nombre_renumeracion.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_nombre_renumeracion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_nombre_renumeracion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_nombre_renumeracion.Location = new System.Drawing.Point(164, 84);
+            this.tb_nombre_renumeracion.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_nombre_renumeracion.Multiline = true;
+            this.tb_nombre_renumeracion.Name = "tb_nombre_renumeracion";
+            this.tb_nombre_renumeracion.Size = new System.Drawing.Size(148, 17);
+            this.tb_nombre_renumeracion.TabIndex = 296;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(32, 84);
+            this.label47.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(44, 13);
+            this.label47.TabIndex = 297;
+            this.label47.Text = "Nombre";
+            // 
+            // linkLabel36
+            // 
+            this.linkLabel36.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel36.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel36.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel36.Location = new System.Drawing.Point(162, 69);
+            this.linkLabel36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel36.Name = "linkLabel36";
+            this.linkLabel36.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel36.TabIndex = 295;
+            this.linkLabel36.TabStop = true;
+            this.linkLabel36.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel36.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_cedula_remuneracion
+            // 
+            this.tb_cedula_remuneracion.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_cedula_remuneracion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_cedula_remuneracion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_cedula_remuneracion.Location = new System.Drawing.Point(164, 49);
+            this.tb_cedula_remuneracion.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_cedula_remuneracion.Multiline = true;
+            this.tb_cedula_remuneracion.Name = "tb_cedula_remuneracion";
+            this.tb_cedula_remuneracion.Size = new System.Drawing.Size(148, 17);
+            this.tb_cedula_remuneracion.TabIndex = 293;
+            this.tb_cedula_remuneracion.TextChanged += new System.EventHandler(this.tb_cedula_remuneracion_TextChanged);
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(32, 49);
+            this.label48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(40, 13);
+            this.label48.TabIndex = 294;
+            this.label48.Text = "Cedula";
+            // 
+            // linkLabel37
+            // 
+            this.linkLabel37.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel37.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel37.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel37.Location = new System.Drawing.Point(153, 147);
+            this.linkLabel37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel37.Name = "linkLabel37";
+            this.linkLabel37.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel37.TabIndex = 310;
+            this.linkLabel37.TabStop = true;
+            this.linkLabel37.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel37.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_apellido_extras_corriente
+            // 
+            this.tb_apellido_extras_corriente.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_apellido_extras_corriente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_apellido_extras_corriente.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_apellido_extras_corriente.Location = new System.Drawing.Point(155, 127);
+            this.tb_apellido_extras_corriente.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_apellido_extras_corriente.Multiline = true;
+            this.tb_apellido_extras_corriente.Name = "tb_apellido_extras_corriente";
+            this.tb_apellido_extras_corriente.Size = new System.Drawing.Size(148, 17);
+            this.tb_apellido_extras_corriente.TabIndex = 308;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(23, 127);
+            this.label49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(44, 13);
+            this.label49.TabIndex = 309;
+            this.label49.Text = "Apellido";
+            // 
+            // linkLabel38
+            // 
+            this.linkLabel38.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel38.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel38.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel38.Location = new System.Drawing.Point(157, 113);
+            this.linkLabel38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel38.Name = "linkLabel38";
+            this.linkLabel38.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel38.TabIndex = 307;
+            this.linkLabel38.TabStop = true;
+            this.linkLabel38.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel38.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_nombre_extras_corrientes
+            // 
+            this.tb_nombre_extras_corrientes.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_nombre_extras_corrientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_nombre_extras_corrientes.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_nombre_extras_corrientes.Location = new System.Drawing.Point(159, 93);
+            this.tb_nombre_extras_corrientes.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_nombre_extras_corrientes.Multiline = true;
+            this.tb_nombre_extras_corrientes.Name = "tb_nombre_extras_corrientes";
+            this.tb_nombre_extras_corrientes.Size = new System.Drawing.Size(148, 17);
+            this.tb_nombre_extras_corrientes.TabIndex = 305;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(27, 93);
+            this.label50.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(44, 13);
+            this.label50.TabIndex = 306;
+            this.label50.Text = "Nombre";
+            // 
+            // linkLabel39
+            // 
+            this.linkLabel39.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel39.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel39.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel39.Location = new System.Drawing.Point(157, 78);
+            this.linkLabel39.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel39.Name = "linkLabel39";
+            this.linkLabel39.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel39.TabIndex = 304;
+            this.linkLabel39.TabStop = true;
+            this.linkLabel39.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel39.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_cedula_extra_corriente
+            // 
+            this.tb_cedula_extra_corriente.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_cedula_extra_corriente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_cedula_extra_corriente.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_cedula_extra_corriente.Location = new System.Drawing.Point(159, 58);
+            this.tb_cedula_extra_corriente.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_cedula_extra_corriente.Multiline = true;
+            this.tb_cedula_extra_corriente.Name = "tb_cedula_extra_corriente";
+            this.tb_cedula_extra_corriente.Size = new System.Drawing.Size(148, 17);
+            this.tb_cedula_extra_corriente.TabIndex = 302;
+            this.tb_cedula_extra_corriente.TextChanged += new System.EventHandler(this.tb_cedula_extra_corriente_TextChanged);
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(27, 58);
+            this.label51.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(40, 13);
+            this.label51.TabIndex = 303;
+            this.label51.Text = "Cedula";
+            // 
+            // linkLabel40
+            // 
+            this.linkLabel40.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel40.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel40.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel40.Location = new System.Drawing.Point(173, 129);
+            this.linkLabel40.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel40.Name = "linkLabel40";
+            this.linkLabel40.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel40.TabIndex = 319;
+            this.linkLabel40.TabStop = true;
+            this.linkLabel40.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel40.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_apellido_extraordinario
+            // 
+            this.tb_apellido_extraordinario.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_apellido_extraordinario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_apellido_extraordinario.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_apellido_extraordinario.Location = new System.Drawing.Point(175, 109);
+            this.tb_apellido_extraordinario.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_apellido_extraordinario.Multiline = true;
+            this.tb_apellido_extraordinario.Name = "tb_apellido_extraordinario";
+            this.tb_apellido_extraordinario.Size = new System.Drawing.Size(148, 17);
+            this.tb_apellido_extraordinario.TabIndex = 317;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(43, 109);
+            this.label52.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(44, 13);
+            this.label52.TabIndex = 318;
+            this.label52.Text = "Apellido";
+            // 
+            // linkLabel41
+            // 
+            this.linkLabel41.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel41.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel41.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel41.Location = new System.Drawing.Point(177, 95);
+            this.linkLabel41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel41.Name = "linkLabel41";
+            this.linkLabel41.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel41.TabIndex = 316;
+            this.linkLabel41.TabStop = true;
+            this.linkLabel41.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel41.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_nombre_extraordinario
+            // 
+            this.tb_nombre_extraordinario.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_nombre_extraordinario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_nombre_extraordinario.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_nombre_extraordinario.Location = new System.Drawing.Point(179, 75);
+            this.tb_nombre_extraordinario.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_nombre_extraordinario.Multiline = true;
+            this.tb_nombre_extraordinario.Name = "tb_nombre_extraordinario";
+            this.tb_nombre_extraordinario.Size = new System.Drawing.Size(148, 17);
+            this.tb_nombre_extraordinario.TabIndex = 314;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(47, 75);
+            this.label53.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(44, 13);
+            this.label53.TabIndex = 315;
+            this.label53.Text = "Nombre";
+            // 
+            // linkLabel42
+            // 
+            this.linkLabel42.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel42.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel42.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel42.Location = new System.Drawing.Point(177, 60);
+            this.linkLabel42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel42.Name = "linkLabel42";
+            this.linkLabel42.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel42.TabIndex = 313;
+            this.linkLabel42.TabStop = true;
+            this.linkLabel42.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel42.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_cedula_extraordinario
+            // 
+            this.tb_cedula_extraordinario.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_cedula_extraordinario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_cedula_extraordinario.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_cedula_extraordinario.Location = new System.Drawing.Point(179, 40);
+            this.tb_cedula_extraordinario.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_cedula_extraordinario.Multiline = true;
+            this.tb_cedula_extraordinario.Name = "tb_cedula_extraordinario";
+            this.tb_cedula_extraordinario.Size = new System.Drawing.Size(148, 17);
+            this.tb_cedula_extraordinario.TabIndex = 311;
+            this.tb_cedula_extraordinario.TextChanged += new System.EventHandler(this.tb_cedula_extraordinario_TextChanged);
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(47, 40);
+            this.label54.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(40, 13);
+            this.label54.TabIndex = 312;
+            this.label54.Text = "Cedula";
+            // 
+            // linkLabel43
+            // 
+            this.linkLabel43.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel43.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel43.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel43.Location = new System.Drawing.Point(162, 141);
+            this.linkLabel43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel43.Name = "linkLabel43";
+            this.linkLabel43.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel43.TabIndex = 328;
+            this.linkLabel43.TabStop = true;
+            this.linkLabel43.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel43.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_apellido_incapacidades
+            // 
+            this.tb_apellido_incapacidades.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_apellido_incapacidades.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_apellido_incapacidades.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_apellido_incapacidades.Location = new System.Drawing.Point(164, 121);
+            this.tb_apellido_incapacidades.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_apellido_incapacidades.Multiline = true;
+            this.tb_apellido_incapacidades.Name = "tb_apellido_incapacidades";
+            this.tb_apellido_incapacidades.Size = new System.Drawing.Size(148, 17);
+            this.tb_apellido_incapacidades.TabIndex = 326;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(32, 121);
+            this.label55.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(44, 13);
+            this.label55.TabIndex = 327;
+            this.label55.Text = "Apellido";
+            // 
+            // linkLabel44
+            // 
+            this.linkLabel44.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel44.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel44.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel44.Location = new System.Drawing.Point(166, 107);
+            this.linkLabel44.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel44.Name = "linkLabel44";
+            this.linkLabel44.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel44.TabIndex = 325;
+            this.linkLabel44.TabStop = true;
+            this.linkLabel44.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel44.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_nombre_incapacidades
+            // 
+            this.tb_nombre_incapacidades.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_nombre_incapacidades.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_nombre_incapacidades.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_nombre_incapacidades.Location = new System.Drawing.Point(168, 87);
+            this.tb_nombre_incapacidades.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_nombre_incapacidades.Multiline = true;
+            this.tb_nombre_incapacidades.Name = "tb_nombre_incapacidades";
+            this.tb_nombre_incapacidades.Size = new System.Drawing.Size(148, 17);
+            this.tb_nombre_incapacidades.TabIndex = 323;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(36, 87);
+            this.label56.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(44, 13);
+            this.label56.TabIndex = 324;
+            this.label56.Text = "Nombre";
+            // 
+            // linkLabel45
+            // 
+            this.linkLabel45.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel45.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel45.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel45.Location = new System.Drawing.Point(166, 72);
+            this.linkLabel45.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel45.Name = "linkLabel45";
+            this.linkLabel45.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel45.TabIndex = 322;
+            this.linkLabel45.TabStop = true;
+            this.linkLabel45.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel45.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_cedula_incapacidades
+            // 
+            this.tb_cedula_incapacidades.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_cedula_incapacidades.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_cedula_incapacidades.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_cedula_incapacidades.Location = new System.Drawing.Point(168, 52);
+            this.tb_cedula_incapacidades.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_cedula_incapacidades.Multiline = true;
+            this.tb_cedula_incapacidades.Name = "tb_cedula_incapacidades";
+            this.tb_cedula_incapacidades.Size = new System.Drawing.Size(148, 17);
+            this.tb_cedula_incapacidades.TabIndex = 320;
+            this.tb_cedula_incapacidades.TextChanged += new System.EventHandler(this.tb_cedula_incapacidades_TextChanged);
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(36, 52);
+            this.label57.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(40, 13);
+            this.label57.TabIndex = 321;
+            this.label57.Text = "Cedula";
             // 
             // Frm_pagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1247, 662);
+            this.ClientSize = new System.Drawing.Size(1247, 793);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_pagos";
@@ -2766,12 +3416,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_presupuesto)).EndInit();
             this.extras_corrientes.ResumeLayout(false);
             this.extras_corrientes.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_extras_corrientes)).EndInit();
             this.tiempo_extraordinario.ResumeLayout(false);
             this.tiempo_extraordinario.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_extraordinario)).EndInit();
             this.acciones.ResumeLayout(false);
             this.acciones.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_personal)).EndInit();
             this.tp_incapacidades.ResumeLayout(false);
             this.tp_incapacidades.PerformLayout();
@@ -2783,15 +3442,6 @@
             this.REGISTRO.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_registro)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2988,5 +3638,50 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lb_notificacion_accion_personal;
         private System.Windows.Forms.PictureBox pictureBox4;
+        internal System.Windows.Forms.LinkLabel linkLabel31;
+        internal System.Windows.Forms.TextBox tb_apellido_accion;
+        internal System.Windows.Forms.Label label43;
+        internal System.Windows.Forms.LinkLabel linkLabel32;
+        internal System.Windows.Forms.TextBox tb_nombre_accion;
+        internal System.Windows.Forms.Label label44;
+        internal System.Windows.Forms.LinkLabel linkLabel33;
+        internal System.Windows.Forms.TextBox tb_cedula_accion;
+        internal System.Windows.Forms.Label label45;
+        internal System.Windows.Forms.LinkLabel linkLabel34;
+        internal System.Windows.Forms.TextBox tb_apellido_remuneracion;
+        internal System.Windows.Forms.Label label46;
+        internal System.Windows.Forms.LinkLabel linkLabel35;
+        internal System.Windows.Forms.TextBox tb_nombre_renumeracion;
+        internal System.Windows.Forms.Label label47;
+        internal System.Windows.Forms.LinkLabel linkLabel36;
+        internal System.Windows.Forms.TextBox tb_cedula_remuneracion;
+        internal System.Windows.Forms.Label label48;
+        internal System.Windows.Forms.LinkLabel linkLabel37;
+        internal System.Windows.Forms.TextBox tb_apellido_extras_corriente;
+        internal System.Windows.Forms.Label label49;
+        internal System.Windows.Forms.LinkLabel linkLabel38;
+        internal System.Windows.Forms.TextBox tb_nombre_extras_corrientes;
+        internal System.Windows.Forms.Label label50;
+        internal System.Windows.Forms.LinkLabel linkLabel39;
+        internal System.Windows.Forms.TextBox tb_cedula_extra_corriente;
+        internal System.Windows.Forms.Label label51;
+        internal System.Windows.Forms.LinkLabel linkLabel40;
+        internal System.Windows.Forms.TextBox tb_apellido_extraordinario;
+        internal System.Windows.Forms.Label label52;
+        internal System.Windows.Forms.LinkLabel linkLabel41;
+        internal System.Windows.Forms.TextBox tb_nombre_extraordinario;
+        internal System.Windows.Forms.Label label53;
+        internal System.Windows.Forms.LinkLabel linkLabel42;
+        internal System.Windows.Forms.TextBox tb_cedula_extraordinario;
+        internal System.Windows.Forms.Label label54;
+        internal System.Windows.Forms.LinkLabel linkLabel43;
+        internal System.Windows.Forms.TextBox tb_apellido_incapacidades;
+        internal System.Windows.Forms.Label label55;
+        internal System.Windows.Forms.LinkLabel linkLabel44;
+        internal System.Windows.Forms.TextBox tb_nombre_incapacidades;
+        internal System.Windows.Forms.Label label56;
+        internal System.Windows.Forms.LinkLabel linkLabel45;
+        internal System.Windows.Forms.TextBox tb_cedula_incapacidades;
+        internal System.Windows.Forms.Label label57;
     }
 }

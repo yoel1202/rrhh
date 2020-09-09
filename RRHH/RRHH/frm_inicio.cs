@@ -58,7 +58,7 @@ namespace RRHH
 
             // obtiene los datos del usuario actual por medio de la variable ID 
 
-            DataSet ds = conexion.sqlconsulta("Select nombre,puesto,cedula,foto from  tbl_usuarios  where id_usuario='" + ID.ToString() + "'");
+            DataSet ds = conexion.sqlconsulta("Select nombre,cedula,foto from  tbl_usuarios  where id_usuario='" + ID.ToString() + "'");
             nombre.Text = ds.Tables[0].Rows[0].ItemArray[0].ToString();
             Label3.Text = ds.Tables[0].Rows[0].ItemArray[1].ToString();
 

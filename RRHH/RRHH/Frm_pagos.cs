@@ -83,8 +83,11 @@ namespace RRHH
             lb_dato.Text = cb_dato_reporte.SelectedItem.ToString();
             dtp_fecha_reporte.Hide();
             conexion.llenarComboBox("SELECT * from tbl_departamentos", cb_departamento, "id_departamento", "nombre");
-            cb_departamento.SelectedIndex = 0;
-           
+
+            if (cb_departamento.SelectedIndex > 0)
+            {
+                cb_departamento.SelectedIndex = 0;
+            }
             // notifica cuando el monto esta apunto de llegar a una cantidad
             notificaciones("Remuneracion por vacaciones", lb_notificaciones_renumeracion, 5000000);
             notificaciones("Extras corrientes medicas", lb_notificacion_extras, 5000000);
@@ -1867,7 +1870,7 @@ namespace RRHH
                     if (cb_empleado_busqueda.SelectedIndex >= 0)
                     {
 
-                        DataSet ds = conexion.sqlconsulta("Select id_empleado,cedula as CEDULA,TE.nombre AS NOMBRE,apellido AS APELLIDO,fecha_nacimiento AS 'FECHA NACIMIENTO',tipo_nombramiento AS 'TIPO DE NOMBRAMIENTO',TE.codigo AS CODIGO,fecha_escala AS 'FECHA ESCALA',fecha_vacaciones AS 'FECHA DE VACACIONES',puesto AS PUESTO ,TD.nombre AS NOMBRE from tbl_empleados AS TE INNER JOIN tbl_departamentos AS TD on id_departamento=fk_departamento WHERE" + " TE." + selector + " " + " LIKE '" + tb_reporte.Text + "%'");
+                        DataSet ds = conexion.sqlconsulta("Select id_empleado,cedula as CEDULA,TE.nombre AS NOMBRE,apellido AS APELLIDO,fecha_nacimiento AS 'FECHA NACIMIENTO',tipo_nombramiento AS 'TIPO DE NOMBRAMIENTO',TE.codigo AS CODIGO,fecha_escala AS 'FECHA ESCALA',fecha_vacaciones AS 'FECHA DE VACACIONES',puesto AS PUESTO  from tbl_empleados AS TE WHERE" + " TE." + selector + " " + " LIKE '" + tb_reporte.Text + "%'");
                         if (ds.Tables[0].Rows.Count > 0)
                         {
 
@@ -2640,6 +2643,88 @@ namespace RRHH
                 }
             }
         }
-    }  
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            buscarempleado(tb_nombre_accion,tb_apellido_accion,tb_cedula_accion,"accion");
+           
+        }
+
+
+        public void buscarempleado(TextBox nombre, TextBox apellido,TextBox buscar, string tipo)
+        {
+            DataSet ds = conexion.sqlconsulta("Select id_empleado,TE.nombre AS NOMBRE,apellido AS APELLIDO,fecha_nacimiento AS 'FECHA NACIMIENTO',tipo_nombramiento AS 'TIPO DE NOMBRAMIENTO',TE.codigo AS CODIGO,fecha_escala AS 'FECHA ESCALA',fecha_vacaciones AS 'FECHA DE VACACIONES',puesto AS PUESTO  from tbl_empleados AS TE WHERE  TE.cedula  = '" + buscar.Text +"'");
+            try
+            {
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+
+
+                    seleccionarempleado = true;
+                    ID_usuario = int.Parse(ds.Tables[0].Rows[0].ItemArray[0].ToString());
+
+                    string[] nombres = ds.Tables[0].Rows[0].ItemArray[1].ToString().Split(' ');
+                    nombre.Text = nombres[2];
+                    apellido.Text = nombres[1] + " " + nombres[0];
+                    switch (tipo)
+                    {
+
+                        case "accion":
+                            actualizardato(dgv_personal, "Select id_accion_personal,numero_accion AS 'NUMERO DE ACCION',motivo AS MOTIVO,sustitucion AS SUSTITUCION,costo AS COSTO,codigo_plaza AS 'CODIGO DE PLAZA',TAP.puesto AS PUESTO,rige_desde AS 'RIGE DESDE',rige_hasta AS 'RIGE HASTA',total_dias AS 'TOTAL DE DIAS',fecha_ubicacion 'FECHA DE UBICACION',TAP.fecha_vacaciones AS 'FECHA DE VACACIONES',fecha_pago AS 'FECHA DE PAGO',observaciones AS 'OBSERVACIONES' from tbl_accion_personal TAP INNER JOIN  tbl_accion_personal_empleados  ON fk_accion_personal=id_accion_personal INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+                            break;
+                        case "remuneracion":
+                            actualizardato(dgv_renumeracion, "Select id_remuneracion,numero_movimiento AS 'NUMERO MOVIMIENTO',tipo AS TIPO,fecha_pago AS 'FECHA DE PAGO',monto AS MONTO ,te.nombre AS NOMBRE ,te.apellido AS APELLIDO from tbl_remuneraciones INNER JOIN  tbl_empleados_remuneraciones  ON fk_remuneracion=id_remuneracion INNER JOIN  tbl_empleados as te on id_empleado =fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+                            break;
+                        case "extrascorrientes":
+                            actualizardato(dgv_extras_corrientes, "Select id_extras,fecha_pago AS 'FECHA DE PAGO',codigo_plaza AS 'CODIGO DE PLAZA',cantidad_horas AS 'CANTIDAD DE HORAS',monto_cancelar AS 'MONTO A CANCELAR',te.nombre AS NOMBRE,te.apellido AS APELLIDO from tbl_extras_medicas INNER JOIN  tbl_extras_medicas_empleados  ON fk_extras=id_extras INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+                            break;
+                        case "extraordinario":
+                            actualizardato(dgv_extraordinario, "Select id_extraordinario,tipo_extraordinario AS 'TIPO DE EXTRAORDINARIO',fecha_pago AS 'FECHA DE PAGO',codigo_plaza AS 'CODIGO DE PLAZA',cantidad_horas AS 'CANTIDAD DE HORAS',monto AS MONTO,te.nombre AS NOMBRE,te.apellido AS APELLIDO from tbl_extraordinario INNER JOIN  tbl_extraordinario_empleados  ON fk_extraordinario=id_extraordinario INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+
+                            break;
+
+                        case "incapacidades":
+                            actualizardato(dgv_incapacidades, "Select id_incapacidad,numero_boleta as 'NUMERO BOLETA',tipo_incapacidad AS 'TIPO DE INCAPACIDAD' ,fecha_pago AS 'FECHA DE PAGO',numero_plaza AS 'NUMERO DE PLAZA',ti.puesto AS 'PUESTO' from tbl_incapacidades ti INNER JOIN  tbl_incapacidades_empleados  ON fk_incapacidad=id_incapacidad INNER JOIN  tbl_empleados as te on id_empleado =fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+                            break;
+                        case "reportes":
+
+                            actualizardato(dgv_reportes, "Select id_extras,fecha_pago AS 'FECHA DE PAGO',codigo_plaza AS 'CODIGO DE PLAZA',cantidad_horas AS 'CANTIDAD DE HORAS',monto_cancelar AS 'MONTO A CANCELAR',te.nombre AS NOMBRE,te.apellido AS APELLIDO from tbl_extras_medicas INNER JOIN  tbl_extras_medicas_empleados  ON fk_extras=id_extras INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+                            break;
+                    }
+                   
+
+                }
+                else
+                {
+                    seleccionarempleado = false;
+
+                }
+            }
+            catch (Exception e) {
+                seleccionarempleado = false;
+
+            }
+        }
+
+        private void tb_cedula_remuneracion_TextChanged(object sender, EventArgs e)
+        {
+            buscarempleado(tb_nombre_renumeracion, tb_apellido_remuneracion,tb_cedula_remuneracion,"remuneracion");
+        }
+
+        private void tb_cedula_extra_corriente_TextChanged(object sender, EventArgs e)
+        {
+            buscarempleado(tb_nombre_extras_corrientes, tb_apellido_extras_corriente, tb_cedula_extra_corriente, "extrascorrientes");
+        }
+
+        private void tb_cedula_extraordinario_TextChanged(object sender, EventArgs e)
+        {
+            buscarempleado(tb_nombre_extraordinario, tb_apellido_extraordinario, tb_cedula_extraordinario, "extraordinario");
+        }
+
+        private void tb_cedula_incapacidades_TextChanged(object sender, EventArgs e)
+        {
+            buscarempleado(tb_nombre_incapacidades, tb_apellido_incapacidades, tb_cedula_incapacidades, "incapacidades");
+        }
+    } 
     } 
 
