@@ -2182,6 +2182,8 @@
             // 
             // cb_motivo_personal
             // 
+            this.cb_motivo_personal.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cb_motivo_personal.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_motivo_personal.FormattingEnabled = true;
             this.cb_motivo_personal.Items.AddRange(new object[] {
             "Traslado y Ascenso Interino",
@@ -2195,7 +2197,7 @@
             "Modificacion de fechas de nombramiento",
             "Exclusion de Planilla",
             "Inclusion de Planilla"});
-            this.cb_motivo_personal.Location = new System.Drawing.Point(158, 162);
+            this.cb_motivo_personal.Location = new System.Drawing.Point(162, 162);
             this.cb_motivo_personal.Margin = new System.Windows.Forms.Padding(2);
             this.cb_motivo_personal.Name = "cb_motivo_personal";
             this.cb_motivo_personal.Size = new System.Drawing.Size(157, 21);
