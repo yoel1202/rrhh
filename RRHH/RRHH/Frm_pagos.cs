@@ -137,30 +137,30 @@ namespace RRHH
         }
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                // llena los datos del empleado que se escoge con la celda que pasemos el cursos
-                seleccionarempleado = true;
-                ID_usuario = int.Parse(dgv_empleado.Rows[e.RowIndex].Cells[0].Value.ToString());
-                tb_cedula.Text = dgv_empleado.Rows[e.RowIndex].Cells[1].Value.ToString();
-                tb_nombre.Text = dgv_empleado.Rows[e.RowIndex].Cells[2].Value.ToString();
-                tb_apellido.Text = dgv_empleado.Rows[e.RowIndex].Cells[3].Value.ToString();
-                tb_codigo_plaza_extras.Text = dgv_empleado.Rows[e.RowIndex].Cells[6].Value.ToString();
-                tb_plaza_extraordinario.Text = dgv_empleado.Rows[e.RowIndex].Cells[6].Value.ToString();
+        //    try
+        //    {
+        //        // llena los datos del empleado que se escoge con la celda que pasemos el cursos
+        //        seleccionarempleado = true;
+        //        ID_usuario = int.Parse(dgv_empleado.Rows[e.RowIndex].Cells[0].Value.ToString());
+        //        tb_cedula.Text = dgv_empleado.Rows[e.RowIndex].Cells[1].Value.ToString();
+        //        tb_nombre.Text = dgv_empleado.Rows[e.RowIndex].Cells[2].Value.ToString();
+        //        tb_apellido.Text = dgv_empleado.Rows[e.RowIndex].Cells[3].Value.ToString();
+        //        tb_codigo_plaza_extras.Text = dgv_empleado.Rows[e.RowIndex].Cells[6].Value.ToString();
+        //        tb_plaza_extraordinario.Text = dgv_empleado.Rows[e.RowIndex].Cells[6].Value.ToString();
 
-                // actualiza los datagridview dependiendo del empleado que escogemos 
-                actualizardato(dgv_renumeracion, "Select id_remuneracion,numero_movimiento AS 'NUMERO MOVIMIENTO',tipo AS TIPO,fecha_pago AS 'FECHA DE PAGO',monto AS MONTO ,te.nombre AS NOMBRE ,te.apellido AS APELLIDO from tbl_remuneraciones INNER JOIN  tbl_empleados_remuneraciones  ON fk_remuneracion=id_remuneracion INNER JOIN  tbl_empleados as te on id_empleado =fk_empleado where id_empleado ='" + ID_usuario + "'  ");
-                actualizardato(dgv_extras_corrientes, "Select id_extras,fecha_pago AS 'FECHA DE PAGO',codigo_plaza AS 'CODIGO DE PLAZA',cantidad_horas AS 'CANTIDAD DE HORAS',monto_cancelar AS 'MONTO A CANCELAR',te.nombre AS NOMBRE,te.apellido AS APELLIDO from tbl_extras_medicas INNER JOIN  tbl_extras_medicas_empleados  ON fk_extras=id_extras INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
-                actualizardato(dgv_extraordinario, "Select id_extraordinario,tipo_extraordinario AS 'TIPO DE EXTRAORDINARIO',fecha_pago AS 'FECHA DE PAGO',codigo_plaza AS 'CODIGO DE PLAZA',cantidad_horas AS 'CANTIDAD DE HORAS',monto AS MONTO,te.nombre AS NOMBRE,te.apellido AS APELLIDO from tbl_extraordinario INNER JOIN  tbl_extraordinario_empleados  ON fk_extraordinario=id_extraordinario INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
-                actualizardato(dgv_personal, "Select id_accion_personal,numero_accion AS 'NUMERO DE ACCION',motivo AS MOTIVO,sustitucion AS SUSTITUCION,costo AS COSTO,codigo_plaza AS 'CODIGO DE PLAZA',TAP.puesto AS PUESTO,rige_desde AS 'RIGE DESDE',rige_hasta AS 'RIGE HASTA',total_dias AS 'TOTAL DE DIAS',fecha_ubicacion 'FECHA DE UBICACION',TAP.fecha_vacaciones AS 'FECHA DE VACACIONES',fecha_pago AS 'FECHA DE PAGO',observaciones AS 'OBSERVACIONES' from tbl_accion_personal TAP INNER JOIN  tbl_accion_personal_empleados  ON fk_accion_personal=id_accion_personal INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
-                actualizardato(dgv_incapacidades, "Select id_incapacidad,numero_boleta as 'NUMERO BOLETA',tipo_incapacidad AS 'TIPO DE INCAPACIDAD' ,fecha_pago AS 'FECHA DE PAGO',numero_plaza AS 'NUMERO DE PLAZA',ti.puesto AS 'PUESTO' from tbl_incapacidades ti INNER JOIN  tbl_incapacidades_empleados  ON fk_incapacidad=id_incapacidad INNER JOIN  tbl_empleados as te on id_empleado =fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+        //        // actualiza los datagridview dependiendo del empleado que escogemos 
+        //        actualizardato(dgv_renumeracion, "Select id_remuneracion,numero_movimiento AS 'NUMERO MOVIMIENTO',tipo AS TIPO,fecha_pago AS 'FECHA DE PAGO',monto AS MONTO ,te.nombre AS NOMBRE ,te.apellido AS APELLIDO from tbl_remuneraciones INNER JOIN  tbl_empleados_remuneraciones  ON fk_remuneracion=id_remuneracion INNER JOIN  tbl_empleados as te on id_empleado =fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+        //        actualizardato(dgv_extras_corrientes, "Select id_extras,fecha_pago AS 'FECHA DE PAGO',codigo_plaza AS 'CODIGO DE PLAZA',cantidad_horas AS 'CANTIDAD DE HORAS',monto_cancelar AS 'MONTO A CANCELAR',te.nombre AS NOMBRE,te.apellido AS APELLIDO from tbl_extras_medicas INNER JOIN  tbl_extras_medicas_empleados  ON fk_extras=id_extras INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+        //        actualizardato(dgv_extraordinario, "Select id_extraordinario,tipo_extraordinario AS 'TIPO DE EXTRAORDINARIO',fecha_pago AS 'FECHA DE PAGO',codigo_plaza AS 'CODIGO DE PLAZA',cantidad_horas AS 'CANTIDAD DE HORAS',monto AS MONTO,te.nombre AS NOMBRE,te.apellido AS APELLIDO from tbl_extraordinario INNER JOIN  tbl_extraordinario_empleados  ON fk_extraordinario=id_extraordinario INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+        //        actualizardato(dgv_personal, "Select id_accion_personal,numero_accion AS 'NUMERO DE ACCION',motivo AS MOTIVO,sustitucion AS SUSTITUCION,costo AS COSTO,codigo_plaza AS 'CODIGO DE PLAZA',TAP.puesto AS PUESTO,rige_desde AS 'RIGE DESDE',rige_hasta AS 'RIGE HASTA',total_dias AS 'TOTAL DE DIAS',fecha_ubicacion 'FECHA DE UBICACION',TAP.fecha_vacaciones AS 'FECHA DE VACACIONES',fecha_pago AS 'FECHA DE PAGO',observaciones AS 'OBSERVACIONES' from tbl_accion_personal TAP INNER JOIN  tbl_accion_personal_empleados  ON fk_accion_personal=id_accion_personal INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+        //        actualizardato(dgv_incapacidades, "Select id_incapacidad,numero_boleta as 'NUMERO BOLETA',tipo_incapacidad AS 'TIPO DE INCAPACIDAD' ,fecha_pago AS 'FECHA DE PAGO',numero_plaza AS 'NUMERO DE PLAZA',ti.puesto AS 'PUESTO' from tbl_incapacidades ti INNER JOIN  tbl_incapacidades_empleados  ON fk_incapacidad=id_incapacidad INNER JOIN  tbl_empleados as te on id_empleado =fk_empleado where id_empleado ='" + ID_usuario + "'  ");
 
-                actualizardato(dgv_reportes, "Select id_extras,fecha_pago AS 'FECHA DE PAGO',codigo_plaza AS 'CODIGO DE PLAZA',cantidad_horas AS 'CANTIDAD DE HORAS',monto_cancelar AS 'MONTO A CANCELAR',te.nombre AS NOMBRE,te.apellido AS APELLIDO from tbl_extras_medicas INNER JOIN  tbl_extras_medicas_empleados  ON fk_extras=id_extras INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+        //        actualizardato(dgv_reportes, "Select id_extras,fecha_pago AS 'FECHA DE PAGO',codigo_plaza AS 'CODIGO DE PLAZA',cantidad_horas AS 'CANTIDAD DE HORAS',monto_cancelar AS 'MONTO A CANCELAR',te.nombre AS NOMBRE,te.apellido AS APELLIDO from tbl_extras_medicas INNER JOIN  tbl_extras_medicas_empleados  ON fk_extras=id_extras INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
 
-            }
-            catch (Exception ex)
-            {
-            }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //    }
         }
 
         private void tab_Click(object sender, EventArgs e)
