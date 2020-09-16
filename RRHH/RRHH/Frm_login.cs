@@ -186,12 +186,15 @@ namespace RRHH
                         // verifica el tipo de usuario que corresponde para los permisos necesarios
                         if (tipo.Trim() == "ADMINISTRADOR")
                         {
+                            frm_inicio.f1 = frm_inicio;
                             frm_inicio.conexion = this.conexion;
+                            frm_inicio.tipo_usuario = "ADMINISTRADOR";
                             frm_inicio.ID = ID;
                             frm_inicio.Show();
                         }
                         else if (tipo.Trim() == "USUARIO")
                         {
+                            frm_inicio.f1 = frm_inicio;
                             frm_inicio.ID = ID;
                             frm_inicio.conexion = this.conexion;
                             frm_inicio.tipo_usuario = "USUARIO";

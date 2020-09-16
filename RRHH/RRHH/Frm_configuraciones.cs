@@ -12,6 +12,7 @@ namespace RRHH
 {
     public partial class Frm_configuraciones : Form
     {
+       public frm_inicio f1;
         public Frm_configuraciones()
         {
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace RRHH
 
         private void Label3_Click(object sender, EventArgs e)
         {
-            apagado1.BringToFront();
+            //apagado1.BringToFront();
         }
 
         private void Label4_Click(object sender, EventArgs e)
@@ -45,7 +46,9 @@ namespace RRHH
 
         private void Label5_Click(object sender, EventArgs e)
         {
-            caracteristicas1.BringToFront();
+            caracteristicas2.f1 = f1;
+            caracteristicas2.BringToFront();
+        
         }
 
         private void Label6_Click(object sender, EventArgs e)

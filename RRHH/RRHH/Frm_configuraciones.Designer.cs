@@ -47,10 +47,11 @@
             this.LinkLabel1 = new System.Windows.Forms.LinkLabel();
             this.Label2 = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
-            this.seguridad1 = new RRHH.seguridad();
-            this.apagado1 = new RRHH.apagado();
-            this.pantalla1 = new RRHH.pantalla();
+            this.caracteristicas2 = new RRHH.caracteristicas();
             this.actualizacion1 = new RRHH.actualizacion();
+            this.seguridad1 = new RRHH.seguridad();
+            this.pantalla1 = new RRHH.pantalla();
+            this.apagado1 = new RRHH.apagado();
             this.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox4)).BeginInit();
@@ -303,29 +304,13 @@
             this.Label1.TabIndex = 0;
             this.Label1.Text = "Configuracion";
             // 
-            // seguridad1
+            // caracteristicas2
             // 
-            this.seguridad1.BackColor = System.Drawing.Color.DarkCyan;
-            this.seguridad1.Location = new System.Drawing.Point(150, 0);
-            this.seguridad1.Name = "seguridad1";
-            this.seguridad1.Size = new System.Drawing.Size(876, 552);
-            this.seguridad1.TabIndex = 4;
-            // 
-            // apagado1
-            // 
-            this.apagado1.BackColor = System.Drawing.Color.DarkCyan;
-            this.apagado1.Location = new System.Drawing.Point(150, 0);
-            this.apagado1.Name = "apagado1";
-            this.apagado1.Size = new System.Drawing.Size(904, 587);
-            this.apagado1.TabIndex = 3;
-            // 
-            // pantalla1
-            // 
-            this.pantalla1.BackColor = System.Drawing.Color.DarkCyan;
-            this.pantalla1.Location = new System.Drawing.Point(150, 0);
-            this.pantalla1.Name = "pantalla1";
-            this.pantalla1.Size = new System.Drawing.Size(915, 514);
-            this.pantalla1.TabIndex = 2;
+            this.caracteristicas2.BackColor = System.Drawing.Color.DarkCyan;
+            this.caracteristicas2.Location = new System.Drawing.Point(150, -68);
+            this.caracteristicas2.Name = "caracteristicas2";
+            this.caracteristicas2.Size = new System.Drawing.Size(934, 582);
+            this.caracteristicas2.TabIndex = 7;
             // 
             // actualizacion1
             // 
@@ -336,15 +321,40 @@
             this.actualizacion1.TabIndex = 6;
             this.actualizacion1.Load += new System.EventHandler(this.actualizacion1_Load_1);
             // 
+            // seguridad1
+            // 
+            this.seguridad1.BackColor = System.Drawing.Color.DarkCyan;
+            this.seguridad1.Location = new System.Drawing.Point(150, 0);
+            this.seguridad1.Name = "seguridad1";
+            this.seguridad1.Size = new System.Drawing.Size(876, 552);
+            this.seguridad1.TabIndex = 4;
+            // 
+            // pantalla1
+            // 
+            this.pantalla1.BackColor = System.Drawing.Color.DarkCyan;
+            this.pantalla1.Location = new System.Drawing.Point(150, 0);
+            this.pantalla1.Name = "pantalla1";
+            this.pantalla1.Size = new System.Drawing.Size(915, 514);
+            this.pantalla1.TabIndex = 2;
+            // 
+            // apagado1
+            // 
+            this.apagado1.BackColor = System.Drawing.Color.DarkCyan;
+            this.apagado1.Location = new System.Drawing.Point(198, 70);
+            this.apagado1.Name = "apagado1";
+            this.apagado1.Size = new System.Drawing.Size(904, 587);
+            this.apagado1.TabIndex = 8;
+            // 
             // Frm_configuraciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(1197, 541);
+            this.Controls.Add(this.apagado1);
+            this.Controls.Add(this.caracteristicas2);
             this.Controls.Add(this.actualizacion1);
             this.Controls.Add(this.seguridad1);
-            this.Controls.Add(this.apagado1);
             this.Controls.Add(this.pantalla1);
             this.Controls.Add(this.Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -383,9 +393,10 @@
         internal System.Windows.Forms.Label Label2;
         internal System.Windows.Forms.Label Label1;
         private pantalla pantalla1;
-        private apagado apagado1;
         private seguridad seguridad1;
         private actualizacion actualizacion1;
         private caracteristicas caracteristicas1;
+        private caracteristicas caracteristicas2;
+        private apagado apagado1;
     }
 }

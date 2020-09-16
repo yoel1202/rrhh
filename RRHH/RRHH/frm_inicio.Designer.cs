@@ -35,7 +35,6 @@
             this.PictureBox4 = new System.Windows.Forms.PictureBox();
             this.PictureBox3 = new System.Windows.Forms.PictureBox();
             this.Label4 = new System.Windows.Forms.Label();
-            this.Label3 = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.Label();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.Label1 = new System.Windows.Forms.Label();
@@ -82,11 +81,12 @@
             // 
             this.Label12.AutoSize = true;
             this.Label12.BackColor = System.Drawing.Color.Transparent;
+            this.Label12.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label12.ForeColor = System.Drawing.SystemColors.Control;
             this.Label12.Location = new System.Drawing.Point(1010, 79);
             this.Label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Label12.Name = "Label12";
-            this.Label12.Size = new System.Drawing.Size(45, 13);
+            this.Label12.Size = new System.Drawing.Size(61, 17);
             this.Label12.TabIndex = 32;
             this.Label12.Text = "Label12";
             // 
@@ -120,31 +120,19 @@
             // 
             this.Label4.AutoSize = true;
             this.Label4.BackColor = System.Drawing.Color.Transparent;
-            this.Label4.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.Label4.Location = new System.Drawing.Point(857, 63);
+            this.Label4.Location = new System.Drawing.Point(833, 62);
             this.Label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(61, 14);
+            this.Label4.Size = new System.Drawing.Size(80, 17);
             this.Label4.TabIndex = 30;
             this.Label4.Text = "604140385";
-            // 
-            // Label3
-            // 
-            this.Label3.BackColor = System.Drawing.Color.Transparent;
-            this.Label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.Label3.Location = new System.Drawing.Point(824, 33);
-            this.Label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(89, 30);
-            this.Label3.TabIndex = 29;
-            this.Label3.Text = "torres";
             // 
             // nombre
             // 
             this.nombre.BackColor = System.Drawing.Color.Transparent;
-            this.nombre.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombre.ForeColor = System.Drawing.SystemColors.Control;
             this.nombre.Location = new System.Drawing.Point(774, 33);
             this.nombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -169,12 +157,12 @@
             // 
             this.Label1.AutoSize = true;
             this.Label1.BackColor = System.Drawing.Color.Transparent;
-            this.Label1.Font = new System.Drawing.Font("Times New Roman", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label1.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1.ForeColor = System.Drawing.SystemColors.Control;
             this.Label1.Location = new System.Drawing.Point(92, 45);
             this.Label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(190, 40);
+            this.Label1.Size = new System.Drawing.Size(197, 42);
             this.Label1.TabIndex = 26;
             this.Label1.Text = "StartControl";
             // 
@@ -403,7 +391,6 @@
             this.Controls.Add(this.PictureBox4);
             this.Controls.Add(this.PictureBox3);
             this.Controls.Add(this.Label4);
-            this.Controls.Add(this.Label3);
             this.Controls.Add(this.nombre);
             this.Controls.Add(this.PictureBox1);
             this.Controls.Add(this.Label1);
@@ -446,7 +433,6 @@
         internal System.Windows.Forms.PictureBox PictureBox4;
         internal System.Windows.Forms.PictureBox PictureBox3;
         internal System.Windows.Forms.Label Label4;
-        internal System.Windows.Forms.Label Label3;
         internal System.Windows.Forms.Label nombre;
         internal System.Windows.Forms.PictureBox PictureBox1;
         internal System.Windows.Forms.Label Label1;

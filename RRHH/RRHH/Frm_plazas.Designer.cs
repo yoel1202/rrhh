@@ -128,10 +128,11 @@
             // Label8
             // 
             this.Label8.AutoSize = true;
-            this.Label8.Location = new System.Drawing.Point(131, 190);
+            this.Label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label8.Location = new System.Drawing.Point(110, 192);
             this.Label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Label8.Name = "Label8";
-            this.Label8.Size = new System.Drawing.Size(40, 13);
+            this.Label8.Size = new System.Drawing.Size(50, 19);
             this.Label8.TabIndex = 170;
             this.Label8.Text = "Puesto";
             // 
@@ -204,10 +205,11 @@
             // Label2
             // 
             this.Label2.AutoSize = true;
-            this.Label2.Location = new System.Drawing.Point(131, 228);
+            this.Label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label2.Location = new System.Drawing.Point(110, 230);
             this.Label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(83, 13);
+            this.Label2.Size = new System.Drawing.Size(108, 19);
             this.Label2.TabIndex = 163;
             this.Label2.Text = "Codigo de plaza";
             // 
@@ -354,10 +356,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(129, 268);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(108, 270);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(22, 13);
+            this.label1.Size = new System.Drawing.Size(29, 19);
             this.label1.TabIndex = 182;
             this.label1.Text = "UP";
             // 

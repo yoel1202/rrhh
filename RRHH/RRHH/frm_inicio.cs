@@ -14,7 +14,7 @@ namespace RRHH
 {
     public partial class frm_inicio : Form
     {
-
+        public  frm_inicio f1;
         public string tipo_usuario;
         public BDconeccion conexion;
         public int ID;
@@ -42,7 +42,7 @@ namespace RRHH
             PictureBox5.SetBounds(this.Width - 200, this.Height - 100, PictureBox5.Width, PictureBox5.Height);
             Label1.SetBounds(100, 30, Label1.Width, Label1.Height);
             nombre.SetBounds(Screen.PrimaryScreen.Bounds.Width - 290, PictureBox1.Height - 40, nombre.Width, nombre.Height);
-            Label3.SetBounds(Screen.PrimaryScreen.Bounds.Width - 290, PictureBox1.Height - 15, Label3.Width, Label3.Height);
+            Label4.SetBounds(Screen.PrimaryScreen.Bounds.Width - 290, PictureBox1.Height - 15, Label4.Width, Label4.Height);
             Label11.SetBounds(this.Width - 245, this.Height - 120, Label11.Width, Label11.Height);
             Label12.SetBounds(Screen.PrimaryScreen.Bounds.Width - 60, PictureBox3.Height + 15, Label12.Width, Label12.Height);
             Label4.SetBounds(Screen.PrimaryScreen.Bounds.Width - 220, PictureBox1.Height, Label4.Width, Label4.Height);
@@ -60,7 +60,7 @@ namespace RRHH
 
             DataSet ds = conexion.sqlconsulta("Select nombre,cedula,foto from  tbl_usuarios  where id_usuario='" + ID.ToString() + "'");
             nombre.Text = ds.Tables[0].Rows[0].ItemArray[0].ToString();
-            Label3.Text = ds.Tables[0].Rows[0].ItemArray[1].ToString();
+            Label4.Text = ds.Tables[0].Rows[0].ItemArray[1].ToString();
 
             try
             {
@@ -309,15 +309,20 @@ namespace RRHH
 
         private void Panel1_Click(object sender, EventArgs e)
         {
-            Frm_usuario myForm = new Frm_usuario();
-            myForm.conexion = this.conexion;
-            myForm.TopLevel = false;
-            myForm.AutoScroll = true;
-            myForm.usuario = ID;
-            pn_principal.Controls.Add(myForm);
-            myForm.Show();
+            if (tipo_usuario.Trim()  == "ADMINISTRADOR") {
+                Frm_usuario myForm = new Frm_usuario();
+                myForm.conexion = this.conexion;
+                myForm.TopLevel = false;
+                myForm.AutoScroll = true;
+                myForm.usuario = ID;
+                pn_principal.Controls.Add(myForm);
+                myForm.Show();
 
-            pn_principal.Show();
+                pn_principal.Show();
+            }else {
+
+                MessageBox.Show("no tiene permisos para ejecutar esta accion");
+            }
         }
 
         private void Panel5_Click(object sender, EventArgs e)
@@ -347,6 +352,7 @@ namespace RRHH
         private void pn_configuracion_Click(object sender, EventArgs e)
         {
             Frm_configuraciones myForm = new Frm_configuraciones();
+            myForm.f1 = f1;
             myForm.ID = this.ID; 
             myForm.TopLevel = false;
             myForm.AutoScroll = true;

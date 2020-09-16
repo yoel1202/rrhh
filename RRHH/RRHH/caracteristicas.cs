@@ -12,11 +12,12 @@ namespace RRHH
 {
     public partial class caracteristicas : UserControl
     {
+       public  frm_inicio f1;
         public caracteristicas()
         {
             InitializeComponent();
         }
-        frm_inicio f1 = (frm_inicio)Application.OpenForms["frm_inicio"];
+
         
         FontFamily fontFamily = new FontFamily("Microsoft Sans Serif");
         private void caracteristicas_Load(object sender, EventArgs e)
@@ -34,7 +35,7 @@ namespace RRHH
                 
                 f1.Label1.ForeColor = colorDialog1.Color;
           
-                f1.Label3.ForeColor = colorDialog1.Color;
+               
                 f1.Label4.ForeColor = colorDialog1.Color;
                 f1.Label11.ForeColor = colorDialog1.Color;
                 f1.Label12.ForeColor = colorDialog1.Color;
@@ -59,7 +60,7 @@ namespace RRHH
              
                 f1.Label1.Font = new Font(fontFamily, f1.Label1.Font.Size + float.Parse((string)ComboBox1.SelectedItem), FontStyle.Regular, GraphicsUnit.Pixel);
                 
-                f1.Label3.Font = new Font(fontFamily, 16, FontStyle.Regular);
+              
                 f1.Label4.Font = new Font(fontFamily, f1.Label4.Font.Size + float.Parse((string)ComboBox1.SelectedItem), FontStyle.Regular);
                 f1.Label11.Font = new Font(fontFamily, f1.Label11.Font.Size +float.Parse((string)ComboBox1.SelectedItem), FontStyle.Regular);
                 f1.Label12.Font = new Font(fontFamily, f1.Label12.Font.Size +float.Parse((string)ComboBox1.SelectedItem), FontStyle.Regular);
@@ -68,7 +69,7 @@ namespace RRHH
             {
                 f1.Label1.Font = new Font(fontFamily, f1.Label4.Font.Size + float.Parse((string)ComboBox1.SelectedItem), FontStyle.Regular);
              
-                f1.Label3.Font = new Font(fontFamily, f1.Label3.Font.Size +float.Parse((string)ComboBox1.SelectedItem), FontStyle.Regular);
+              
                 f1.Label4.Font = new Font(fontFamily, f1.Label4.Font.Size +float.Parse((string)ComboBox1.SelectedItem), FontStyle.Regular);
                 f1.Label11.Font = new Font(fontFamily, f1.Label11.Font.Size +float.Parse((string)ComboBox1.SelectedItem), FontStyle.Regular);
                 f1.Label12.Font = new Font(fontFamily, f1.Label12.Font.Size +float.Parse((string)ComboBox1.SelectedItem), FontStyle.Regular);
@@ -82,7 +83,7 @@ namespace RRHH
             {
                 f1.Label1.Font = new Font(fontFamily, f1.Label1.Font.Size, FontStyle.Regular);
                 
-                f1.Label3.Font = new Font(fontFamily, f1.Label3.Font.Size, FontStyle.Regular);
+               
                 f1.Label4.Font = new Font(fontFamily, f1.Label4.Font.Size, FontStyle.Regular);
                 f1.Label11.Font = new Font(fontFamily, f1.Label11.Font.Size, FontStyle.Regular);
                 f1.Label12.Font = new Font(fontFamily, f1.Label12.Font.Size, FontStyle.Regular);
@@ -98,7 +99,7 @@ namespace RRHH
                 {
                     f1.Label1.Font = new Font(fontFamily, f1.Label1.Font.Size - float.Parse((string)ComboBox3.SelectedItem), FontStyle.Regular);
                     
-                    f1.Label3.Font = new Font(fontFamily, f1.Label3.Font.Size - float.Parse((string)ComboBox3.SelectedItem), FontStyle.Regular);
+                    
                     f1.Label4.Font = new Font(fontFamily, f1.Label4.Font.Size - float.Parse((string)ComboBox3.SelectedItem), FontStyle.Regular);
                     f1.Label11.Font = new Font(fontFamily, f1.Label11.Font.Size - float.Parse((string)ComboBox3.SelectedItem), FontStyle.Regular);
                     f1.Label12.Font = new Font(fontFamily, f1.Label12.Font.Size - float.Parse((string)ComboBox3.SelectedItem), FontStyle.Regular);
@@ -107,7 +108,7 @@ namespace RRHH
                 {
                     f1.Label1.Font = new Font(f1.Label1.Name, f1.Label1.Font.Size - float.Parse((string)ComboBox3.SelectedItem), FontStyle.Regular);
            
-                    f1.Label3.Font = new Font(f1.Label3.Name, f1.Label3.Font.Size - float.Parse((string)ComboBox3.SelectedItem), FontStyle.Regular);
+                    
                     f1.Label4.Font = new Font(f1.Label4.Name, f1.Label4.Font.Size - float.Parse((string)ComboBox3.SelectedItem), FontStyle.Regular);
                     f1.Label11.Font = new Font(f1.Label11.Name, f1.Label11.Font.Size - float.Parse((string)ComboBox3.SelectedItem), FontStyle.Regular);
                     f1.Label12.Font = new Font(f1.Label11.Name, f1.Label12.Font.Size - float.Parse((string)ComboBox3.SelectedItem), FontStyle.Regular);

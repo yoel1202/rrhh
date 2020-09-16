@@ -87,9 +87,9 @@ namespace RRHH
         private void Button1_Click(object sender, EventArgs e)
         {
             // cumple la funcion de guardar se llama el metodo querycomando de la clase conexion para insertar los datos 
-            if (validartexbox(tb_contra) & validartexbox(tb_usuario) & validartexbox(tb_apellido) & validartexbox(tb_cedula) & validartexbox(tb_nombre))
+            if (validartexbox(tb_contra) & validartexbox(tb_usuario) & validartexbox(tb_cedula) & validartexbox(tb_nombre))
             {
-                if (conexion.querycomando("Insert into tbl_usuarios(usuario,pass,tipo,cedula,nombre,apellido) VALUES('" + tb_usuario.Text + "','" + tb_contra.Text + "','" + ComboBox2.SelectedItem.ToString() + "','" + tb_cedula.Text + "','" + tb_nombre.Text + "','" + tb_apellido.Text + "')"))
+                if (conexion.querycomando("Insert into tbl_usuarios(usuario,pass,tipo,cedula,nombre) VALUES('" + tb_usuario.Text + "','" + tb_contra.Text + "','" + ComboBox2.SelectedItem.ToString() + "','" + tb_cedula.Text + "','" + tb_nombre.Text + "')"))
                     MessageBox.Show("Se ha guardado correctamente");
                 else
                     MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
@@ -97,7 +97,7 @@ namespace RRHH
                 actualizardato();
                 tb_contra.Clear();
                 tb_usuario.Clear();
-                tb_apellido.Clear();
+                
                 tb_nombre.Clear();
                 tb_cedula.Clear();
                 ComboBox2.SelectedIndex = 0;
@@ -109,7 +109,7 @@ namespace RRHH
         //esta funcion actualiza los datos del tabla cuando se inserte se actualize o se elimine
         public void actualizardato()
         {
-            DataSet data = conexion.sqlconsulta("Select id_usuario,usuario as 'USUARIO',pass AS 'CONTRASEÑA',tipo AS 'TIPO',nombre As NOMBRE, cedula AS CEDULA, foto AS FOTO from tbl_usuarios WHERE id_usuario='" + usuario + "' ");
+            DataSet data = conexion.sqlconsulta("Select id_usuario,usuario as 'USUARIO',pass AS 'CONTRASEÑA',tipo AS 'TIPO',nombre As NOMBRE, cedula AS CEDULA, foto AS FOTO from tbl_usuarios  ");
             if (data.Tables.Count > 0)
             {
                 DataGridView1.DataSource = data.Tables[0];
@@ -119,11 +119,11 @@ namespace RRHH
         // cumple la funcion de actualizar se llama el metodo querycomando de la clase conexion para actualizar los datos 
         private void Button3_Click(object sender, EventArgs e)
         {
-            if (validartexbox(tb_contra) & validartexbox(tb_usuario) & validartexbox(tb_apellido) & validartexbox(tb_nombre) & validartexbox(tb_cedula))
+            if (validartexbox(tb_contra) & validartexbox(tb_usuario) &  validartexbox(tb_nombre) & validartexbox(tb_cedula))
             {
                 if (seleccionarusuario)
                 {
-                    if (conexion.querycomando("Update tbl_usuarios set usuario='" + tb_usuario.Text + "',pass='" + tb_contra.Text + "',tipo='" + ComboBox2.SelectedItem.ToString() + "',cedula='" + tb_cedula.Text + "',nombre='" + tb_nombre.Text + "',apellido='" + tb_apellido.Text + "' WHERE id_usuario='" + ID_usuario.ToString() + "'"))
+                    if (conexion.querycomando("Update tbl_usuarios set usuario='" + tb_usuario.Text + "',pass='" + tb_contra.Text + "',tipo='" + ComboBox2.SelectedItem.ToString() + "',cedula='" + tb_cedula.Text + "',nombre='" + tb_nombre.Text + "' WHERE id_usuario='" + ID_usuario.ToString() + "'"))
                         MessageBox.Show("Se ha actualizado correctamente");
                     else
                         MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
@@ -135,7 +135,7 @@ namespace RRHH
                 actualizardato();
                 tb_contra.Clear();
                 tb_usuario.Clear();
-                tb_apellido.Clear();
+               
                 tb_nombre.Clear();
                 tb_cedula.Clear();
                 ComboBox2.SelectedIndex = 0;
@@ -155,7 +155,7 @@ namespace RRHH
 
                 tb_contra.Clear();
                 tb_usuario.Clear();
-                tb_apellido.Clear();
+               
                 tb_nombre.Clear();
                 tb_cedula.Clear();
                 ComboBox2.SelectedIndex = 0;
@@ -176,10 +176,9 @@ namespace RRHH
                 tb_contra.Text = DataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
                 ComboBox2.SelectedItem = DataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                 tb_cedula.Text = DataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
-                String[] cadena = DataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString().Split(' ');
+                tb_nombre.Text = DataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
                 
-                tb_nombre.Text =cadena[0];
-                tb_apellido.Text = cadena[1];
+             
 
             }
             catch (Exception ex)
@@ -200,14 +199,14 @@ namespace RRHH
             {
                 if (ComboBox1.SelectedIndex == 0)
                 {
-                    DataSet ds = conexion.sqlconsulta("Select id_usuario,usuario as 'USUARIO',pass AS 'CONTRASEÑA',tipo AS 'TIPO',nombre As NOMBRE, cedula AS CEDULA, foto AS FOTO from tbl_usuarios WHERE id_usuario='" + usuario + "' and cedula LIKE '" + tb_busqueda.Text + "%'");
+                    DataSet ds = conexion.sqlconsulta("Select id_usuario,usuario as 'USUARIO',pass AS 'CONTRASEÑA',tipo AS 'TIPO',nombre As NOMBRE, cedula AS CEDULA, foto AS FOTO from tbl_usuarios WHERE cedula LIKE '" + tb_busqueda.Text + "%'");
                     DataGridView1.DataSource = ds.Tables[0];
                     DataGridView1.Columns[0].Visible = false;
                 }
             }
             else
             {
-                DataSet ds = conexion.sqlconsulta("Select id_usuario,usuario as 'USUARIO',pass AS 'CONTRASEÑA',tipo AS 'TIPO',nombre As NOMBRE, cedula AS CEDULA, foto AS FOTO from tbl_usuarios WHERE id_usuario='" + usuario+"'");
+                DataSet ds = conexion.sqlconsulta("Select id_usuario,usuario as 'USUARIO',pass AS 'CONTRASEÑA',tipo AS 'TIPO',nombre As NOMBRE, cedula AS CEDULA, foto AS FOTO from tbl_usuarios");
                 DataGridView1.DataSource = ds.Tables[0];
                 DataGridView1.Columns[0].Visible = false;
             }

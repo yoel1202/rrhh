@@ -125,10 +125,11 @@
             // Label8
             // 
             this.Label8.AutoSize = true;
+            this.Label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label8.Location = new System.Drawing.Point(141, 193);
             this.Label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Label8.Name = "Label8";
-            this.Label8.Size = new System.Drawing.Size(47, 13);
+            this.Label8.Size = new System.Drawing.Size(64, 19);
             this.Label8.TabIndex = 170;
             this.Label8.Text = "Nombre ";
             // 
@@ -201,10 +202,11 @@
             // Label2
             // 
             this.Label2.AutoSize = true;
+            this.Label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label2.Location = new System.Drawing.Point(141, 230);
             this.Label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(40, 13);
+            this.Label2.Size = new System.Drawing.Size(54, 19);
             this.Label2.TabIndex = 163;
             this.Label2.Text = "Codigo";
             // 

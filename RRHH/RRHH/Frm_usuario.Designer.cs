@@ -57,9 +57,6 @@
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.tb_nombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.tb_apellido = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox3)).BeginInit();
             this.Panel1.SuspendLayout();
@@ -428,52 +425,12 @@
             this.label4.TabIndex = 185;
             this.label4.Text = "Nombre";
             // 
-            // linkLabel4
-            // 
-            this.linkLabel4.DisabledLinkColor = System.Drawing.Color.SpringGreen;
-            this.linkLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel4.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel4.Location = new System.Drawing.Point(203, 353);
-            this.linkLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(158, 8);
-            this.linkLabel4.TabIndex = 189;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "                                                                                 " +
-    "                                                                            ";
-            this.linkLabel4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // tb_apellido
-            // 
-            this.tb_apellido.BackColor = System.Drawing.Color.DarkCyan;
-            this.tb_apellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_apellido.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_apellido.Location = new System.Drawing.Point(205, 333);
-            this.tb_apellido.Margin = new System.Windows.Forms.Padding(2);
-            this.tb_apellido.Multiline = true;
-            this.tb_apellido.Name = "tb_apellido";
-            this.tb_apellido.Size = new System.Drawing.Size(148, 17);
-            this.tb_apellido.TabIndex = 187;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(141, 339);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 13);
-            this.label5.TabIndex = 188;
-            this.label5.Text = "Apellido";
-            // 
             // Frm_usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(1040, 557);
-            this.Controls.Add(this.linkLabel4);
-            this.Controls.Add(this.tb_apellido);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.linkLabel3);
             this.Controls.Add(this.tb_nombre);
             this.Controls.Add(this.label4);
@@ -499,7 +456,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(1040, 557);
             this.Name = "Frm_usuario";
-            this.Text = "Frm_usuario";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_usuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).EndInit();
@@ -542,8 +498,5 @@
         internal System.Windows.Forms.LinkLabel linkLabel3;
         internal System.Windows.Forms.TextBox tb_nombre;
         internal System.Windows.Forms.Label label4;
-        internal System.Windows.Forms.LinkLabel linkLabel4;
-        internal System.Windows.Forms.TextBox tb_apellido;
-        internal System.Windows.Forms.Label label5;
     }
 }

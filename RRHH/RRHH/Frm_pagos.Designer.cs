@@ -45,6 +45,16 @@
             this.tb_cedula = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.REMUNERACION = new System.Windows.Forms.TabPage();
+            this.button20 = new System.Windows.Forms.Button();
+            this.linkLabel34 = new System.Windows.Forms.LinkLabel();
+            this.tb_apellido_remuneracion = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.linkLabel35 = new System.Windows.Forms.LinkLabel();
+            this.tb_nombre_renumeracion = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.linkLabel36 = new System.Windows.Forms.LinkLabel();
+            this.tb_cedula_remuneracion = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
             this.pn_notificaciones = new System.Windows.Forms.Panel();
             this.lb_notificaciones_renumeracion = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -69,6 +79,7 @@
             this.tb_movimiento_remuneracion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.PRESUPUESTO = new System.Windows.Forms.TabPage();
+            this.button21 = new System.Windows.Forms.Button();
             this.linkLabel25 = new System.Windows.Forms.LinkLabel();
             this.tb_monto_actual_presupuesto = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
@@ -85,6 +96,16 @@
             this.cb_tipo_presupuesto = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.extras_corrientes = new System.Windows.Forms.TabPage();
+            this.button22 = new System.Windows.Forms.Button();
+            this.linkLabel37 = new System.Windows.Forms.LinkLabel();
+            this.tb_apellido_extras_corriente = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.linkLabel38 = new System.Windows.Forms.LinkLabel();
+            this.tb_nombre_extras_corrientes = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.linkLabel39 = new System.Windows.Forms.LinkLabel();
+            this.tb_cedula_extra_corriente = new System.Windows.Forms.TextBox();
+            this.label51 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lb_notificacion_extras = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -107,10 +128,20 @@
             this.dtp_fecha_pago_extras = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.tiempo_extraordinario = new System.Windows.Forms.TabPage();
+            this.button23 = new System.Windows.Forms.Button();
+            this.linkLabel40 = new System.Windows.Forms.LinkLabel();
+            this.tb_apellido_extraordinario = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.linkLabel41 = new System.Windows.Forms.LinkLabel();
+            this.tb_nombre_extraordinario = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.linkLabel42 = new System.Windows.Forms.LinkLabel();
+            this.tb_cedula_extraordinario = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lb_notificacion_extraordinario = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.cb_departamento = new System.Windows.Forms.ComboBox();
+            this.cb_departamento_extraordinario = new System.Windows.Forms.ComboBox();
             this.label33 = new System.Windows.Forms.Label();
             this.cb_busqueda_extraordinario = new System.Windows.Forms.ComboBox();
             this.button13 = new System.Windows.Forms.Button();
@@ -120,7 +151,6 @@
             this.tb_busqueda_extraordinario = new System.Windows.Forms.TextBox();
             this.dgv_extraordinario = new System.Windows.Forms.DataGridView();
             this.label13 = new System.Windows.Forms.Label();
-            this.dtp_extraordinario = new System.Windows.Forms.DateTimePicker();
             this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.tb_monto_extraordinario = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -133,13 +163,31 @@
             this.cb_tipo_extraordinario = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.acciones = new System.Windows.Forms.TabPage();
+            this.btn_limpiar_personal = new System.Windows.Forms.Button();
+            this.linkLabel50 = new System.Windows.Forms.LinkLabel();
+            this.tb_fecha_pago_personal = new System.Windows.Forms.TextBox();
+            this.linkLabel49 = new System.Windows.Forms.LinkLabel();
+            this.tb_fechavacaciones_personal = new System.Windows.Forms.TextBox();
+            this.linkLabel48 = new System.Windows.Forms.LinkLabel();
+            this.tb_fechaescala_personal = new System.Windows.Forms.TextBox();
+            this.linkLabel47 = new System.Windows.Forms.LinkLabel();
+            this.tb_hasta_personal = new System.Windows.Forms.TextBox();
+            this.linkLabel46 = new System.Windows.Forms.LinkLabel();
+            this.tb_desde_personal = new System.Windows.Forms.TextBox();
+            this.linkLabel31 = new System.Windows.Forms.LinkLabel();
+            this.tb_apellido_accion = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.linkLabel32 = new System.Windows.Forms.LinkLabel();
+            this.tb_nombre_accion = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.linkLabel33 = new System.Windows.Forms.LinkLabel();
+            this.tb_cedula_accion = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lb_notificacion_accion_personal = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.cb_busqueda_personal = new System.Windows.Forms.ComboBox();
             this.linkLabel17 = new System.Windows.Forms.LinkLabel();
-            this.dtp_fechavacaciones_personal = new System.Windows.Forms.DateTimePicker();
-            this.dtp_fechaescala_personal = new System.Windows.Forms.DateTimePicker();
             this.label26 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.tb_dias_personal = new System.Windows.Forms.TextBox();
@@ -153,11 +201,8 @@
             this.rtb_observaciones_personal = new System.Windows.Forms.RichTextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.dtp_fecha_pago_personal = new System.Windows.Forms.DateTimePicker();
             this.label25 = new System.Windows.Forms.Label();
-            this.dtp_hasta_personal = new System.Windows.Forms.DateTimePicker();
             this.label24 = new System.Windows.Forms.Label();
-            this.dtp_desde_personal = new System.Windows.Forms.DateTimePicker();
             this.linkLabel15 = new System.Windows.Forms.LinkLabel();
             this.tb_puesto_personal = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -175,6 +220,16 @@
             this.tb_numero_accion_personal = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.tp_incapacidades = new System.Windows.Forms.TabPage();
+            this.button24 = new System.Windows.Forms.Button();
+            this.linkLabel43 = new System.Windows.Forms.LinkLabel();
+            this.tb_apellido_incapacidades = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.linkLabel44 = new System.Windows.Forms.LinkLabel();
+            this.tb_nombre_incapacidades = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.linkLabel45 = new System.Windows.Forms.LinkLabel();
+            this.tb_cedula_incapacidades = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
             this.linkLabel26 = new System.Windows.Forms.LinkLabel();
             this.tb_puesto_incapacidades = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
@@ -219,51 +274,8 @@
             this.linkLabel30 = new System.Windows.Forms.LinkLabel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dgv_registro = new System.Windows.Forms.DataGridView();
-            this.linkLabel31 = new System.Windows.Forms.LinkLabel();
-            this.tb_apellido_accion = new System.Windows.Forms.TextBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.linkLabel32 = new System.Windows.Forms.LinkLabel();
-            this.tb_nombre_accion = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.linkLabel33 = new System.Windows.Forms.LinkLabel();
-            this.tb_cedula_accion = new System.Windows.Forms.TextBox();
-            this.label45 = new System.Windows.Forms.Label();
-            this.linkLabel34 = new System.Windows.Forms.LinkLabel();
-            this.tb_apellido_remuneracion = new System.Windows.Forms.TextBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.linkLabel35 = new System.Windows.Forms.LinkLabel();
-            this.tb_nombre_renumeracion = new System.Windows.Forms.TextBox();
-            this.label47 = new System.Windows.Forms.Label();
-            this.linkLabel36 = new System.Windows.Forms.LinkLabel();
-            this.tb_cedula_remuneracion = new System.Windows.Forms.TextBox();
-            this.label48 = new System.Windows.Forms.Label();
-            this.linkLabel37 = new System.Windows.Forms.LinkLabel();
-            this.tb_apellido_extras_corriente = new System.Windows.Forms.TextBox();
-            this.label49 = new System.Windows.Forms.Label();
-            this.linkLabel38 = new System.Windows.Forms.LinkLabel();
-            this.tb_nombre_extras_corrientes = new System.Windows.Forms.TextBox();
-            this.label50 = new System.Windows.Forms.Label();
-            this.linkLabel39 = new System.Windows.Forms.LinkLabel();
-            this.tb_cedula_extra_corriente = new System.Windows.Forms.TextBox();
-            this.label51 = new System.Windows.Forms.Label();
-            this.linkLabel40 = new System.Windows.Forms.LinkLabel();
-            this.tb_apellido_extraordinario = new System.Windows.Forms.TextBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.linkLabel41 = new System.Windows.Forms.LinkLabel();
-            this.tb_nombre_extraordinario = new System.Windows.Forms.TextBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.linkLabel42 = new System.Windows.Forms.LinkLabel();
-            this.tb_cedula_extraordinario = new System.Windows.Forms.TextBox();
-            this.label54 = new System.Windows.Forms.Label();
-            this.linkLabel43 = new System.Windows.Forms.LinkLabel();
-            this.tb_apellido_incapacidades = new System.Windows.Forms.TextBox();
-            this.label55 = new System.Windows.Forms.Label();
-            this.linkLabel44 = new System.Windows.Forms.LinkLabel();
-            this.tb_nombre_incapacidades = new System.Windows.Forms.TextBox();
-            this.label56 = new System.Windows.Forms.Label();
-            this.linkLabel45 = new System.Windows.Forms.LinkLabel();
-            this.tb_cedula_incapacidades = new System.Windows.Forms.TextBox();
-            this.label57 = new System.Windows.Forms.Label();
+            this.linkLabel51 = new System.Windows.Forms.LinkLabel();
+            this.tb_extraordinario = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.empleado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empleado)).BeginInit();
@@ -310,6 +322,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1291, 783);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // empleado
             // 
@@ -329,7 +342,7 @@
             this.empleado.Controls.Add(this.label17);
             this.empleado.Location = new System.Drawing.Point(4, 22);
             this.empleado.Name = "empleado";
-            this.empleado.Size = new System.Drawing.Size(1283, 632);
+            this.empleado.Size = new System.Drawing.Size(1283, 757);
             this.empleado.TabIndex = 5;
             this.empleado.Text = "Empleado";
             this.empleado.Click += new System.EventHandler(this.empleado_Click);
@@ -421,10 +434,11 @@
             // label15
             // 
             this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(20, 157);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(44, 13);
+            this.label15.Size = new System.Drawing.Size(60, 19);
             this.label15.TabIndex = 206;
             this.label15.Text = "Apellido";
             // 
@@ -458,10 +472,11 @@
             // label16
             // 
             this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(24, 123);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(44, 13);
+            this.label16.Size = new System.Drawing.Size(60, 19);
             this.label16.TabIndex = 203;
             this.label16.Text = "Nombre";
             // 
@@ -495,16 +510,18 @@
             // label17
             // 
             this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(24, 88);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(40, 13);
+            this.label17.Size = new System.Drawing.Size(52, 19);
             this.label17.TabIndex = 200;
             this.label17.Text = "Cedula";
             // 
             // REMUNERACION
             // 
             this.REMUNERACION.BackColor = System.Drawing.Color.DarkCyan;
+            this.REMUNERACION.Controls.Add(this.button20);
             this.REMUNERACION.Controls.Add(this.linkLabel34);
             this.REMUNERACION.Controls.Add(this.tb_apellido_remuneracion);
             this.REMUNERACION.Controls.Add(this.label46);
@@ -542,6 +559,138 @@
             this.REMUNERACION.TabIndex = 0;
             this.REMUNERACION.Text = "Remuneracion";
             this.REMUNERACION.Click += new System.EventHandler(this.tab_Click);
+            // 
+            // button20
+            // 
+            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button20.Image = ((System.Drawing.Image)(resources.GetObject("button20.Image")));
+            this.button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button20.Location = new System.Drawing.Point(343, 343);
+            this.button20.Margin = new System.Windows.Forms.Padding(2);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(104, 67);
+            this.button20.TabIndex = 304;
+            this.button20.Text = "Limpiar ";
+            this.button20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
+            // linkLabel34
+            // 
+            this.linkLabel34.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel34.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel34.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel34.Location = new System.Drawing.Point(158, 138);
+            this.linkLabel34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel34.Name = "linkLabel34";
+            this.linkLabel34.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel34.TabIndex = 301;
+            this.linkLabel34.TabStop = true;
+            this.linkLabel34.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel34.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_apellido_remuneracion
+            // 
+            this.tb_apellido_remuneracion.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_apellido_remuneracion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_apellido_remuneracion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_apellido_remuneracion.Location = new System.Drawing.Point(160, 118);
+            this.tb_apellido_remuneracion.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_apellido_remuneracion.Multiline = true;
+            this.tb_apellido_remuneracion.Name = "tb_apellido_remuneracion";
+            this.tb_apellido_remuneracion.ReadOnly = true;
+            this.tb_apellido_remuneracion.Size = new System.Drawing.Size(148, 17);
+            this.tb_apellido_remuneracion.TabIndex = 299;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Location = new System.Drawing.Point(10, 121);
+            this.label46.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(60, 19);
+            this.label46.TabIndex = 300;
+            this.label46.Text = "Apellido";
+            // 
+            // linkLabel35
+            // 
+            this.linkLabel35.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel35.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel35.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel35.Location = new System.Drawing.Point(162, 104);
+            this.linkLabel35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel35.Name = "linkLabel35";
+            this.linkLabel35.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel35.TabIndex = 298;
+            this.linkLabel35.TabStop = true;
+            this.linkLabel35.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel35.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_nombre_renumeracion
+            // 
+            this.tb_nombre_renumeracion.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_nombre_renumeracion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_nombre_renumeracion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_nombre_renumeracion.Location = new System.Drawing.Point(164, 84);
+            this.tb_nombre_renumeracion.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_nombre_renumeracion.Multiline = true;
+            this.tb_nombre_renumeracion.Name = "tb_nombre_renumeracion";
+            this.tb_nombre_renumeracion.ReadOnly = true;
+            this.tb_nombre_renumeracion.Size = new System.Drawing.Size(148, 17);
+            this.tb_nombre_renumeracion.TabIndex = 296;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(8, 87);
+            this.label47.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(60, 19);
+            this.label47.TabIndex = 297;
+            this.label47.Text = "Nombre";
+            // 
+            // linkLabel36
+            // 
+            this.linkLabel36.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel36.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel36.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel36.Location = new System.Drawing.Point(162, 69);
+            this.linkLabel36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel36.Name = "linkLabel36";
+            this.linkLabel36.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel36.TabIndex = 295;
+            this.linkLabel36.TabStop = true;
+            this.linkLabel36.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel36.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_cedula_remuneracion
+            // 
+            this.tb_cedula_remuneracion.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_cedula_remuneracion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_cedula_remuneracion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_cedula_remuneracion.Location = new System.Drawing.Point(164, 49);
+            this.tb_cedula_remuneracion.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_cedula_remuneracion.Multiline = true;
+            this.tb_cedula_remuneracion.Name = "tb_cedula_remuneracion";
+            this.tb_cedula_remuneracion.Size = new System.Drawing.Size(148, 17);
+            this.tb_cedula_remuneracion.TabIndex = 293;
+            this.tb_cedula_remuneracion.TextChanged += new System.EventHandler(this.tb_cedula_remuneracion_TextChanged);
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.Location = new System.Drawing.Point(10, 49);
+            this.label48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(52, 19);
+            this.label48.TabIndex = 294;
+            this.label48.Text = "Cedula";
             // 
             // pn_notificaciones
             // 
@@ -605,10 +754,11 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(32, 155);
+            this.label34.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(10, 155);
             this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(46, 13);
+            this.label34.Size = new System.Drawing.Size(62, 19);
             this.label34.TabIndex = 218;
             this.label34.Text = "Codigo  ";
             // 
@@ -748,10 +898,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(29, 308);
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(7, 308);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 13);
+            this.label7.Size = new System.Drawing.Size(50, 19);
             this.label7.TabIndex = 208;
             this.label7.Text = "Monto";
             // 
@@ -765,20 +916,22 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(30, 266);
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(8, 266);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 13);
+            this.label6.Size = new System.Drawing.Size(99, 19);
             this.label6.TabIndex = 206;
             this.label6.Text = "Fecha de pago";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 234);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 234);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 13);
+            this.label4.Size = new System.Drawing.Size(121, 19);
             this.label4.TabIndex = 205;
             this.label4.Text = "Tipo renumeracion";
             // 
@@ -824,16 +977,18 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 184);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(8, 184);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 13);
+            this.label3.Size = new System.Drawing.Size(159, 19);
             this.label3.TabIndex = 200;
             this.label3.Text = "Numero de movimiento  ";
             // 
             // PRESUPUESTO
             // 
             this.PRESUPUESTO.BackColor = System.Drawing.Color.DarkCyan;
+            this.PRESUPUESTO.Controls.Add(this.button21);
             this.PRESUPUESTO.Controls.Add(this.linkLabel25);
             this.PRESUPUESTO.Controls.Add(this.tb_monto_actual_presupuesto);
             this.PRESUPUESTO.Controls.Add(this.label35);
@@ -852,9 +1007,24 @@
             this.PRESUPUESTO.Location = new System.Drawing.Point(4, 22);
             this.PRESUPUESTO.Name = "PRESUPUESTO";
             this.PRESUPUESTO.Padding = new System.Windows.Forms.Padding(3);
-            this.PRESUPUESTO.Size = new System.Drawing.Size(1283, 632);
+            this.PRESUPUESTO.Size = new System.Drawing.Size(1283, 757);
             this.PRESUPUESTO.TabIndex = 1;
             this.PRESUPUESTO.Text = "Presupuesto ";
+            // 
+            // button21
+            // 
+            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button21.Image = ((System.Drawing.Image)(resources.GetObject("button21.Image")));
+            this.button21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button21.Location = new System.Drawing.Point(44, 302);
+            this.button21.Margin = new System.Windows.Forms.Padding(2);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(104, 67);
+            this.button21.TabIndex = 304;
+            this.button21.Text = "Limpiar ";
+            this.button21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
             // 
             // linkLabel25
             // 
@@ -886,10 +1056,11 @@
             // label35
             // 
             this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.Location = new System.Drawing.Point(61, 123);
             this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(69, 13);
+            this.label35.Size = new System.Drawing.Size(89, 19);
             this.label35.TabIndex = 234;
             this.label35.Text = "Monto actual";
             // 
@@ -937,10 +1108,11 @@
             // label29
             // 
             this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.Location = new System.Drawing.Point(62, 79);
             this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(37, 13);
+            this.label29.Size = new System.Drawing.Size(50, 19);
             this.label29.TabIndex = 230;
             this.label29.Text = "Monto";
             // 
@@ -1051,16 +1223,18 @@
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(59, 45);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(89, 13);
+            this.label14.Size = new System.Drawing.Size(113, 19);
             this.label14.TabIndex = 212;
             this.label14.Text = "Tipo presupuesto";
             // 
             // extras_corrientes
             // 
             this.extras_corrientes.BackColor = System.Drawing.Color.DarkCyan;
+            this.extras_corrientes.Controls.Add(this.button22);
             this.extras_corrientes.Controls.Add(this.linkLabel37);
             this.extras_corrientes.Controls.Add(this.tb_apellido_extras_corriente);
             this.extras_corrientes.Controls.Add(this.label49);
@@ -1094,6 +1268,136 @@
             this.extras_corrientes.Size = new System.Drawing.Size(1283, 757);
             this.extras_corrientes.TabIndex = 2;
             this.extras_corrientes.Text = "Extras corientes medicas";
+            // 
+            // button22
+            // 
+            this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button22.Image = ((System.Drawing.Image)(resources.GetObject("button22.Image")));
+            this.button22.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button22.Location = new System.Drawing.Point(350, 345);
+            this.button22.Margin = new System.Windows.Forms.Padding(2);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(104, 67);
+            this.button22.TabIndex = 311;
+            this.button22.Text = "Limpiar ";
+            this.button22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
+            // 
+            // linkLabel37
+            // 
+            this.linkLabel37.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel37.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel37.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel37.Location = new System.Drawing.Point(153, 147);
+            this.linkLabel37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel37.Name = "linkLabel37";
+            this.linkLabel37.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel37.TabIndex = 310;
+            this.linkLabel37.TabStop = true;
+            this.linkLabel37.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel37.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_apellido_extras_corriente
+            // 
+            this.tb_apellido_extras_corriente.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_apellido_extras_corriente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_apellido_extras_corriente.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_apellido_extras_corriente.Location = new System.Drawing.Point(155, 127);
+            this.tb_apellido_extras_corriente.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_apellido_extras_corriente.Multiline = true;
+            this.tb_apellido_extras_corriente.Name = "tb_apellido_extras_corriente";
+            this.tb_apellido_extras_corriente.Size = new System.Drawing.Size(148, 17);
+            this.tb_apellido_extras_corriente.TabIndex = 308;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.Location = new System.Drawing.Point(23, 127);
+            this.label49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(60, 19);
+            this.label49.TabIndex = 309;
+            this.label49.Text = "Apellido";
+            // 
+            // linkLabel38
+            // 
+            this.linkLabel38.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel38.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel38.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel38.Location = new System.Drawing.Point(157, 113);
+            this.linkLabel38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel38.Name = "linkLabel38";
+            this.linkLabel38.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel38.TabIndex = 307;
+            this.linkLabel38.TabStop = true;
+            this.linkLabel38.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel38.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_nombre_extras_corrientes
+            // 
+            this.tb_nombre_extras_corrientes.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_nombre_extras_corrientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_nombre_extras_corrientes.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_nombre_extras_corrientes.Location = new System.Drawing.Point(159, 93);
+            this.tb_nombre_extras_corrientes.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_nombre_extras_corrientes.Multiline = true;
+            this.tb_nombre_extras_corrientes.Name = "tb_nombre_extras_corrientes";
+            this.tb_nombre_extras_corrientes.Size = new System.Drawing.Size(148, 17);
+            this.tb_nombre_extras_corrientes.TabIndex = 305;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.Location = new System.Drawing.Point(27, 93);
+            this.label50.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(60, 19);
+            this.label50.TabIndex = 306;
+            this.label50.Text = "Nombre";
+            // 
+            // linkLabel39
+            // 
+            this.linkLabel39.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel39.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel39.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel39.Location = new System.Drawing.Point(157, 78);
+            this.linkLabel39.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel39.Name = "linkLabel39";
+            this.linkLabel39.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel39.TabIndex = 304;
+            this.linkLabel39.TabStop = true;
+            this.linkLabel39.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel39.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_cedula_extra_corriente
+            // 
+            this.tb_cedula_extra_corriente.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_cedula_extra_corriente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_cedula_extra_corriente.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_cedula_extra_corriente.Location = new System.Drawing.Point(159, 58);
+            this.tb_cedula_extra_corriente.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_cedula_extra_corriente.Multiline = true;
+            this.tb_cedula_extra_corriente.Name = "tb_cedula_extra_corriente";
+            this.tb_cedula_extra_corriente.Size = new System.Drawing.Size(148, 17);
+            this.tb_cedula_extra_corriente.TabIndex = 302;
+            this.tb_cedula_extra_corriente.TextChanged += new System.EventHandler(this.tb_cedula_extra_corriente_TextChanged);
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label51.Location = new System.Drawing.Point(27, 58);
+            this.label51.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(52, 19);
+            this.label51.TabIndex = 303;
+            this.label51.Text = "Cedula";
             // 
             // panel1
             // 
@@ -1144,7 +1448,7 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(238, 321);
+            this.button10.Location = new System.Drawing.Point(238, 345);
             this.button10.Margin = new System.Windows.Forms.Padding(2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(98, 67);
@@ -1159,7 +1463,7 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(124, 321);
+            this.button11.Location = new System.Drawing.Point(124, 345);
             this.button11.Margin = new System.Windows.Forms.Padding(2);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(108, 67);
@@ -1188,7 +1492,7 @@
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(17, 321);
+            this.button12.Location = new System.Drawing.Point(17, 345);
             this.button12.Margin = new System.Windows.Forms.Padding(2);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(103, 67);
@@ -1260,10 +1564,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(27, 283);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 13);
+            this.label8.Size = new System.Drawing.Size(115, 19);
             this.label8.TabIndex = 236;
             this.label8.Text = "Monto a cancelar";
             // 
@@ -1297,10 +1602,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(27, 243);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 13);
+            this.label5.Size = new System.Drawing.Size(120, 19);
             this.label5.TabIndex = 233;
             this.label5.Text = "Cantidad de horas";
             // 
@@ -1334,10 +1640,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(27, 201);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 13);
+            this.label2.Size = new System.Drawing.Size(109, 19);
             this.label2.TabIndex = 230;
             this.label2.Text = "Codigo de Plaza";
             // 
@@ -1351,16 +1658,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(27, 167);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.Size = new System.Drawing.Size(99, 19);
             this.label1.TabIndex = 227;
             this.label1.Text = "Fecha de pago";
             // 
             // tiempo_extraordinario
             // 
             this.tiempo_extraordinario.BackColor = System.Drawing.Color.DarkCyan;
+            this.tiempo_extraordinario.Controls.Add(this.linkLabel51);
+            this.tiempo_extraordinario.Controls.Add(this.tb_extraordinario);
+            this.tiempo_extraordinario.Controls.Add(this.button23);
             this.tiempo_extraordinario.Controls.Add(this.linkLabel40);
             this.tiempo_extraordinario.Controls.Add(this.tb_apellido_extraordinario);
             this.tiempo_extraordinario.Controls.Add(this.label52);
@@ -1371,7 +1682,7 @@
             this.tiempo_extraordinario.Controls.Add(this.tb_cedula_extraordinario);
             this.tiempo_extraordinario.Controls.Add(this.label54);
             this.tiempo_extraordinario.Controls.Add(this.panel2);
-            this.tiempo_extraordinario.Controls.Add(this.cb_departamento);
+            this.tiempo_extraordinario.Controls.Add(this.cb_departamento_extraordinario);
             this.tiempo_extraordinario.Controls.Add(this.label33);
             this.tiempo_extraordinario.Controls.Add(this.cb_busqueda_extraordinario);
             this.tiempo_extraordinario.Controls.Add(this.button13);
@@ -1381,7 +1692,6 @@
             this.tiempo_extraordinario.Controls.Add(this.tb_busqueda_extraordinario);
             this.tiempo_extraordinario.Controls.Add(this.dgv_extraordinario);
             this.tiempo_extraordinario.Controls.Add(this.label13);
-            this.tiempo_extraordinario.Controls.Add(this.dtp_extraordinario);
             this.tiempo_extraordinario.Controls.Add(this.linkLabel6);
             this.tiempo_extraordinario.Controls.Add(this.tb_monto_extraordinario);
             this.tiempo_extraordinario.Controls.Add(this.label10);
@@ -1399,6 +1709,136 @@
             this.tiempo_extraordinario.TabIndex = 3;
             this.tiempo_extraordinario.Text = "Tiempo extraordinario ";
             this.tiempo_extraordinario.Click += new System.EventHandler(this.tiempo_extraordinario_Click);
+            // 
+            // button23
+            // 
+            this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button23.Image = ((System.Drawing.Image)(resources.GetObject("button23.Image")));
+            this.button23.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button23.Location = new System.Drawing.Point(401, 368);
+            this.button23.Margin = new System.Windows.Forms.Padding(2);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(104, 67);
+            this.button23.TabIndex = 320;
+            this.button23.Text = "Limpiar ";
+            this.button23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // linkLabel40
+            // 
+            this.linkLabel40.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel40.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel40.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel40.Location = new System.Drawing.Point(173, 129);
+            this.linkLabel40.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel40.Name = "linkLabel40";
+            this.linkLabel40.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel40.TabIndex = 319;
+            this.linkLabel40.TabStop = true;
+            this.linkLabel40.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel40.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_apellido_extraordinario
+            // 
+            this.tb_apellido_extraordinario.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_apellido_extraordinario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_apellido_extraordinario.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_apellido_extraordinario.Location = new System.Drawing.Point(175, 109);
+            this.tb_apellido_extraordinario.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_apellido_extraordinario.Multiline = true;
+            this.tb_apellido_extraordinario.Name = "tb_apellido_extraordinario";
+            this.tb_apellido_extraordinario.Size = new System.Drawing.Size(148, 17);
+            this.tb_apellido_extraordinario.TabIndex = 317;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label52.Location = new System.Drawing.Point(35, 109);
+            this.label52.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(60, 19);
+            this.label52.TabIndex = 318;
+            this.label52.Text = "Apellido";
+            // 
+            // linkLabel41
+            // 
+            this.linkLabel41.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel41.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel41.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel41.Location = new System.Drawing.Point(177, 95);
+            this.linkLabel41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel41.Name = "linkLabel41";
+            this.linkLabel41.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel41.TabIndex = 316;
+            this.linkLabel41.TabStop = true;
+            this.linkLabel41.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel41.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_nombre_extraordinario
+            // 
+            this.tb_nombre_extraordinario.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_nombre_extraordinario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_nombre_extraordinario.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_nombre_extraordinario.Location = new System.Drawing.Point(179, 75);
+            this.tb_nombre_extraordinario.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_nombre_extraordinario.Multiline = true;
+            this.tb_nombre_extraordinario.Name = "tb_nombre_extraordinario";
+            this.tb_nombre_extraordinario.Size = new System.Drawing.Size(148, 17);
+            this.tb_nombre_extraordinario.TabIndex = 314;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label53.Location = new System.Drawing.Point(39, 75);
+            this.label53.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(60, 19);
+            this.label53.TabIndex = 315;
+            this.label53.Text = "Nombre";
+            // 
+            // linkLabel42
+            // 
+            this.linkLabel42.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel42.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel42.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel42.Location = new System.Drawing.Point(177, 60);
+            this.linkLabel42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel42.Name = "linkLabel42";
+            this.linkLabel42.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel42.TabIndex = 313;
+            this.linkLabel42.TabStop = true;
+            this.linkLabel42.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel42.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_cedula_extraordinario
+            // 
+            this.tb_cedula_extraordinario.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_cedula_extraordinario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_cedula_extraordinario.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_cedula_extraordinario.Location = new System.Drawing.Point(179, 40);
+            this.tb_cedula_extraordinario.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_cedula_extraordinario.Multiline = true;
+            this.tb_cedula_extraordinario.Name = "tb_cedula_extraordinario";
+            this.tb_cedula_extraordinario.Size = new System.Drawing.Size(148, 17);
+            this.tb_cedula_extraordinario.TabIndex = 311;
+            this.tb_cedula_extraordinario.TextChanged += new System.EventHandler(this.tb_cedula_extraordinario_TextChanged);
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label54.Location = new System.Drawing.Point(39, 40);
+            this.label54.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(52, 19);
+            this.label54.TabIndex = 312;
+            this.label54.Text = "Cedula";
             // 
             // panel2
             // 
@@ -1432,22 +1872,23 @@
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
-            // cb_departamento
+            // cb_departamento_extraordinario
             // 
-            this.cb_departamento.FormattingEnabled = true;
-            this.cb_departamento.Location = new System.Drawing.Point(168, 148);
-            this.cb_departamento.Margin = new System.Windows.Forms.Padding(2);
-            this.cb_departamento.Name = "cb_departamento";
-            this.cb_departamento.Size = new System.Drawing.Size(157, 21);
-            this.cb_departamento.TabIndex = 257;
+            this.cb_departamento_extraordinario.FormattingEnabled = true;
+            this.cb_departamento_extraordinario.Location = new System.Drawing.Point(168, 148);
+            this.cb_departamento_extraordinario.Margin = new System.Windows.Forms.Padding(2);
+            this.cb_departamento_extraordinario.Name = "cb_departamento_extraordinario";
+            this.cb_departamento_extraordinario.Size = new System.Drawing.Size(157, 21);
+            this.cb_departamento_extraordinario.TabIndex = 257;
             // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(47, 148);
+            this.label33.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(39, 148);
             this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(74, 13);
+            this.label33.Size = new System.Drawing.Size(95, 19);
             this.label33.TabIndex = 256;
             this.label33.Text = "Departamento";
             // 
@@ -1556,19 +1997,13 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(47, 213);
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(39, 213);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(79, 13);
+            this.label13.Size = new System.Drawing.Size(99, 19);
             this.label13.TabIndex = 248;
             this.label13.Text = "Fecha de pago";
-            // 
-            // dtp_extraordinario
-            // 
-            this.dtp_extraordinario.Location = new System.Drawing.Point(168, 213);
-            this.dtp_extraordinario.Name = "dtp_extraordinario";
-            this.dtp_extraordinario.Size = new System.Drawing.Size(200, 20);
-            this.dtp_extraordinario.TabIndex = 247;
             // 
             // linkLabel6
             // 
@@ -1602,10 +2037,11 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(47, 333);
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(39, 333);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 13);
+            this.label10.Size = new System.Drawing.Size(115, 19);
             this.label10.TabIndex = 245;
             this.label10.Text = "Monto a cancelar";
             // 
@@ -1639,10 +2075,11 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(47, 293);
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(39, 293);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(93, 13);
+            this.label11.Size = new System.Drawing.Size(120, 19);
             this.label11.TabIndex = 242;
             this.label11.Text = "Cantidad de horas";
             // 
@@ -1676,10 +2113,11 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(47, 251);
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(39, 251);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(84, 13);
+            this.label12.Size = new System.Drawing.Size(109, 19);
             this.label12.TabIndex = 239;
             this.label12.Text = "Codigo de Plaza";
             // 
@@ -1700,10 +2138,11 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(47, 174);
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(39, 174);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 13);
+            this.label9.Size = new System.Drawing.Size(124, 19);
             this.label9.TabIndex = 224;
             this.label9.Text = "Tipo extraordinario";
             // 
@@ -1711,6 +2150,17 @@
             // 
             this.acciones.AutoScroll = true;
             this.acciones.BackColor = System.Drawing.Color.DarkCyan;
+            this.acciones.Controls.Add(this.btn_limpiar_personal);
+            this.acciones.Controls.Add(this.linkLabel50);
+            this.acciones.Controls.Add(this.tb_fecha_pago_personal);
+            this.acciones.Controls.Add(this.linkLabel49);
+            this.acciones.Controls.Add(this.tb_fechavacaciones_personal);
+            this.acciones.Controls.Add(this.linkLabel48);
+            this.acciones.Controls.Add(this.tb_fechaescala_personal);
+            this.acciones.Controls.Add(this.linkLabel47);
+            this.acciones.Controls.Add(this.tb_hasta_personal);
+            this.acciones.Controls.Add(this.linkLabel46);
+            this.acciones.Controls.Add(this.tb_desde_personal);
             this.acciones.Controls.Add(this.linkLabel31);
             this.acciones.Controls.Add(this.tb_apellido_accion);
             this.acciones.Controls.Add(this.label43);
@@ -1723,8 +2173,6 @@
             this.acciones.Controls.Add(this.panel3);
             this.acciones.Controls.Add(this.cb_busqueda_personal);
             this.acciones.Controls.Add(this.linkLabel17);
-            this.acciones.Controls.Add(this.dtp_fechavacaciones_personal);
-            this.acciones.Controls.Add(this.dtp_fechaescala_personal);
             this.acciones.Controls.Add(this.label26);
             this.acciones.Controls.Add(this.label31);
             this.acciones.Controls.Add(this.tb_dias_personal);
@@ -1738,11 +2186,8 @@
             this.acciones.Controls.Add(this.rtb_observaciones_personal);
             this.acciones.Controls.Add(this.label28);
             this.acciones.Controls.Add(this.label27);
-            this.acciones.Controls.Add(this.dtp_fecha_pago_personal);
             this.acciones.Controls.Add(this.label25);
-            this.acciones.Controls.Add(this.dtp_hasta_personal);
             this.acciones.Controls.Add(this.label24);
-            this.acciones.Controls.Add(this.dtp_desde_personal);
             this.acciones.Controls.Add(this.linkLabel15);
             this.acciones.Controls.Add(this.tb_puesto_personal);
             this.acciones.Controls.Add(this.label23);
@@ -1759,12 +2204,283 @@
             this.acciones.Controls.Add(this.linkLabel9);
             this.acciones.Controls.Add(this.tb_numero_accion_personal);
             this.acciones.Controls.Add(this.label18);
+            this.acciones.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.acciones.Location = new System.Drawing.Point(4, 22);
             this.acciones.Name = "acciones";
             this.acciones.Size = new System.Drawing.Size(1283, 757);
             this.acciones.TabIndex = 4;
             this.acciones.Text = "Acciones de personal ";
             this.acciones.Click += new System.EventHandler(this.acciones_Click);
+            // 
+            // btn_limpiar_personal
+            // 
+            this.btn_limpiar_personal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_limpiar_personal.Image = ((System.Drawing.Image)(resources.GetObject("btn_limpiar_personal.Image")));
+            this.btn_limpiar_personal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_limpiar_personal.Location = new System.Drawing.Point(1136, 224);
+            this.btn_limpiar_personal.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_limpiar_personal.Name = "btn_limpiar_personal";
+            this.btn_limpiar_personal.Size = new System.Drawing.Size(104, 67);
+            this.btn_limpiar_personal.TabIndex = 303;
+            this.btn_limpiar_personal.Text = "Limpiar ";
+            this.btn_limpiar_personal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_limpiar_personal.UseVisualStyleBackColor = true;
+            this.btn_limpiar_personal.Click += new System.EventHandler(this.btn_limpiar_personal_Click);
+            // 
+            // linkLabel50
+            // 
+            this.linkLabel50.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel50.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel50.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel50.Location = new System.Drawing.Point(932, 148);
+            this.linkLabel50.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel50.Name = "linkLabel50";
+            this.linkLabel50.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel50.TabIndex = 302;
+            this.linkLabel50.TabStop = true;
+            this.linkLabel50.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel50.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_fecha_pago_personal
+            // 
+            this.tb_fecha_pago_personal.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_fecha_pago_personal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_fecha_pago_personal.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_fecha_pago_personal.Location = new System.Drawing.Point(932, 129);
+            this.tb_fecha_pago_personal.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_fecha_pago_personal.Multiline = true;
+            this.tb_fecha_pago_personal.Name = "tb_fecha_pago_personal";
+            this.tb_fecha_pago_personal.Size = new System.Drawing.Size(148, 17);
+            this.tb_fecha_pago_personal.TabIndex = 301;
+            this.tb_fecha_pago_personal.TextChanged += new System.EventHandler(this.tb_fecha_pago_personal_TextChanged);
+            // 
+            // linkLabel49
+            // 
+            this.linkLabel49.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel49.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel49.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel49.Location = new System.Drawing.Point(930, 120);
+            this.linkLabel49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel49.Name = "linkLabel49";
+            this.linkLabel49.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel49.TabIndex = 300;
+            this.linkLabel49.TabStop = true;
+            this.linkLabel49.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel49.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_fechavacaciones_personal
+            // 
+            this.tb_fechavacaciones_personal.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_fechavacaciones_personal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_fechavacaciones_personal.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_fechavacaciones_personal.Location = new System.Drawing.Point(930, 101);
+            this.tb_fechavacaciones_personal.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_fechavacaciones_personal.Multiline = true;
+            this.tb_fechavacaciones_personal.Name = "tb_fechavacaciones_personal";
+            this.tb_fechavacaciones_personal.Size = new System.Drawing.Size(148, 17);
+            this.tb_fechavacaciones_personal.TabIndex = 299;
+            // 
+            // linkLabel48
+            // 
+            this.linkLabel48.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel48.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel48.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel48.Location = new System.Drawing.Point(926, 93);
+            this.linkLabel48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel48.Name = "linkLabel48";
+            this.linkLabel48.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel48.TabIndex = 298;
+            this.linkLabel48.TabStop = true;
+            this.linkLabel48.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel48.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_fechaescala_personal
+            // 
+            this.tb_fechaescala_personal.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_fechaescala_personal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_fechaescala_personal.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_fechaescala_personal.Location = new System.Drawing.Point(926, 74);
+            this.tb_fechaescala_personal.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_fechaescala_personal.Multiline = true;
+            this.tb_fechaescala_personal.Name = "tb_fechaescala_personal";
+            this.tb_fechaescala_personal.Size = new System.Drawing.Size(148, 17);
+            this.tb_fechaescala_personal.TabIndex = 297;
+            // 
+            // linkLabel47
+            // 
+            this.linkLabel47.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel47.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel47.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel47.Location = new System.Drawing.Point(923, 34);
+            this.linkLabel47.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel47.Name = "linkLabel47";
+            this.linkLabel47.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel47.TabIndex = 296;
+            this.linkLabel47.TabStop = true;
+            this.linkLabel47.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel47.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_hasta_personal
+            // 
+            this.tb_hasta_personal.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_hasta_personal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_hasta_personal.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_hasta_personal.Location = new System.Drawing.Point(925, 14);
+            this.tb_hasta_personal.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_hasta_personal.Multiline = true;
+            this.tb_hasta_personal.Name = "tb_hasta_personal";
+            this.tb_hasta_personal.Size = new System.Drawing.Size(148, 17);
+            this.tb_hasta_personal.TabIndex = 295;
+            this.tb_hasta_personal.TextChanged += new System.EventHandler(this.tb_hasta_personal_TextChanged);
+            // 
+            // linkLabel46
+            // 
+            this.linkLabel46.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel46.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel46.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel46.Location = new System.Drawing.Point(582, 206);
+            this.linkLabel46.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel46.Name = "linkLabel46";
+            this.linkLabel46.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel46.TabIndex = 294;
+            this.linkLabel46.TabStop = true;
+            this.linkLabel46.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel46.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_desde_personal
+            // 
+            this.tb_desde_personal.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_desde_personal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_desde_personal.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_desde_personal.Location = new System.Drawing.Point(584, 186);
+            this.tb_desde_personal.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_desde_personal.Multiline = true;
+            this.tb_desde_personal.Name = "tb_desde_personal";
+            this.tb_desde_personal.Size = new System.Drawing.Size(148, 17);
+            this.tb_desde_personal.TabIndex = 293;
+            this.tb_desde_personal.TextChanged += new System.EventHandler(this.tb_desde_personal_TextChanged);
+            // 
+            // linkLabel31
+            // 
+            this.linkLabel31.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel31.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel31.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel31.Location = new System.Drawing.Point(161, 110);
+            this.linkLabel31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel31.Name = "linkLabel31";
+            this.linkLabel31.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel31.TabIndex = 292;
+            this.linkLabel31.TabStop = true;
+            this.linkLabel31.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel31.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_apellido_accion
+            // 
+            this.tb_apellido_accion.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_apellido_accion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_apellido_accion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_apellido_accion.Location = new System.Drawing.Point(163, 90);
+            this.tb_apellido_accion.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_apellido_accion.Multiline = true;
+            this.tb_apellido_accion.Name = "tb_apellido_accion";
+            this.tb_apellido_accion.ReadOnly = true;
+            this.tb_apellido_accion.Size = new System.Drawing.Size(148, 17);
+            this.tb_apellido_accion.TabIndex = 290;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(31, 90);
+            this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(60, 19);
+            this.label43.TabIndex = 291;
+            this.label43.Text = "Apellido";
+            // 
+            // linkLabel32
+            // 
+            this.linkLabel32.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel32.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel32.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel32.Location = new System.Drawing.Point(165, 76);
+            this.linkLabel32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel32.Name = "linkLabel32";
+            this.linkLabel32.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel32.TabIndex = 289;
+            this.linkLabel32.TabStop = true;
+            this.linkLabel32.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel32.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_nombre_accion
+            // 
+            this.tb_nombre_accion.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_nombre_accion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_nombre_accion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_nombre_accion.Location = new System.Drawing.Point(167, 56);
+            this.tb_nombre_accion.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_nombre_accion.Multiline = true;
+            this.tb_nombre_accion.Name = "tb_nombre_accion";
+            this.tb_nombre_accion.ReadOnly = true;
+            this.tb_nombre_accion.Size = new System.Drawing.Size(148, 17);
+            this.tb_nombre_accion.TabIndex = 287;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(35, 56);
+            this.label44.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(60, 19);
+            this.label44.TabIndex = 288;
+            this.label44.Text = "Nombre";
+            // 
+            // linkLabel33
+            // 
+            this.linkLabel33.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel33.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel33.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel33.Location = new System.Drawing.Point(165, 41);
+            this.linkLabel33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel33.Name = "linkLabel33";
+            this.linkLabel33.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel33.TabIndex = 286;
+            this.linkLabel33.TabStop = true;
+            this.linkLabel33.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel33.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_cedula_accion
+            // 
+            this.tb_cedula_accion.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_cedula_accion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_cedula_accion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_cedula_accion.Location = new System.Drawing.Point(167, 21);
+            this.tb_cedula_accion.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_cedula_accion.Multiline = true;
+            this.tb_cedula_accion.Name = "tb_cedula_accion";
+            this.tb_cedula_accion.Size = new System.Drawing.Size(148, 17);
+            this.tb_cedula_accion.TabIndex = 284;
+            this.tb_cedula_accion.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.Location = new System.Drawing.Point(35, 21);
+            this.label45.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(52, 19);
+            this.label45.TabIndex = 285;
+            this.label45.Text = "Cedula";
             // 
             // panel3
             // 
@@ -1808,7 +2524,7 @@
             this.cb_busqueda_personal.Location = new System.Drawing.Point(605, 222);
             this.cb_busqueda_personal.Margin = new System.Windows.Forms.Padding(2);
             this.cb_busqueda_personal.Name = "cb_busqueda_personal";
-            this.cb_busqueda_personal.Size = new System.Drawing.Size(167, 21);
+            this.cb_busqueda_personal.Size = new System.Drawing.Size(167, 27);
             this.cb_busqueda_personal.TabIndex = 282;
             // 
             // linkLabel17
@@ -1816,7 +2532,7 @@
             this.linkLabel17.DisabledLinkColor = System.Drawing.Color.SpringGreen;
             this.linkLabel17.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel17.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel17.Location = new System.Drawing.Point(931, 64);
+            this.linkLabel17.Location = new System.Drawing.Point(923, 60);
             this.linkLabel17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel17.Name = "linkLabel17";
             this.linkLabel17.Size = new System.Drawing.Size(158, 8);
@@ -1826,38 +2542,26 @@
     "                                                                            ";
             this.linkLabel17.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // dtp_fechavacaciones_personal
-            // 
-            this.dtp_fechavacaciones_personal.Location = new System.Drawing.Point(925, 107);
-            this.dtp_fechavacaciones_personal.Name = "dtp_fechavacaciones_personal";
-            this.dtp_fechavacaciones_personal.Size = new System.Drawing.Size(152, 20);
-            this.dtp_fechavacaciones_personal.TabIndex = 280;
-            // 
-            // dtp_fechaescala_personal
-            // 
-            this.dtp_fechaescala_personal.Location = new System.Drawing.Point(925, 81);
-            this.dtp_fechaescala_personal.Name = "dtp_fechaescala_personal";
-            this.dtp_fechaescala_personal.Size = new System.Drawing.Size(152, 20);
-            this.dtp_fechaescala_personal.TabIndex = 279;
-            // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.CausesValidation = false;
-            this.label26.Location = new System.Drawing.Point(800, 112);
+            this.label26.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(765, 112);
             this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(110, 13);
+            this.label26.Size = new System.Drawing.Size(135, 19);
             this.label26.TabIndex = 278;
             this.label26.Text = "Fecha de vacaciones";
             // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(800, 87);
+            this.label31.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(765, 87);
             this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(122, 13);
+            this.label31.Size = new System.Drawing.Size(152, 19);
             this.label31.TabIndex = 277;
             this.label31.Text = "Fecha Ubicacion escala";
             // 
@@ -1866,7 +2570,7 @@
             this.tb_dias_personal.BackColor = System.Drawing.Color.DarkCyan;
             this.tb_dias_personal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_dias_personal.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_dias_personal.Location = new System.Drawing.Point(931, 45);
+            this.tb_dias_personal.Location = new System.Drawing.Point(923, 41);
             this.tb_dias_personal.Margin = new System.Windows.Forms.Padding(2);
             this.tb_dias_personal.Multiline = true;
             this.tb_dias_personal.Name = "tb_dias_personal";
@@ -1876,10 +2580,11 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(800, 55);
+            this.label30.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(765, 55);
             this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(68, 13);
+            this.label30.Size = new System.Drawing.Size(86, 19);
             this.label30.TabIndex = 276;
             this.label30.Text = "Total de dias";
             // 
@@ -1888,7 +2593,7 @@
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button16.Image = ((System.Drawing.Image)(resources.GetObject("button16.Image")));
             this.button16.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button16.Location = new System.Drawing.Point(1046, 224);
+            this.button16.Location = new System.Drawing.Point(1034, 224);
             this.button16.Margin = new System.Windows.Forms.Padding(2);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(98, 67);
@@ -1903,7 +2608,7 @@
             this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button17.Image = ((System.Drawing.Image)(resources.GetObject("button17.Image")));
             this.button17.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button17.Location = new System.Drawing.Point(932, 224);
+            this.button17.Location = new System.Drawing.Point(920, 224);
             this.button17.Margin = new System.Windows.Forms.Padding(2);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(108, 67);
@@ -1918,7 +2623,7 @@
             this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button18.Image = ((System.Drawing.Image)(resources.GetObject("button18.Image")));
             this.button18.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button18.Location = new System.Drawing.Point(825, 224);
+            this.button18.Location = new System.Drawing.Point(813, 224);
             this.button18.Margin = new System.Windows.Forms.Padding(2);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(103, 67);
@@ -1983,63 +2688,46 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(798, 162);
+            this.label28.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(763, 162);
             this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(78, 13);
+            this.label28.Size = new System.Drawing.Size(99, 19);
             this.label28.TabIndex = 266;
             this.label28.Text = "Observaciones";
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(800, 139);
+            this.label27.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(765, 139);
             this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(79, 13);
+            this.label27.Size = new System.Drawing.Size(99, 19);
             this.label27.TabIndex = 265;
             this.label27.Text = "Fecha de pago";
-            // 
-            // dtp_fecha_pago_personal
-            // 
-            this.dtp_fecha_pago_personal.Location = new System.Drawing.Point(925, 133);
-            this.dtp_fecha_pago_personal.Name = "dtp_fecha_pago_personal";
-            this.dtp_fecha_pago_personal.Size = new System.Drawing.Size(200, 20);
-            this.dtp_fecha_pago_personal.TabIndex = 264;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(800, 18);
+            this.label25.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(765, 18);
             this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(58, 13);
+            this.label25.Size = new System.Drawing.Size(71, 19);
             this.label25.TabIndex = 260;
             this.label25.Text = "Rige hasta";
-            // 
-            // dtp_hasta_personal
-            // 
-            this.dtp_hasta_personal.Location = new System.Drawing.Point(925, 18);
-            this.dtp_hasta_personal.Name = "dtp_hasta_personal";
-            this.dtp_hasta_personal.Size = new System.Drawing.Size(200, 20);
-            this.dtp_hasta_personal.TabIndex = 259;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(455, 189);
             this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(61, 13);
+            this.label24.Size = new System.Drawing.Size(76, 19);
             this.label24.TabIndex = 258;
             this.label24.Text = "Rige desde";
-            // 
-            // dtp_desde_personal
-            // 
-            this.dtp_desde_personal.Location = new System.Drawing.Point(580, 189);
-            this.dtp_desde_personal.Name = "dtp_desde_personal";
-            this.dtp_desde_personal.Size = new System.Drawing.Size(200, 20);
-            this.dtp_desde_personal.TabIndex = 257;
             // 
             // linkLabel15
             // 
@@ -2071,10 +2759,11 @@
             // label23
             // 
             this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(453, 149);
             this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(40, 13);
+            this.label23.Size = new System.Drawing.Size(50, 19);
             this.label23.TabIndex = 255;
             this.label23.Text = "Puesto";
             // 
@@ -2109,10 +2798,11 @@
             // label22
             // 
             this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(455, 109);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(84, 13);
+            this.label22.Size = new System.Drawing.Size(109, 19);
             this.label22.TabIndex = 252;
             this.label22.Text = "Codigo de Plaza";
             // 
@@ -2148,15 +2838,17 @@
             // label21
             // 
             this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(453, 63);
             this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(34, 13);
+            this.label21.Size = new System.Drawing.Size(46, 19);
             this.label21.TabIndex = 249;
             this.label21.Text = "Costo";
             // 
             // cb_sustitucion_personal
             // 
+            this.cb_sustitucion_personal.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cb_sustitucion_personal.FormattingEnabled = true;
             this.cb_sustitucion_personal.Items.AddRange(new object[] {
             "Vacaciones",
@@ -2167,16 +2859,17 @@
             this.cb_sustitucion_personal.Location = new System.Drawing.Point(578, 25);
             this.cb_sustitucion_personal.Margin = new System.Windows.Forms.Padding(2);
             this.cb_sustitucion_personal.Name = "cb_sustitucion_personal";
-            this.cb_sustitucion_personal.Size = new System.Drawing.Size(157, 21);
+            this.cb_sustitucion_personal.Size = new System.Drawing.Size(157, 27);
             this.cb_sustitucion_personal.TabIndex = 247;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(453, 25);
             this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(59, 13);
+            this.label20.Size = new System.Drawing.Size(74, 19);
             this.label20.TabIndex = 246;
             this.label20.Text = "Sustitucion";
             // 
@@ -2200,16 +2893,17 @@
             this.cb_motivo_personal.Location = new System.Drawing.Point(162, 162);
             this.cb_motivo_personal.Margin = new System.Windows.Forms.Padding(2);
             this.cb_motivo_personal.Name = "cb_motivo_personal";
-            this.cb_motivo_personal.Size = new System.Drawing.Size(157, 21);
+            this.cb_motivo_personal.Size = new System.Drawing.Size(157, 27);
             this.cb_motivo_personal.TabIndex = 245;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(33, 162);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(39, 13);
+            this.label19.Size = new System.Drawing.Size(53, 19);
             this.label19.TabIndex = 244;
             this.label19.Text = "Motivo";
             // 
@@ -2243,16 +2937,18 @@
             // label18
             // 
             this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(35, 126);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(94, 13);
+            this.label18.Size = new System.Drawing.Size(121, 19);
             this.label18.TabIndex = 242;
             this.label18.Text = "Numero de accion";
             // 
             // tp_incapacidades
             // 
             this.tp_incapacidades.BackColor = System.Drawing.Color.DarkCyan;
+            this.tp_incapacidades.Controls.Add(this.button24);
             this.tp_incapacidades.Controls.Add(this.linkLabel43);
             this.tp_incapacidades.Controls.Add(this.tb_apellido_incapacidades);
             this.tp_incapacidades.Controls.Add(this.label55);
@@ -2288,6 +2984,136 @@
             this.tp_incapacidades.TabIndex = 7;
             this.tp_incapacidades.Text = "Incapacidades";
             // 
+            // button24
+            // 
+            this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button24.Image = ((System.Drawing.Image)(resources.GetObject("button24.Image")));
+            this.button24.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button24.Location = new System.Drawing.Point(370, 369);
+            this.button24.Margin = new System.Windows.Forms.Padding(2);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(104, 67);
+            this.button24.TabIndex = 329;
+            this.button24.Text = "Limpiar ";
+            this.button24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
+            // 
+            // linkLabel43
+            // 
+            this.linkLabel43.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel43.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel43.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel43.Location = new System.Drawing.Point(162, 141);
+            this.linkLabel43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel43.Name = "linkLabel43";
+            this.linkLabel43.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel43.TabIndex = 328;
+            this.linkLabel43.TabStop = true;
+            this.linkLabel43.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel43.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_apellido_incapacidades
+            // 
+            this.tb_apellido_incapacidades.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_apellido_incapacidades.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_apellido_incapacidades.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_apellido_incapacidades.Location = new System.Drawing.Point(164, 121);
+            this.tb_apellido_incapacidades.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_apellido_incapacidades.Multiline = true;
+            this.tb_apellido_incapacidades.Name = "tb_apellido_incapacidades";
+            this.tb_apellido_incapacidades.Size = new System.Drawing.Size(148, 17);
+            this.tb_apellido_incapacidades.TabIndex = 326;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label55.Location = new System.Drawing.Point(32, 121);
+            this.label55.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(60, 19);
+            this.label55.TabIndex = 327;
+            this.label55.Text = "Apellido";
+            // 
+            // linkLabel44
+            // 
+            this.linkLabel44.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel44.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel44.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel44.Location = new System.Drawing.Point(166, 107);
+            this.linkLabel44.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel44.Name = "linkLabel44";
+            this.linkLabel44.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel44.TabIndex = 325;
+            this.linkLabel44.TabStop = true;
+            this.linkLabel44.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel44.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_nombre_incapacidades
+            // 
+            this.tb_nombre_incapacidades.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_nombre_incapacidades.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_nombre_incapacidades.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_nombre_incapacidades.Location = new System.Drawing.Point(168, 87);
+            this.tb_nombre_incapacidades.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_nombre_incapacidades.Multiline = true;
+            this.tb_nombre_incapacidades.Name = "tb_nombre_incapacidades";
+            this.tb_nombre_incapacidades.Size = new System.Drawing.Size(148, 17);
+            this.tb_nombre_incapacidades.TabIndex = 323;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label56.Location = new System.Drawing.Point(36, 87);
+            this.label56.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(60, 19);
+            this.label56.TabIndex = 324;
+            this.label56.Text = "Nombre";
+            // 
+            // linkLabel45
+            // 
+            this.linkLabel45.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel45.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel45.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel45.Location = new System.Drawing.Point(166, 72);
+            this.linkLabel45.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel45.Name = "linkLabel45";
+            this.linkLabel45.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel45.TabIndex = 322;
+            this.linkLabel45.TabStop = true;
+            this.linkLabel45.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel45.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_cedula_incapacidades
+            // 
+            this.tb_cedula_incapacidades.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_cedula_incapacidades.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_cedula_incapacidades.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_cedula_incapacidades.Location = new System.Drawing.Point(168, 52);
+            this.tb_cedula_incapacidades.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_cedula_incapacidades.Multiline = true;
+            this.tb_cedula_incapacidades.Name = "tb_cedula_incapacidades";
+            this.tb_cedula_incapacidades.Size = new System.Drawing.Size(148, 17);
+            this.tb_cedula_incapacidades.TabIndex = 320;
+            this.tb_cedula_incapacidades.TextChanged += new System.EventHandler(this.tb_cedula_incapacidades_TextChanged);
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label57.Location = new System.Drawing.Point(36, 52);
+            this.label57.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(52, 19);
+            this.label57.TabIndex = 321;
+            this.label57.Text = "Cedula";
+            // 
             // linkLabel26
             // 
             this.linkLabel26.DisabledLinkColor = System.Drawing.Color.SpringGreen;
@@ -2318,10 +3144,11 @@
             // label36
             // 
             this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.Location = new System.Drawing.Point(34, 327);
             this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(40, 13);
+            this.label36.Size = new System.Drawing.Size(50, 19);
             this.label36.TabIndex = 238;
             this.label36.Text = "Puesto";
             // 
@@ -2456,10 +3283,11 @@
             // label37
             // 
             this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label37.Location = new System.Drawing.Point(31, 288);
             this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(88, 13);
+            this.label37.Size = new System.Drawing.Size(114, 19);
             this.label37.TabIndex = 228;
             this.label37.Text = "Numero de Plaza";
             // 
@@ -2473,20 +3301,22 @@
             // label38
             // 
             this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label38.Location = new System.Drawing.Point(32, 246);
             this.label38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(79, 13);
+            this.label38.Size = new System.Drawing.Size(99, 19);
             this.label38.TabIndex = 226;
             this.label38.Text = "Fecha de pago";
             // 
             // label39
             // 
             this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label39.Location = new System.Drawing.Point(30, 214);
             this.label39.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(89, 13);
+            this.label39.Size = new System.Drawing.Size(112, 19);
             this.label39.TabIndex = 225;
             this.label39.Text = "Tipo incapacidad";
             // 
@@ -2536,10 +3366,11 @@
             // label40
             // 
             this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label40.Location = new System.Drawing.Point(32, 164);
             this.label40.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(91, 13);
+            this.label40.Size = new System.Drawing.Size(119, 19);
             this.label40.TabIndex = 221;
             this.label40.Text = "Numero de boleta";
             // 
@@ -2615,10 +3446,11 @@
             // lb_hasta_reporte
             // 
             this.lb_hasta_reporte.AutoSize = true;
-            this.lb_hasta_reporte.Location = new System.Drawing.Point(25, 260);
+            this.lb_hasta_reporte.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_hasta_reporte.Location = new System.Drawing.Point(16, 258);
             this.lb_hasta_reporte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_hasta_reporte.Name = "lb_hasta_reporte";
-            this.lb_hasta_reporte.Size = new System.Drawing.Size(35, 13);
+            this.lb_hasta_reporte.Size = new System.Drawing.Size(44, 19);
             this.lb_hasta_reporte.TabIndex = 275;
             this.lb_hasta_reporte.Text = "Hasta";
             // 
@@ -2632,10 +3464,11 @@
             // lb_desde_reporte
             // 
             this.lb_desde_reporte.AutoSize = true;
-            this.lb_desde_reporte.Location = new System.Drawing.Point(23, 230);
+            this.lb_desde_reporte.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_desde_reporte.Location = new System.Drawing.Point(14, 228);
             this.lb_desde_reporte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_desde_reporte.Name = "lb_desde_reporte";
-            this.lb_desde_reporte.Size = new System.Drawing.Size(38, 13);
+            this.lb_desde_reporte.Size = new System.Drawing.Size(48, 19);
             this.lb_desde_reporte.TabIndex = 273;
             this.lb_desde_reporte.Text = "Desde";
             // 
@@ -2670,10 +3503,11 @@
             // lb_dato
             // 
             this.lb_dato.AutoSize = true;
-            this.lb_dato.Location = new System.Drawing.Point(23, 190);
+            this.lb_dato.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_dato.Location = new System.Drawing.Point(14, 188);
             this.lb_dato.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_dato.Name = "lb_dato";
-            this.lb_dato.Size = new System.Drawing.Size(37, 13);
+            this.lb_dato.Size = new System.Drawing.Size(50, 19);
             this.lb_dato.TabIndex = 270;
             this.lb_dato.Text = "Monto";
             // 
@@ -2693,18 +3527,20 @@
             // Dato
             // 
             this.Dato.AutoSize = true;
-            this.Dato.Location = new System.Drawing.Point(23, 153);
+            this.Dato.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dato.Location = new System.Drawing.Point(14, 151);
             this.Dato.Name = "Dato";
-            this.Dato.Size = new System.Drawing.Size(30, 13);
+            this.Dato.Size = new System.Drawing.Size(39, 19);
             this.Dato.TabIndex = 3;
             this.Dato.Text = "Dato";
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(23, 98);
+            this.label32.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(14, 96);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(79, 13);
+            this.label32.Size = new System.Drawing.Size(103, 19);
             this.label32.TabIndex = 2;
             this.label32.Text = "Tipo de reporte";
             // 
@@ -2833,565 +3669,33 @@
             this.dgv_registro.Size = new System.Drawing.Size(891, 194);
             this.dgv_registro.TabIndex = 240;
             // 
-            // linkLabel31
+            // linkLabel51
             // 
-            this.linkLabel31.DisabledLinkColor = System.Drawing.Color.SpringGreen;
-            this.linkLabel31.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel31.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel31.Location = new System.Drawing.Point(161, 110);
-            this.linkLabel31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel31.Name = "linkLabel31";
-            this.linkLabel31.Size = new System.Drawing.Size(158, 8);
-            this.linkLabel31.TabIndex = 292;
-            this.linkLabel31.TabStop = true;
-            this.linkLabel31.Text = "                                                                                 " +
+            this.linkLabel51.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel51.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel51.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel51.Location = new System.Drawing.Point(168, 233);
+            this.linkLabel51.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel51.Name = "linkLabel51";
+            this.linkLabel51.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel51.TabIndex = 322;
+            this.linkLabel51.TabStop = true;
+            this.linkLabel51.Text = "                                                                                 " +
     "                                                                            ";
-            this.linkLabel31.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // tb_apellido_accion
-            // 
-            this.tb_apellido_accion.BackColor = System.Drawing.Color.DarkCyan;
-            this.tb_apellido_accion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_apellido_accion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_apellido_accion.Location = new System.Drawing.Point(163, 90);
-            this.tb_apellido_accion.Margin = new System.Windows.Forms.Padding(2);
-            this.tb_apellido_accion.Multiline = true;
-            this.tb_apellido_accion.Name = "tb_apellido_accion";
-            this.tb_apellido_accion.Size = new System.Drawing.Size(148, 17);
-            this.tb_apellido_accion.TabIndex = 290;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(31, 90);
-            this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(44, 13);
-            this.label43.TabIndex = 291;
-            this.label43.Text = "Apellido";
-            // 
-            // linkLabel32
-            // 
-            this.linkLabel32.DisabledLinkColor = System.Drawing.Color.SpringGreen;
-            this.linkLabel32.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel32.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel32.Location = new System.Drawing.Point(165, 76);
-            this.linkLabel32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel32.Name = "linkLabel32";
-            this.linkLabel32.Size = new System.Drawing.Size(158, 8);
-            this.linkLabel32.TabIndex = 289;
-            this.linkLabel32.TabStop = true;
-            this.linkLabel32.Text = "                                                                                 " +
-    "                                                                            ";
-            this.linkLabel32.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // tb_nombre_accion
-            // 
-            this.tb_nombre_accion.BackColor = System.Drawing.Color.DarkCyan;
-            this.tb_nombre_accion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_nombre_accion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_nombre_accion.Location = new System.Drawing.Point(167, 56);
-            this.tb_nombre_accion.Margin = new System.Windows.Forms.Padding(2);
-            this.tb_nombre_accion.Multiline = true;
-            this.tb_nombre_accion.Name = "tb_nombre_accion";
-            this.tb_nombre_accion.Size = new System.Drawing.Size(148, 17);
-            this.tb_nombre_accion.TabIndex = 287;
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(35, 56);
-            this.label44.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(44, 13);
-            this.label44.TabIndex = 288;
-            this.label44.Text = "Nombre";
-            // 
-            // linkLabel33
-            // 
-            this.linkLabel33.DisabledLinkColor = System.Drawing.Color.SpringGreen;
-            this.linkLabel33.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel33.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel33.Location = new System.Drawing.Point(165, 41);
-            this.linkLabel33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel33.Name = "linkLabel33";
-            this.linkLabel33.Size = new System.Drawing.Size(158, 8);
-            this.linkLabel33.TabIndex = 286;
-            this.linkLabel33.TabStop = true;
-            this.linkLabel33.Text = "                                                                                 " +
-    "                                                                            ";
-            this.linkLabel33.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // tb_cedula_accion
-            // 
-            this.tb_cedula_accion.BackColor = System.Drawing.Color.DarkCyan;
-            this.tb_cedula_accion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_cedula_accion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_cedula_accion.Location = new System.Drawing.Point(167, 21);
-            this.tb_cedula_accion.Margin = new System.Windows.Forms.Padding(2);
-            this.tb_cedula_accion.Multiline = true;
-            this.tb_cedula_accion.Name = "tb_cedula_accion";
-            this.tb_cedula_accion.Size = new System.Drawing.Size(148, 17);
-            this.tb_cedula_accion.TabIndex = 284;
-            this.tb_cedula_accion.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(35, 21);
-            this.label45.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(40, 13);
-            this.label45.TabIndex = 285;
-            this.label45.Text = "Cedula";
-            // 
-            // linkLabel34
-            // 
-            this.linkLabel34.DisabledLinkColor = System.Drawing.Color.SpringGreen;
-            this.linkLabel34.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel34.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel34.Location = new System.Drawing.Point(158, 138);
-            this.linkLabel34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel34.Name = "linkLabel34";
-            this.linkLabel34.Size = new System.Drawing.Size(158, 8);
-            this.linkLabel34.TabIndex = 301;
-            this.linkLabel34.TabStop = true;
-            this.linkLabel34.Text = "                                                                                 " +
-    "                                                                            ";
-            this.linkLabel34.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // tb_apellido_remuneracion
-            // 
-            this.tb_apellido_remuneracion.BackColor = System.Drawing.Color.DarkCyan;
-            this.tb_apellido_remuneracion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_apellido_remuneracion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_apellido_remuneracion.Location = new System.Drawing.Point(160, 118);
-            this.tb_apellido_remuneracion.Margin = new System.Windows.Forms.Padding(2);
-            this.tb_apellido_remuneracion.Multiline = true;
-            this.tb_apellido_remuneracion.Name = "tb_apellido_remuneracion";
-            this.tb_apellido_remuneracion.Size = new System.Drawing.Size(148, 17);
-            this.tb_apellido_remuneracion.TabIndex = 299;
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(28, 118);
-            this.label46.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(44, 13);
-            this.label46.TabIndex = 300;
-            this.label46.Text = "Apellido";
-            // 
-            // linkLabel35
-            // 
-            this.linkLabel35.DisabledLinkColor = System.Drawing.Color.SpringGreen;
-            this.linkLabel35.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel35.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel35.Location = new System.Drawing.Point(162, 104);
-            this.linkLabel35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel35.Name = "linkLabel35";
-            this.linkLabel35.Size = new System.Drawing.Size(158, 8);
-            this.linkLabel35.TabIndex = 298;
-            this.linkLabel35.TabStop = true;
-            this.linkLabel35.Text = "                                                                                 " +
-    "                                                                            ";
-            this.linkLabel35.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // tb_nombre_renumeracion
-            // 
-            this.tb_nombre_renumeracion.BackColor = System.Drawing.Color.DarkCyan;
-            this.tb_nombre_renumeracion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_nombre_renumeracion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_nombre_renumeracion.Location = new System.Drawing.Point(164, 84);
-            this.tb_nombre_renumeracion.Margin = new System.Windows.Forms.Padding(2);
-            this.tb_nombre_renumeracion.Multiline = true;
-            this.tb_nombre_renumeracion.Name = "tb_nombre_renumeracion";
-            this.tb_nombre_renumeracion.Size = new System.Drawing.Size(148, 17);
-            this.tb_nombre_renumeracion.TabIndex = 296;
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(32, 84);
-            this.label47.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(44, 13);
-            this.label47.TabIndex = 297;
-            this.label47.Text = "Nombre";
-            // 
-            // linkLabel36
-            // 
-            this.linkLabel36.DisabledLinkColor = System.Drawing.Color.SpringGreen;
-            this.linkLabel36.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel36.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel36.Location = new System.Drawing.Point(162, 69);
-            this.linkLabel36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel36.Name = "linkLabel36";
-            this.linkLabel36.Size = new System.Drawing.Size(158, 8);
-            this.linkLabel36.TabIndex = 295;
-            this.linkLabel36.TabStop = true;
-            this.linkLabel36.Text = "                                                                                 " +
-    "                                                                            ";
-            this.linkLabel36.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // tb_cedula_remuneracion
-            // 
-            this.tb_cedula_remuneracion.BackColor = System.Drawing.Color.DarkCyan;
-            this.tb_cedula_remuneracion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_cedula_remuneracion.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_cedula_remuneracion.Location = new System.Drawing.Point(164, 49);
-            this.tb_cedula_remuneracion.Margin = new System.Windows.Forms.Padding(2);
-            this.tb_cedula_remuneracion.Multiline = true;
-            this.tb_cedula_remuneracion.Name = "tb_cedula_remuneracion";
-            this.tb_cedula_remuneracion.Size = new System.Drawing.Size(148, 17);
-            this.tb_cedula_remuneracion.TabIndex = 293;
-            this.tb_cedula_remuneracion.TextChanged += new System.EventHandler(this.tb_cedula_remuneracion_TextChanged);
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(32, 49);
-            this.label48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(40, 13);
-            this.label48.TabIndex = 294;
-            this.label48.Text = "Cedula";
-            // 
-            // linkLabel37
-            // 
-            this.linkLabel37.DisabledLinkColor = System.Drawing.Color.SpringGreen;
-            this.linkLabel37.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel37.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel37.Location = new System.Drawing.Point(153, 147);
-            this.linkLabel37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel37.Name = "linkLabel37";
-            this.linkLabel37.Size = new System.Drawing.Size(158, 8);
-            this.linkLabel37.TabIndex = 310;
-            this.linkLabel37.TabStop = true;
-            this.linkLabel37.Text = "                                                                                 " +
-    "                                                                            ";
-            this.linkLabel37.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // tb_apellido_extras_corriente
-            // 
-            this.tb_apellido_extras_corriente.BackColor = System.Drawing.Color.DarkCyan;
-            this.tb_apellido_extras_corriente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_apellido_extras_corriente.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_apellido_extras_corriente.Location = new System.Drawing.Point(155, 127);
-            this.tb_apellido_extras_corriente.Margin = new System.Windows.Forms.Padding(2);
-            this.tb_apellido_extras_corriente.Multiline = true;
-            this.tb_apellido_extras_corriente.Name = "tb_apellido_extras_corriente";
-            this.tb_apellido_extras_corriente.Size = new System.Drawing.Size(148, 17);
-            this.tb_apellido_extras_corriente.TabIndex = 308;
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(23, 127);
-            this.label49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(44, 13);
-            this.label49.TabIndex = 309;
-            this.label49.Text = "Apellido";
-            // 
-            // linkLabel38
-            // 
-            this.linkLabel38.DisabledLinkColor = System.Drawing.Color.SpringGreen;
-            this.linkLabel38.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel38.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel38.Location = new System.Drawing.Point(157, 113);
-            this.linkLabel38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel38.Name = "linkLabel38";
-            this.linkLabel38.Size = new System.Drawing.Size(158, 8);
-            this.linkLabel38.TabIndex = 307;
-            this.linkLabel38.TabStop = true;
-            this.linkLabel38.Text = "                                                                                 " +
-    "                                                                            ";
-            this.linkLabel38.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // tb_nombre_extras_corrientes
-            // 
-            this.tb_nombre_extras_corrientes.BackColor = System.Drawing.Color.DarkCyan;
-            this.tb_nombre_extras_corrientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_nombre_extras_corrientes.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_nombre_extras_corrientes.Location = new System.Drawing.Point(159, 93);
-            this.tb_nombre_extras_corrientes.Margin = new System.Windows.Forms.Padding(2);
-            this.tb_nombre_extras_corrientes.Multiline = true;
-            this.tb_nombre_extras_corrientes.Name = "tb_nombre_extras_corrientes";
-            this.tb_nombre_extras_corrientes.Size = new System.Drawing.Size(148, 17);
-            this.tb_nombre_extras_corrientes.TabIndex = 305;
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(27, 93);
-            this.label50.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(44, 13);
-            this.label50.TabIndex = 306;
-            this.label50.Text = "Nombre";
-            // 
-            // linkLabel39
-            // 
-            this.linkLabel39.DisabledLinkColor = System.Drawing.Color.SpringGreen;
-            this.linkLabel39.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel39.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel39.Location = new System.Drawing.Point(157, 78);
-            this.linkLabel39.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel39.Name = "linkLabel39";
-            this.linkLabel39.Size = new System.Drawing.Size(158, 8);
-            this.linkLabel39.TabIndex = 304;
-            this.linkLabel39.TabStop = true;
-            this.linkLabel39.Text = "                                                                                 " +
-    "                                                                            ";
-            this.linkLabel39.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // tb_cedula_extra_corriente
-            // 
-            this.tb_cedula_extra_corriente.BackColor = System.Drawing.Color.DarkCyan;
-            this.tb_cedula_extra_corriente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_cedula_extra_corriente.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_cedula_extra_corriente.Location = new System.Drawing.Point(159, 58);
-            this.tb_cedula_extra_corriente.Margin = new System.Windows.Forms.Padding(2);
-            this.tb_cedula_extra_corriente.Multiline = true;
-            this.tb_cedula_extra_corriente.Name = "tb_cedula_extra_corriente";
-            this.tb_cedula_extra_corriente.Size = new System.Drawing.Size(148, 17);
-            this.tb_cedula_extra_corriente.TabIndex = 302;
-            this.tb_cedula_extra_corriente.TextChanged += new System.EventHandler(this.tb_cedula_extra_corriente_TextChanged);
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(27, 58);
-            this.label51.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(40, 13);
-            this.label51.TabIndex = 303;
-            this.label51.Text = "Cedula";
-            // 
-            // linkLabel40
-            // 
-            this.linkLabel40.DisabledLinkColor = System.Drawing.Color.SpringGreen;
-            this.linkLabel40.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel40.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel40.Location = new System.Drawing.Point(173, 129);
-            this.linkLabel40.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel40.Name = "linkLabel40";
-            this.linkLabel40.Size = new System.Drawing.Size(158, 8);
-            this.linkLabel40.TabIndex = 319;
-            this.linkLabel40.TabStop = true;
-            this.linkLabel40.Text = "                                                                                 " +
-    "                                                                            ";
-            this.linkLabel40.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // tb_apellido_extraordinario
-            // 
-            this.tb_apellido_extraordinario.BackColor = System.Drawing.Color.DarkCyan;
-            this.tb_apellido_extraordinario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_apellido_extraordinario.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_apellido_extraordinario.Location = new System.Drawing.Point(175, 109);
-            this.tb_apellido_extraordinario.Margin = new System.Windows.Forms.Padding(2);
-            this.tb_apellido_extraordinario.Multiline = true;
-            this.tb_apellido_extraordinario.Name = "tb_apellido_extraordinario";
-            this.tb_apellido_extraordinario.Size = new System.Drawing.Size(148, 17);
-            this.tb_apellido_extraordinario.TabIndex = 317;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(43, 109);
-            this.label52.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(44, 13);
-            this.label52.TabIndex = 318;
-            this.label52.Text = "Apellido";
-            // 
-            // linkLabel41
-            // 
-            this.linkLabel41.DisabledLinkColor = System.Drawing.Color.SpringGreen;
-            this.linkLabel41.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel41.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel41.Location = new System.Drawing.Point(177, 95);
-            this.linkLabel41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel41.Name = "linkLabel41";
-            this.linkLabel41.Size = new System.Drawing.Size(158, 8);
-            this.linkLabel41.TabIndex = 316;
-            this.linkLabel41.TabStop = true;
-            this.linkLabel41.Text = "                                                                                 " +
-    "                                                                            ";
-            this.linkLabel41.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // tb_nombre_extraordinario
-            // 
-            this.tb_nombre_extraordinario.BackColor = System.Drawing.Color.DarkCyan;
-            this.tb_nombre_extraordinario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_nombre_extraordinario.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_nombre_extraordinario.Location = new System.Drawing.Point(179, 75);
-            this.tb_nombre_extraordinario.Margin = new System.Windows.Forms.Padding(2);
-            this.tb_nombre_extraordinario.Multiline = true;
-            this.tb_nombre_extraordinario.Name = "tb_nombre_extraordinario";
-            this.tb_nombre_extraordinario.Size = new System.Drawing.Size(148, 17);
-            this.tb_nombre_extraordinario.TabIndex = 314;
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(47, 75);
-            this.label53.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(44, 13);
-            this.label53.TabIndex = 315;
-            this.label53.Text = "Nombre";
-            // 
-            // linkLabel42
-            // 
-            this.linkLabel42.DisabledLinkColor = System.Drawing.Color.SpringGreen;
-            this.linkLabel42.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel42.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel42.Location = new System.Drawing.Point(177, 60);
-            this.linkLabel42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel42.Name = "linkLabel42";
-            this.linkLabel42.Size = new System.Drawing.Size(158, 8);
-            this.linkLabel42.TabIndex = 313;
-            this.linkLabel42.TabStop = true;
-            this.linkLabel42.Text = "                                                                                 " +
-    "                                                                            ";
-            this.linkLabel42.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // tb_cedula_extraordinario
-            // 
-            this.tb_cedula_extraordinario.BackColor = System.Drawing.Color.DarkCyan;
-            this.tb_cedula_extraordinario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_cedula_extraordinario.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_cedula_extraordinario.Location = new System.Drawing.Point(179, 40);
-            this.tb_cedula_extraordinario.Margin = new System.Windows.Forms.Padding(2);
-            this.tb_cedula_extraordinario.Multiline = true;
-            this.tb_cedula_extraordinario.Name = "tb_cedula_extraordinario";
-            this.tb_cedula_extraordinario.Size = new System.Drawing.Size(148, 17);
-            this.tb_cedula_extraordinario.TabIndex = 311;
-            this.tb_cedula_extraordinario.TextChanged += new System.EventHandler(this.tb_cedula_extraordinario_TextChanged);
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(47, 40);
-            this.label54.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(40, 13);
-            this.label54.TabIndex = 312;
-            this.label54.Text = "Cedula";
-            // 
-            // linkLabel43
-            // 
-            this.linkLabel43.DisabledLinkColor = System.Drawing.Color.SpringGreen;
-            this.linkLabel43.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel43.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel43.Location = new System.Drawing.Point(162, 141);
-            this.linkLabel43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel43.Name = "linkLabel43";
-            this.linkLabel43.Size = new System.Drawing.Size(158, 8);
-            this.linkLabel43.TabIndex = 328;
-            this.linkLabel43.TabStop = true;
-            this.linkLabel43.Text = "                                                                                 " +
-    "                                                                            ";
-            this.linkLabel43.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // tb_apellido_incapacidades
-            // 
-            this.tb_apellido_incapacidades.BackColor = System.Drawing.Color.DarkCyan;
-            this.tb_apellido_incapacidades.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_apellido_incapacidades.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_apellido_incapacidades.Location = new System.Drawing.Point(164, 121);
-            this.tb_apellido_incapacidades.Margin = new System.Windows.Forms.Padding(2);
-            this.tb_apellido_incapacidades.Multiline = true;
-            this.tb_apellido_incapacidades.Name = "tb_apellido_incapacidades";
-            this.tb_apellido_incapacidades.Size = new System.Drawing.Size(148, 17);
-            this.tb_apellido_incapacidades.TabIndex = 326;
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(32, 121);
-            this.label55.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(44, 13);
-            this.label55.TabIndex = 327;
-            this.label55.Text = "Apellido";
-            // 
-            // linkLabel44
-            // 
-            this.linkLabel44.DisabledLinkColor = System.Drawing.Color.SpringGreen;
-            this.linkLabel44.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel44.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel44.Location = new System.Drawing.Point(166, 107);
-            this.linkLabel44.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel44.Name = "linkLabel44";
-            this.linkLabel44.Size = new System.Drawing.Size(158, 8);
-            this.linkLabel44.TabIndex = 325;
-            this.linkLabel44.TabStop = true;
-            this.linkLabel44.Text = "                                                                                 " +
-    "                                                                            ";
-            this.linkLabel44.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // tb_nombre_incapacidades
-            // 
-            this.tb_nombre_incapacidades.BackColor = System.Drawing.Color.DarkCyan;
-            this.tb_nombre_incapacidades.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_nombre_incapacidades.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_nombre_incapacidades.Location = new System.Drawing.Point(168, 87);
-            this.tb_nombre_incapacidades.Margin = new System.Windows.Forms.Padding(2);
-            this.tb_nombre_incapacidades.Multiline = true;
-            this.tb_nombre_incapacidades.Name = "tb_nombre_incapacidades";
-            this.tb_nombre_incapacidades.Size = new System.Drawing.Size(148, 17);
-            this.tb_nombre_incapacidades.TabIndex = 323;
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(36, 87);
-            this.label56.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(44, 13);
-            this.label56.TabIndex = 324;
-            this.label56.Text = "Nombre";
-            // 
-            // linkLabel45
-            // 
-            this.linkLabel45.DisabledLinkColor = System.Drawing.Color.SpringGreen;
-            this.linkLabel45.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel45.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel45.Location = new System.Drawing.Point(166, 72);
-            this.linkLabel45.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel45.Name = "linkLabel45";
-            this.linkLabel45.Size = new System.Drawing.Size(158, 8);
-            this.linkLabel45.TabIndex = 322;
-            this.linkLabel45.TabStop = true;
-            this.linkLabel45.Text = "                                                                                 " +
-    "                                                                            ";
-            this.linkLabel45.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // tb_cedula_incapacidades
-            // 
-            this.tb_cedula_incapacidades.BackColor = System.Drawing.Color.DarkCyan;
-            this.tb_cedula_incapacidades.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_cedula_incapacidades.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_cedula_incapacidades.Location = new System.Drawing.Point(168, 52);
-            this.tb_cedula_incapacidades.Margin = new System.Windows.Forms.Padding(2);
-            this.tb_cedula_incapacidades.Multiline = true;
-            this.tb_cedula_incapacidades.Name = "tb_cedula_incapacidades";
-            this.tb_cedula_incapacidades.Size = new System.Drawing.Size(148, 17);
-            this.tb_cedula_incapacidades.TabIndex = 320;
-            this.tb_cedula_incapacidades.TextChanged += new System.EventHandler(this.tb_cedula_incapacidades_TextChanged);
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(36, 52);
-            this.label57.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(40, 13);
-            this.label57.TabIndex = 321;
-            this.label57.Text = "Cedula";
+            this.linkLabel51.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_extraordinario
+            // 
+            this.tb_extraordinario.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_extraordinario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_extraordinario.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_extraordinario.Location = new System.Drawing.Point(168, 214);
+            this.tb_extraordinario.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_extraordinario.Multiline = true;
+            this.tb_extraordinario.Name = "tb_extraordinario";
+            this.tb_extraordinario.Size = new System.Drawing.Size(148, 17);
+            this.tb_extraordinario.TabIndex = 321;
+            this.tb_extraordinario.TextChanged += new System.EventHandler(this.tb_extraordinario_TextChanged);
             // 
             // Frm_pagos
             // 
@@ -3493,7 +3797,6 @@
         internal System.Windows.Forms.TextBox tb_monto_cancelar_extras;
         internal System.Windows.Forms.Label label8;
         internal System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DateTimePicker dtp_extraordinario;
         internal System.Windows.Forms.LinkLabel linkLabel6;
         internal System.Windows.Forms.TextBox tb_monto_extraordinario;
         internal System.Windows.Forms.Label label10;
@@ -3508,11 +3811,8 @@
         private System.Windows.Forms.RichTextBox rtb_observaciones_personal;
         internal System.Windows.Forms.Label label28;
         internal System.Windows.Forms.Label label27;
-        private System.Windows.Forms.DateTimePicker dtp_fecha_pago_personal;
         internal System.Windows.Forms.Label label25;
-        private System.Windows.Forms.DateTimePicker dtp_hasta_personal;
         internal System.Windows.Forms.Label label24;
-        private System.Windows.Forms.DateTimePicker dtp_desde_personal;
         internal System.Windows.Forms.LinkLabel linkLabel15;
         internal System.Windows.Forms.TextBox tb_puesto_personal;
         internal System.Windows.Forms.Label label23;
@@ -3569,8 +3869,6 @@
         internal System.Windows.Forms.Label label22;
         internal System.Windows.Forms.ComboBox cb_extras_busqueda;
         internal System.Windows.Forms.ComboBox cb_busqueda_extraordinario;
-        private System.Windows.Forms.DateTimePicker dtp_fechavacaciones_personal;
-        private System.Windows.Forms.DateTimePicker dtp_fechaescala_personal;
         protected internal System.Windows.Forms.Label label26;
         internal System.Windows.Forms.Label label31;
         internal System.Windows.Forms.LinkLabel linkLabel17;
@@ -3591,7 +3889,7 @@
         private System.Windows.Forms.DateTimePicker dtp_desde_reporte;
         internal System.Windows.Forms.Label lb_desde_reporte;
         private System.Windows.Forms.DateTimePicker dtp_fecha_reporte;
-        internal System.Windows.Forms.ComboBox cb_departamento;
+        internal System.Windows.Forms.ComboBox cb_departamento_extraordinario;
         internal System.Windows.Forms.Label label33;
         internal System.Windows.Forms.LinkLabel linkLabel24;
         internal System.Windows.Forms.TextBox tb_codigo_remuneracion;
@@ -3685,5 +3983,23 @@
         internal System.Windows.Forms.LinkLabel linkLabel45;
         internal System.Windows.Forms.TextBox tb_cedula_incapacidades;
         internal System.Windows.Forms.Label label57;
+        internal System.Windows.Forms.LinkLabel linkLabel46;
+        internal System.Windows.Forms.TextBox tb_desde_personal;
+        internal System.Windows.Forms.LinkLabel linkLabel47;
+        internal System.Windows.Forms.TextBox tb_hasta_personal;
+        internal System.Windows.Forms.LinkLabel linkLabel49;
+        internal System.Windows.Forms.TextBox tb_fechavacaciones_personal;
+        internal System.Windows.Forms.LinkLabel linkLabel48;
+        internal System.Windows.Forms.TextBox tb_fechaescala_personal;
+        internal System.Windows.Forms.LinkLabel linkLabel50;
+        internal System.Windows.Forms.TextBox tb_fecha_pago_personal;
+        internal System.Windows.Forms.Button btn_limpiar_personal;
+        internal System.Windows.Forms.Button button20;
+        internal System.Windows.Forms.Button button21;
+        internal System.Windows.Forms.Button button22;
+        internal System.Windows.Forms.Button button23;
+        internal System.Windows.Forms.Button button24;
+        internal System.Windows.Forms.LinkLabel linkLabel51;
+        internal System.Windows.Forms.TextBox tb_extraordinario;
     }
 }
