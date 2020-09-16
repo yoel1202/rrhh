@@ -125,7 +125,6 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.tb_codigo_plaza_extras = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dtp_fecha_pago_extras = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.tiempo_extraordinario = new System.Windows.Forms.TabPage();
             this.button23 = new System.Windows.Forms.Button();
@@ -276,6 +275,8 @@
             this.dgv_registro = new System.Windows.Forms.DataGridView();
             this.linkLabel51 = new System.Windows.Forms.LinkLabel();
             this.tb_extraordinario = new System.Windows.Forms.TextBox();
+            this.linkLabel52 = new System.Windows.Forms.LinkLabel();
+            this.tb_fecha_pago_extras = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.empleado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empleado)).BeginInit();
@@ -1234,6 +1235,8 @@
             // extras_corrientes
             // 
             this.extras_corrientes.BackColor = System.Drawing.Color.DarkCyan;
+            this.extras_corrientes.Controls.Add(this.linkLabel52);
+            this.extras_corrientes.Controls.Add(this.tb_fecha_pago_extras);
             this.extras_corrientes.Controls.Add(this.button22);
             this.extras_corrientes.Controls.Add(this.linkLabel37);
             this.extras_corrientes.Controls.Add(this.tb_apellido_extras_corriente);
@@ -1261,7 +1264,6 @@
             this.extras_corrientes.Controls.Add(this.linkLabel1);
             this.extras_corrientes.Controls.Add(this.tb_codigo_plaza_extras);
             this.extras_corrientes.Controls.Add(this.label2);
-            this.extras_corrientes.Controls.Add(this.dtp_fecha_pago_extras);
             this.extras_corrientes.Controls.Add(this.label1);
             this.extras_corrientes.Location = new System.Drawing.Point(4, 22);
             this.extras_corrientes.Name = "extras_corrientes";
@@ -1647,13 +1649,6 @@
             this.label2.Size = new System.Drawing.Size(109, 19);
             this.label2.TabIndex = 230;
             this.label2.Text = "Codigo de Plaza";
-            // 
-            // dtp_fecha_pago_extras
-            // 
-            this.dtp_fecha_pago_extras.Location = new System.Drawing.Point(150, 167);
-            this.dtp_fecha_pago_extras.Name = "dtp_fecha_pago_extras";
-            this.dtp_fecha_pago_extras.Size = new System.Drawing.Size(200, 20);
-            this.dtp_fecha_pago_extras.TabIndex = 228;
             // 
             // label1
             // 
@@ -3697,6 +3692,34 @@
             this.tb_extraordinario.TabIndex = 321;
             this.tb_extraordinario.TextChanged += new System.EventHandler(this.tb_extraordinario_TextChanged);
             // 
+            // linkLabel52
+            // 
+            this.linkLabel52.DisabledLinkColor = System.Drawing.Color.SpringGreen;
+            this.linkLabel52.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel52.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel52.Location = new System.Drawing.Point(155, 186);
+            this.linkLabel52.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel52.Name = "linkLabel52";
+            this.linkLabel52.Size = new System.Drawing.Size(158, 8);
+            this.linkLabel52.TabIndex = 324;
+            this.linkLabel52.TabStop = true;
+            this.linkLabel52.Text = "                                                                                 " +
+    "                                                                            ";
+            this.linkLabel52.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_fecha_pago_extras
+            // 
+            this.tb_fecha_pago_extras.BackColor = System.Drawing.Color.DarkCyan;
+            this.tb_fecha_pago_extras.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_fecha_pago_extras.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_fecha_pago_extras.Location = new System.Drawing.Point(155, 167);
+            this.tb_fecha_pago_extras.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_fecha_pago_extras.Multiline = true;
+            this.tb_fecha_pago_extras.Name = "tb_fecha_pago_extras";
+            this.tb_fecha_pago_extras.Size = new System.Drawing.Size(148, 17);
+            this.tb_fecha_pago_extras.TabIndex = 323;
+            this.tb_fecha_pago_extras.TextChanged += new System.EventHandler(this.tb_fecha_pago_extras_TextChanged);
+            // 
             // Frm_pagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3791,7 +3814,6 @@
         internal System.Windows.Forms.LinkLabel linkLabel1;
         internal System.Windows.Forms.TextBox tb_codigo_plaza_extras;
         internal System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dtp_fecha_pago_extras;
         internal System.Windows.Forms.Label label1;
         internal System.Windows.Forms.LinkLabel linkLabel4;
         internal System.Windows.Forms.TextBox tb_monto_cancelar_extras;
@@ -4001,5 +4023,7 @@
         internal System.Windows.Forms.Button button24;
         internal System.Windows.Forms.LinkLabel linkLabel51;
         internal System.Windows.Forms.TextBox tb_extraordinario;
+        internal System.Windows.Forms.LinkLabel linkLabel52;
+        internal System.Windows.Forms.TextBox tb_fecha_pago_extras;
     }
 }

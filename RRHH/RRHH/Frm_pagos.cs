@@ -595,7 +595,7 @@ namespace RRHH
                 {
                     if (actualizarmontodisminuir("Extras corrientes medicas", tb_monto_cancelar_extras))
                     {
-                        if (conexion.querycomando("Insert into tbl_extras_medicas(fecha_pago,codigo_plaza,cantidad_horas,monto_cancelar,fecha_registro_extras) VALUES('" + dtp_fecha_pago_extras.Value.Date + "','" + tb_codigo_plaza_extras.Text.ToString() + "','" + tb_cantidad_extras.Text + "','" + tb_monto_cancelar_extras.Text + "',GETDATE())"))
+                        if (conexion.querycomando("Insert into tbl_extras_medicas(fecha_pago,codigo_plaza,cantidad_horas,monto_cancelar,fecha_registro_extras) VALUES('" + DateTime.Parse(tb_fecha_pago_extras.Text).ToString("dd/M/yyyy HH:mm:ss") + "','" + tb_codigo_plaza_extras.Text.ToString() + "','" + tb_cantidad_extras.Text + "','" + tb_monto_cancelar_extras.Text + "',GETDATE())"))
                         {
                             DataSet ds;
                             ds = conexion.sqlconsulta("SELECT * FROM tbl_extras_medicas WHERE id_extras = (SELECT MAX(id_extras) FROM tbl_extras_medicas)");
@@ -638,7 +638,7 @@ namespace RRHH
                     {
                         actualizarmontodisminuir("Extras corrientes medicas", tb_monto_cancelar_extras);
 
-                        if (conexion.querycomando("Update tbl_extras_medicas set fecha_pago='" + dtp_fecha_pago_extras.Value.Date + "',codigo_plaza='" + tb_codigo_plaza_extras.Text + "', cantidad_horas='" + tb_cantidad_extras.Text + "', monto_cancelar='" + tb_monto_cancelar_extras.Text + "', WHERE id_extras='" + ID_extras.ToString() + "'"))
+                        if (conexion.querycomando("Update tbl_extras_medicas set fecha_pago='" + DateTime.Parse(tb_fecha_pago_extras.Text).ToString("dd/M/yyyy HH:mm:ss") + "',codigo_plaza='" + tb_codigo_plaza_extras.Text + "', cantidad_horas='" + tb_cantidad_extras.Text + "', monto_cancelar='" + tb_monto_cancelar_extras.Text + "', WHERE id_extras='" + ID_extras.ToString() + "'"))
                         {
                             conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario) VALUES('" + ID_extras + "','EXTRAS','ACTUALIZO ESTE REGISTRO UN REGISTRO','" + usuario + "')");
                             MessageBox.Show("Se ha actualizado correctamente");
@@ -670,7 +670,7 @@ namespace RRHH
             {
                 seleccionarextras = true;
                 ID_extras = int.Parse(dgv_extras_corrientes.Rows[e.RowIndex].Cells[0].Value.ToString());
-                dtp_fecha_pago_extras.Text = dgv_extras_corrientes.Rows[e.RowIndex].Cells[1].Value.ToString();
+                tb_fecha_pago_extras.Text = dgv_extras_corrientes.Rows[e.RowIndex].Cells[1].Value.ToString();
                 tb_codigo_plaza_extras.Text = dgv_extras_corrientes.Rows[e.RowIndex].Cells[2].Value.ToString();
                 tb_cantidad_extras.Text = dgv_extras_corrientes.Rows[e.RowIndex].Cells[3].Value.ToString();
                 tb_monto_cancelar_extras.Text = dgv_extras_corrientes.Rows[e.RowIndex].Cells[4].Value.ToString();
@@ -694,7 +694,7 @@ namespace RRHH
                 {
                     if (conexion.querycomando("DELETE FROM tbl_extras_medicas_empleados WHERE fk_extras='" + ID_extras.ToString() + "' "))
                     {
-                        conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario,fecha_registro,registro) VALUES('" + ID_remuneracion.ToString() + "','EXTRAS','ELIMINO UN REGISTRO','" + usuario + "',GETDATE(),'" + " FECHA DE PAGO: " + dtp_fecha_pago_extras.Text.ToString() + " CODIGO DE PLAZA: " + tb_codigo_plaza_extras.Text + " CANTIDAD DE HORAS: " + tb_cantidad_extras.Text + " MONTO: " + tb_monto_cancelar_extras.Text + "' )");
+                        conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario,fecha_registro,registro) VALUES('" + ID_remuneracion.ToString() + "','EXTRAS','ELIMINO UN REGISTRO','" + usuario + "',GETDATE(),'" + " FECHA DE PAGO: " + tb_fecha_pago_extras.Text.ToString() + " CODIGO DE PLAZA: " + tb_codigo_plaza_extras.Text + " CANTIDAD DE HORAS: " + tb_cantidad_extras.Text + " MONTO: " + tb_monto_cancelar_extras.Text + "' )");
                         if (conexion.querycomando("DELETE FROM tbl_extras_medicas WHERE id_extras='" + ID_extras.ToString() + "' "))
                         {
 
@@ -2905,7 +2905,7 @@ namespace RRHH
 
         private void button22_Click(object sender, EventArgs e)
         {
-            dtp_fecha_pago_extras.Value = DateTime.Now;
+            tb_fecha_pago_extras.Clear();
             tb_cantidad_extras.Clear();
              tb_codigo_plaza_extras.Clear();
             tb_monto_cancelar_extras.Clear();
@@ -2951,6 +2951,27 @@ namespace RRHH
 
                     //Use the DateTime.ToString() method to store the value of the DateTime into your TextBox
                     tb_extraordinario.Text = yourDate.ToString("dd/MM/yyyy");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("El formato de fecha es incorrecto este debe contener el siguiente formato (20-02-1978) por favor verificar");
+
+            }
+        }
+
+        private void tb_fecha_pago_extras_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tb_fecha_pago_extras.Text.Length >= 10)
+                {
+
+                    //Store your database DateTime value into a variable
+                    DateTime yourDate = DateTime.Parse(tb_fecha_pago_extras.Text);
+
+                    //Use the DateTime.ToString() method to store the value of the DateTime into your TextBox
+                    tb_fecha_pago_extras.Text = yourDate.ToString("dd/MM/yyyy");
                 }
             }
             catch (Exception ex)
