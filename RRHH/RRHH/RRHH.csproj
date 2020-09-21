@@ -90,6 +90,12 @@
       <DependentUpon>caracteristicas.cs</DependentUpon>
     </Compile>
     <Compile Include="CONEXION\BDconeccion.cs" />
+    <Compile Include="FRM_ACERCADE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_ACERCADE.Designer.cs">
+      <DependentUpon>FRM_ACERCADE.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_configuraciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="caracteristicas.resx">
       <DependentUpon>caracteristicas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_ACERCADE.resx">
+      <DependentUpon>FRM_ACERCADE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_configuraciones.resx">
       <DependentUpon>Frm_configuraciones.cs</DependentUpon>

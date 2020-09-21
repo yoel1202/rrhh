@@ -151,3 +151,4 @@ C:\Users\Sirias\Documents\GitHub\rrhh\RRHH\RRHH\obj\Debug\RRHH.csproj.CoreCompil
 C:\Users\Sirias\Documents\GitHub\rrhh\RRHH\RRHH\obj\Debug\RRHH.csproj.CopyComplete
 C:\Users\Sirias\Documents\GitHub\rrhh\RRHH\RRHH\obj\Debug\RRHH.exe
 C:\Users\Sirias\Documents\GitHub\rrhh\RRHH\RRHH\obj\Debug\RRHH.pdb
+C:\Users\HP\Documents\GitHub\rrhh\RRHH\RRHH\obj\Debug\RRHH.FRM_ACERCADE.resources

@@ -30,7 +30,7 @@ namespace RRHH
             pictureBox1.Hide();
             PictureBox3.SetBounds(this.Width - 80, 25, PictureBox3.Width, PictureBox3.Height);
             Label6.Hide();
-            DataGridView1.Hide();
+            //DataGridView1.Hide();
             ComboBox1.SelectedIndex = 0;
             
            
@@ -85,22 +85,27 @@ namespace RRHH
         // cumple la funcion de guardar se llama el metodo querycomando de la clase conexion para insertar los datos 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (validartexbox(tb_codigo) & validartexbox(tb_puesto) )
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+  MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+  MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
-                if (conexion.querycomando("Insert into tbl_plazas(puesto,codigo,u_p) VALUES('" + tb_puesto.Text + "','" + tb_codigo.Text + "','"+tb_up.Text+"')"))
-                    MessageBox.Show("Se ha guardado correctamente");
-                else
-                    MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                if (validartexbox(tb_codigo) & validartexbox(tb_puesto))
+                {
+                    if (conexion.querycomando("Insert into tbl_plazas(puesto,codigo,u_p) VALUES('" + tb_puesto.Text + "','" + tb_codigo.Text + "','" + tb_up.Text + "')"))
+                        MessageBox.Show("Se ha guardado correctamente");
+                    else
+                        MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
 
-                actualizardato();
-                tb_codigo.Clear();
-                tb_puesto.Clear();
-                tb_up.Clear();
-              
-         
+                    actualizardato();
+                    tb_codigo.Clear();
+                    tb_puesto.Clear();
+                    tb_up.Clear();
+
+
+                }
+                else
+                    MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
             }
-            else
-                MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
         }
         //esta funcion actualiza los datos del tabla cuando se inserte se actualize o se elimine
         public void actualizardato()
@@ -115,48 +120,58 @@ namespace RRHH
         // cumple la funcion de eliminar se llama el metodo querycomando de la clase conexion para eliminar los datos 
         private void Button3_Click(object sender, EventArgs e)
         {
-            if (validartexbox(tb_codigo) & validartexbox(tb_puesto)  )
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+  MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+  MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
-                if (seleccionarusuario)
+                if (validartexbox(tb_codigo) & validartexbox(tb_puesto))
                 {
-                    if (conexion.querycomando("Update tbl_plazas set codigo='" + tb_codigo.Text + "',puesto='" + tb_puesto.Text + "', u_p='"+tb_up.Text+"'  WHERE id_departamento='" + ID_usuario.ToString() + "'"))
-                        MessageBox.Show("Se ha actualizado correctamente");
+                    if (seleccionarusuario)
+                    {
+                        if (conexion.querycomando("Update tbl_plazas set codigo='" + tb_codigo.Text + "',puesto='" + tb_puesto.Text + "', u_p='" + tb_up.Text + "'  WHERE id_departamento='" + ID_usuario.ToString() + "'"))
+                            MessageBox.Show("Se ha actualizado correctamente");
+                        else
+                            MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                    }
                     else
-                        MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                        MessageBox.Show("Seleccione algun cliente para realizar esta accion");
+
+                    seleccionarusuario = false;
+                    actualizardato();
+                    tb_codigo.Clear();
+                    tb_puesto.Clear();
+                    tb_up.Clear();
+
                 }
                 else
-                    MessageBox.Show("Seleccione algun cliente para realizar esta accion");
-
-                seleccionarusuario = false;
-                actualizardato();
-                tb_codigo.Clear();
-                tb_puesto.Clear();
-                tb_up.Clear();
-               
+                    MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
             }
-            else
-                MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
         }
         // cumple la funcion de eliminar se llama el metodo querycomando de la clase conexion para eliminar los datos 
         private void Button2_Click(object sender, EventArgs e)
         {
-            if (seleccionarusuario)
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+  MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+  MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
-                if (conexion.querycomando("DELETE FROM tbl_plazas WHERE id_plaza='" + ID_usuario.ToString() + "' "))
-                    MessageBox.Show("Se ha eliminado correctamente");
-                else
-                    MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                if (seleccionarusuario)
+                {
+                    if (conexion.querycomando("DELETE FROM tbl_plazas WHERE id_plaza='" + ID_usuario.ToString() + "' "))
+                        MessageBox.Show("Se ha eliminado correctamente");
+                    else
+                        MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
 
-                tb_codigo.Clear();
-                tb_puesto.Clear();
-                tb_up.Clear();
-              
-              
-                actualizardato();
-                seleccionarusuario = false;
+                    tb_codigo.Clear();
+                    tb_puesto.Clear();
+                    tb_up.Clear();
+
+
+                    actualizardato();
+                    seleccionarusuario = false;
+                }
+                else
+                    MessageBox.Show("Seleccione un empleado de la lista");
             }
-            else
-                MessageBox.Show("Seleccione un empleado de la lista");
         }
         // medoto seleciona los datos de la datgrieview y los pones en los campos para cumplir con la funcionar actualizar y eliminar
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

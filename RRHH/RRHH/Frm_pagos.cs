@@ -180,27 +180,60 @@ namespace RRHH
 
         private void button6_Click(object sender, EventArgs e)
         {
-            // valida los texbox que no esten en blanco
-            if (validartexbox(tb_monto_remuneracion) & validartexbox(tb_movimiento_remuneracion))
+
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+    MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+    MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
-                // verifica si el empleado esta selecciona
-                if (seleccionarempleado)
+                //TODO: Stuff
+
+                // valida los texbox que no esten en blanco
+                if (validartexbox(tb_monto_remuneracion) & validartexbox(tb_movimiento_remuneracion))
                 {
-                    // identifica el tipo de renumeracion 
-                    if (cb_tipo_renumeracion.SelectedItem.ToString() == "remuneracion por vacaciones")
+                    // verifica si el empleado esta selecciona
+                    if (seleccionarempleado)
                     {
-                        // disminuye el monto del presupuesto por medio de este metodo
-                        if (actualizarmontodisminuir("Remuneracion por vacaciones", tb_monto_remuneracion))
+                        // identifica el tipo de renumeracion 
+                        if (cb_tipo_renumeracion.SelectedItem.ToString() == "remuneracion por vacaciones")
+                        {
+                            // disminuye el monto del presupuesto por medio de este metodo
+                            if (actualizarmontodisminuir("Remuneracion por vacaciones", tb_monto_remuneracion))
+                            {
+
+                                // inserta las renumeraciones se separa para poder descontar el monto de cada una
+                                if (conexion.querycomando("Insert into tbl_remuneraciones(tipo,numero_movimiento,fecha_pago,monto,codigo,fecha_registro_renumeracion) VALUES('" + cb_tipo_renumeracion.SelectedItem.ToString() + "','" + tb_movimiento_remuneracion.Text + "','" + dtp_fecha_pago_remuneracion.Value.Date + "','" + tb_monto_remuneracion.Text + "','" + tb_codigo_remuneracion.Text + "',GETDATE())"))
+                                {
+                                    DataSet ds;
+                                    ds = conexion.sqlconsulta("SELECT * FROM tbl_remuneraciones WHERE id_remuneracion = (SELECT MAX(id_remuneracion) FROM tbl_remuneraciones)");
+
+                                    conexion.querycomando("Insert into tbl_empleados_remuneraciones(fk_remuneracion,fk_empleado) VALUES('" + ds.Tables[0].Rows[0].ItemArray[0].ToString() + "','" + ID_usuario + "')");
+                                    conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario,fecha_registro) VALUES('" + ds.Tables[0].Rows[0].ItemArray[0].ToString() + "','RENUMERACION','INSERTO UN REGISTRO','" + usuario + "',GETDATE())");
+                                    MessageBox.Show("Se ha guardado correctamente");
+                                    tb_movimiento_remuneracion.Clear();
+                                    tb_monto_remuneracion.Clear();
+                                    tb_codigo_remuneracion.Clear();
+                                    cb_tipo_renumeracion.SelectedIndex = 0;
+                                    dtp_fecha_pago_remuneracion.Value = DateTime.Now;
+                                }
+                                else
+                                    MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+
+
+
+                            }
+
+                        }
+                        else
                         {
 
-                            // inserta las renumeraciones se separa para poder descontar el monto de cada una
+                            //renumeracion por maternidad
                             if (conexion.querycomando("Insert into tbl_remuneraciones(tipo,numero_movimiento,fecha_pago,monto,codigo,fecha_registro_renumeracion) VALUES('" + cb_tipo_renumeracion.SelectedItem.ToString() + "','" + tb_movimiento_remuneracion.Text + "','" + dtp_fecha_pago_remuneracion.Value.Date + "','" + tb_monto_remuneracion.Text + "','" + tb_codigo_remuneracion.Text + "',GETDATE())"))
                             {
                                 DataSet ds;
                                 ds = conexion.sqlconsulta("SELECT * FROM tbl_remuneraciones WHERE id_remuneracion = (SELECT MAX(id_remuneracion) FROM tbl_remuneraciones)");
 
                                 conexion.querycomando("Insert into tbl_empleados_remuneraciones(fk_remuneracion,fk_empleado) VALUES('" + ds.Tables[0].Rows[0].ItemArray[0].ToString() + "','" + ID_usuario + "')");
-                                conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario,fecha_registro) VALUES('" + ds.Tables[0].Rows[0].ItemArray[0].ToString() + "','RENUMERACION','INSERTO UN REGISTRO','" + usuario + "',GETDATE())");
+                                conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario) VALUES('" + ds.Tables[0].Rows[0].ItemArray[0].ToString() + "','RENUMERACION','INSERTO UN REGISTRO','" + usuario + "')");
                                 MessageBox.Show("Se ha guardado correctamente");
                                 tb_movimiento_remuneracion.Clear();
                                 tb_monto_remuneracion.Clear();
@@ -213,58 +246,102 @@ namespace RRHH
 
 
 
+
                         }
 
+                        // limpia los texbox
+
+
+
+                        cb_tipo_renumeracion.SelectedIndex = 0;
+                        actualizardato(dgv_renumeracion, "Select id_remuneracion,numero_movimiento AS 'NUMERO MOVIMIENTO',tipo AS TIPO,fecha_pago AS 'FECHA DE PAGO',monto AS MONTO ,tr.codigo AS CODIGO,te.nombre AS NOMBRE ,te.apellido AS APELLIDO from tbl_remuneraciones tr INNER JOIN  tbl_empleados_remuneraciones  ON fk_remuneracion=id_remuneracion INNER JOIN  tbl_empleados as te on id_empleado =fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+                        actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
+                        notificaciones("Remuneracion por vacaciones", lb_notificaciones_renumeracion, 5000000);
                     }
                     else
-                    {
-
-                        //renumeracion por maternidad
-                        if (conexion.querycomando("Insert into tbl_remuneraciones(tipo,numero_movimiento,fecha_pago,monto,codigo,fecha_registro_renumeracion) VALUES('" + cb_tipo_renumeracion.SelectedItem.ToString() + "','" + tb_movimiento_remuneracion.Text + "','" + dtp_fecha_pago_remuneracion.Value.Date + "','" + tb_monto_remuneracion.Text + "','" + tb_codigo_remuneracion.Text + "',GETDATE())"))
-                        {
-                            DataSet ds;
-                            ds = conexion.sqlconsulta("SELECT * FROM tbl_remuneraciones WHERE id_remuneracion = (SELECT MAX(id_remuneracion) FROM tbl_remuneraciones)");
-
-                            conexion.querycomando("Insert into tbl_empleados_remuneraciones(fk_remuneracion,fk_empleado) VALUES('" + ds.Tables[0].Rows[0].ItemArray[0].ToString() + "','" + ID_usuario + "')");
-                            conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario) VALUES('" + ds.Tables[0].Rows[0].ItemArray[0].ToString() + "','RENUMERACION','INSERTO UN REGISTRO','" + usuario + "')");
-                            MessageBox.Show("Se ha guardado correctamente");
-                            tb_movimiento_remuneracion.Clear();
-                            tb_monto_remuneracion.Clear();
-                            tb_codigo_remuneracion.Clear();
-                            cb_tipo_renumeracion.SelectedIndex = 0;
-                            dtp_fecha_pago_remuneracion.Value = DateTime.Now;
-                        }
-                        else
-                            MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                        MessageBox.Show("selecciona un empleado ");
 
 
 
-
-                    }
-
-                    // limpia los texbox
-
-                  
-
-                    cb_tipo_renumeracion.SelectedIndex = 0;
-                    actualizardato(dgv_renumeracion, "Select id_remuneracion,numero_movimiento AS 'NUMERO MOVIMIENTO',tipo AS TIPO,fecha_pago AS 'FECHA DE PAGO',monto AS MONTO ,tr.codigo AS CODIGO,te.nombre AS NOMBRE ,te.apellido AS APELLIDO from tbl_remuneraciones tr INNER JOIN  tbl_empleados_remuneraciones  ON fk_remuneracion=id_remuneracion INNER JOIN  tbl_empleados as te on id_empleado =fk_empleado where id_empleado ='" + ID_usuario + "'  ");
-                    actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
-                    notificaciones("Remuneracion por vacaciones", lb_notificaciones_renumeracion, 5000000);
                 }
                 else
-                    MessageBox.Show("selecciona un empleado ");
-
-
-
+                    MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
             }
-            else
-                MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
         }
 
         // boton hace la funcion de actualizar las renumeraciones para ello aplica funciones para devolver o aumentar el monto
         private void button5_Click(object sender, EventArgs e)
         {
-            if (validartexbox(tb_apellido) & validartexbox(tb_nombre) & validartexbox(tb_cedula))
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+   MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+   MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
+            {
+                if (validartexbox(tb_apellido) & validartexbox(tb_nombre) & validartexbox(tb_cedula))
+                {
+                    if (seleccionarremuneracion)
+                    {
+                        if (cb_tipo_renumeracion.SelectedItem.ToString() == "remuneracion por vacaciones")
+                        {
+                            string sql = "SELECT monto FROM tbl_remuneraciones WHERE id_remuneracion = '" + ID_remuneracion.ToString() + "'";
+                            if (actualizarmontoaumentar(sql, "Remuneracion por vacaciones"))
+                            {
+                                actualizarmontodisminuir("Remuneracion por vacaciones", tb_monto_remuneracion);
+
+                                if (conexion.querycomando("Update tbl_remuneraciones set tipo='" + cb_tipo_renumeracion.SelectedItem.ToString() + "',numero_movimiento='" + tb_movimiento_remuneracion.Text + "',fecha_pago='" + dtp_fecha_pago_remuneracion.Value.Date + "',monto='" + tb_monto_remuneracion.Text + "', codigo='" + tb_codigo_remuneracion.Text + "' WHERE id_remuneracion='" + ID_remuneracion.ToString() + "'"))
+                                {
+                                    MessageBox.Show("Se ha actualizado correctamente");
+                                    tb_movimiento_remuneracion.Clear();
+                                    tb_monto_remuneracion.Clear();
+                                    tb_codigo_remuneracion.Clear();
+                                    cb_tipo_renumeracion.SelectedIndex = 0;
+                                    dtp_fecha_pago_remuneracion.Value = DateTime.Now;
+                                    conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario) VALUES('" + ID_remuneracion.ToString() + "','RENUMERACION','ACTUALIZO UN REGISTRO','" + usuario + "')");
+                                }
+                                else
+                                    MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                            }
+                        }
+                        else
+                        {
+
+
+                            if (conexion.querycomando("Update tbl_remuneraciones set tipo='" + cb_tipo_renumeracion.SelectedItem.ToString() + "',numero_movimiento='" + tb_movimiento_remuneracion.Text + "',fecha_pago='" + dtp_fecha_pago_remuneracion.Value.Date + "',monto='" + tb_monto_remuneracion.Text + "', codigo='" + tb_codigo_remuneracion.Text + "' WHERE id_remuneracion='" + ID_remuneracion.ToString() + "'"))
+                            {
+                                conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario,fecha_registro) VALUES('" + ID_remuneracion.ToString() + "','RENUMERACION','ACTUALIZO UN REGISTRO','" + usuario + "',GETDATE())");
+                                MessageBox.Show("Se ha actualizado correctamente");
+                                tb_movimiento_remuneracion.Clear();
+                                tb_monto_remuneracion.Clear();
+                                tb_codigo_remuneracion.Clear();
+                                cb_tipo_renumeracion.SelectedIndex = 0;
+                                dtp_fecha_pago_remuneracion.Value = DateTime.Now;
+                            }
+                            else
+                                MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                        }
+                    }
+                    else
+                        MessageBox.Show("Seleccione algun cliente para realizar esta accion");
+
+                    seleccionarremuneracion = false;
+                    actualizardato(dgv_renumeracion, "Select id_remuneracion,numero_movimiento AS 'NUMERO MOVIMIENTO',tipo AS TIPO,fecha_pago AS 'FECHA DE PAGO',monto AS MONTO ,tr.codigo AS CODIGO,te.nombre AS NOMBRE ,te.apellido AS APELLIDO from tbl_remuneraciones tr INNER JOIN  tbl_empleados_remuneraciones  ON fk_remuneracion=id_remuneracion INNER JOIN  tbl_empleados as te on id_empleado =fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+                    actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
+                    notificaciones("Remuneracion por vacaciones", lb_notificaciones_renumeracion, 5000000);
+
+
+
+                    cb_tipo_renumeracion.SelectedIndex = 0;
+                }
+                else
+                    MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
+            }
+        }
+
+        // boton de eliminar de las renumeraciones
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+   MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+   MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
                 if (seleccionarremuneracion)
                 {
@@ -273,70 +350,27 @@ namespace RRHH
                         string sql = "SELECT monto FROM tbl_remuneraciones WHERE id_remuneracion = '" + ID_remuneracion.ToString() + "'";
                         if (actualizarmontoaumentar(sql, "Remuneracion por vacaciones"))
                         {
-                            actualizarmontodisminuir("Remuneracion por vacaciones", tb_monto_remuneracion);
 
-                            if (conexion.querycomando("Update tbl_remuneraciones set tipo='" + cb_tipo_renumeracion.SelectedItem.ToString() + "',numero_movimiento='" + tb_movimiento_remuneracion.Text + "',fecha_pago='" + dtp_fecha_pago_remuneracion.Value.Date + "',monto='" + tb_monto_remuneracion.Text + "', codigo='" + tb_codigo_remuneracion.Text + "' WHERE id_remuneracion='" + ID_remuneracion.ToString() + "'"))
+                            if (conexion.querycomando("DELETE FROM tbl_empleados_remuneraciones WHERE fk_remuneracion='" + ID_remuneracion.ToString() + "' "))
                             {
-                                MessageBox.Show("Se ha actualizado correctamente");
-                                tb_movimiento_remuneracion.Clear();
-                                tb_monto_remuneracion.Clear();
-                                tb_codigo_remuneracion.Clear();
-                                cb_tipo_renumeracion.SelectedIndex = 0;
-                                dtp_fecha_pago_remuneracion.Value = DateTime.Now;
-                                conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario) VALUES('" + ID_remuneracion.ToString() + "','RENUMERACION','ACTUALIZO UN REGISTRO','" + usuario + "')");
+
+                                conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario,fecha_registro,registro) VALUES('" + ID_remuneracion.ToString() + "','RENUMERACION','ELIMINO UN REGISTRO','" + usuario + "',GETDATE(),'" + " TIPO: " + cb_tipo_renumeracion.SelectedItem.ToString() + " NUMERO DE MOVIMIENTO: " + tb_movimiento_remuneracion.Text + " FECHA DE PAGO: " + dtp_fecha_pago_remuneracion.Value.Date + " MONTO: " + tb_monto_remuneracion.Text + " CODIGO: " + tb_codigo_remuneracion.Text + "' )");
+                                if (conexion.querycomando("DELETE FROM tbl_remuneraciones WHERE id_remuneracion='" + ID_remuneracion.ToString() + "' "))
+                                {
+
+                                    MessageBox.Show("Se ha eliminado correctamente");
+                                }
+                                else
+                                    MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
                             }
-                            else
-                                MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
                         }
+
+
                     }
                     else
                     {
-
-
-                        if (conexion.querycomando("Update tbl_remuneraciones set tipo='" + cb_tipo_renumeracion.SelectedItem.ToString() + "',numero_movimiento='" + tb_movimiento_remuneracion.Text + "',fecha_pago='" + dtp_fecha_pago_remuneracion.Value.Date + "',monto='" + tb_monto_remuneracion.Text + "', codigo='" + tb_codigo_remuneracion.Text + "' WHERE id_remuneracion='" + ID_remuneracion.ToString() + "'"))
-                        {
-                            conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario,fecha_registro) VALUES('" + ID_remuneracion.ToString() + "','RENUMERACION','ACTUALIZO UN REGISTRO','" + usuario + "',GETDATE())");
-                            MessageBox.Show("Se ha actualizado correctamente");
-                            tb_movimiento_remuneracion.Clear();
-                            tb_monto_remuneracion.Clear();
-                            tb_codigo_remuneracion.Clear();
-                            cb_tipo_renumeracion.SelectedIndex = 0;
-                            dtp_fecha_pago_remuneracion.Value = DateTime.Now;
-                        }
-                        else
-                            MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
-                    }
-                }
-                else
-                    MessageBox.Show("Seleccione algun cliente para realizar esta accion");
-
-                seleccionarremuneracion = false;
-                actualizardato(dgv_renumeracion, "Select id_remuneracion,numero_movimiento AS 'NUMERO MOVIMIENTO',tipo AS TIPO,fecha_pago AS 'FECHA DE PAGO',monto AS MONTO ,tr.codigo AS CODIGO,te.nombre AS NOMBRE ,te.apellido AS APELLIDO from tbl_remuneraciones tr INNER JOIN  tbl_empleados_remuneraciones  ON fk_remuneracion=id_remuneracion INNER JOIN  tbl_empleados as te on id_empleado =fk_empleado where id_empleado ='" + ID_usuario + "'  ");
-                actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
-                notificaciones("Remuneracion por vacaciones", lb_notificaciones_renumeracion, 5000000);
-
-              
-
-                cb_tipo_renumeracion.SelectedIndex = 0;
-            }
-            else
-                MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
-        }
-
-        // boton de eliminar de las renumeraciones
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (seleccionarremuneracion)
-            {
-                if (cb_tipo_renumeracion.SelectedItem.ToString() == "remuneracion por vacaciones")
-                {
-                    string sql = "SELECT monto FROM tbl_remuneraciones WHERE id_remuneracion = '" + ID_remuneracion.ToString() + "'";
-                    if (actualizarmontoaumentar(sql, "Remuneracion por vacaciones"))
-                    {
-
                         if (conexion.querycomando("DELETE FROM tbl_empleados_remuneraciones WHERE fk_remuneracion='" + ID_remuneracion.ToString() + "' "))
                         {
-
                             conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario,fecha_registro,registro) VALUES('" + ID_remuneracion.ToString() + "','RENUMERACION','ELIMINO UN REGISTRO','" + usuario + "',GETDATE(),'" + " TIPO: " + cb_tipo_renumeracion.SelectedItem.ToString() + " NUMERO DE MOVIMIENTO: " + tb_movimiento_remuneracion.Text + " FECHA DE PAGO: " + dtp_fecha_pago_remuneracion.Value.Date + " MONTO: " + tb_monto_remuneracion.Text + " CODIGO: " + tb_codigo_remuneracion.Text + "' )");
                             if (conexion.querycomando("DELETE FROM tbl_remuneraciones WHERE id_remuneracion='" + ID_remuneracion.ToString() + "' "))
                             {
@@ -348,38 +382,22 @@ namespace RRHH
                         }
                     }
 
-
+                    tb_movimiento_remuneracion.Clear();
+                    tb_monto_remuneracion.Clear();
+                    tb_codigo_remuneracion.Clear();
+                    notificaciones("Remuneracion por vacaciones", lb_notificaciones_renumeracion, 5000000);
+                    cb_tipo_renumeracion.SelectedIndex = 0;
+                    actualizardato(dgv_renumeracion, "Select id_remuneracion,numero_movimiento AS 'NUMERO MOVIMIENTO',tipo AS TIPO,fecha_pago AS 'FECHA DE PAGO',monto AS MONTO ,tr.codigo AS CODIGO,te.nombre AS NOMBRE ,te.apellido AS APELLIDO from tbl_remuneraciones tr INNER JOIN  tbl_empleados_remuneraciones  ON fk_remuneracion=id_remuneracion INNER JOIN  tbl_empleados as te on id_empleado =fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+                    actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
+                    seleccionarremuneracion = false;
                 }
                 else
                 {
-                    if (conexion.querycomando("DELETE FROM tbl_empleados_remuneraciones WHERE fk_remuneracion='" + ID_remuneracion.ToString() + "' "))
-                    {
-                        conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario,fecha_registro,registro) VALUES('" + ID_remuneracion.ToString() + "','RENUMERACION','ELIMINO UN REGISTRO','" + usuario + "',GETDATE(),'" + " TIPO: " + cb_tipo_renumeracion.SelectedItem.ToString() + " NUMERO DE MOVIMIENTO: " + tb_movimiento_remuneracion.Text + " FECHA DE PAGO: " + dtp_fecha_pago_remuneracion.Value.Date + " MONTO: " + tb_monto_remuneracion.Text + " CODIGO: " + tb_codigo_remuneracion.Text + "' )");
-                        if (conexion.querycomando("DELETE FROM tbl_remuneraciones WHERE id_remuneracion='" + ID_remuneracion.ToString() + "' "))
-                        {
-
-                            MessageBox.Show("Se ha eliminado correctamente");
-                        }
-                        else
-                            MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
-                    }
+                    MessageBox.Show("Seleccione un empleado de la lista");
                 }
 
-                tb_movimiento_remuneracion.Clear();
-                tb_monto_remuneracion.Clear();
-                tb_codigo_remuneracion.Clear();
-                notificaciones("Remuneracion por vacaciones", lb_notificaciones_renumeracion, 5000000);
-                cb_tipo_renumeracion.SelectedIndex = 0;
-                actualizardato(dgv_renumeracion, "Select id_remuneracion,numero_movimiento AS 'NUMERO MOVIMIENTO',tipo AS TIPO,fecha_pago AS 'FECHA DE PAGO',monto AS MONTO ,tr.codigo AS CODIGO,te.nombre AS NOMBRE ,te.apellido AS APELLIDO from tbl_remuneraciones tr INNER JOIN  tbl_empleados_remuneraciones  ON fk_remuneracion=id_remuneracion INNER JOIN  tbl_empleados as te on id_empleado =fk_empleado where id_empleado ='" + ID_usuario + "'  ");
-                actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
-                seleccionarremuneracion = false;
-            }
-            else
-            {
-                MessageBox.Show("Seleccione un empleado de la lista");
-            }
 
-
+            }
         }
         // seleciona los datos de la datagridview  de renumeraciones y setea los texbox
         private void dgv_renumeracion_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -442,8 +460,12 @@ namespace RRHH
             else
             {
                 DataSet ds = conexion.sqlconsulta("Select id_remuneracion,numero_movimiento AS 'NUMERO MOVIMIENTO',tipo AS TIPO,fecha_pago AS 'FECHA DE PAGO',monto AS MONTO ,tr.codigo AS CODIGO,te.nombre AS NOMBRE ,te.apellido AS APELLIDO from tbl_remuneraciones tr INNER JOIN  tbl_empleados_remuneraciones  ON fk_remuneracion=id_remuneracion INNER JOIN  tbl_empleados as te on id_empleado =fk_empleado where id_empleado ='" + ID_usuario + "'  ");
-                dgv_renumeracion.DataSource = ds.Tables[0];
-                dgv_renumeracion.Columns[0].Visible = false;
+                if (ds.Tables.Count>0) {
+
+                    dgv_renumeracion.DataSource = ds.Tables[0];
+                    dgv_renumeracion.Columns[0].Visible = false;
+                }
+               
             }
         }
 
@@ -471,80 +493,93 @@ namespace RRHH
         // boton insertar presupuesto por medio de una consulta sql ademas llama la funcion notificaciones para validar que monto no llegado al limite permitido
         private void button9_Click(object sender, EventArgs e)
         {
-            if (validartexbox(tb_monto_presupuesto) & cb_tipo_presupuesto.SelectedIndex >= 0)
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+      MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+      MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
+                if (validartexbox(tb_monto_presupuesto) & cb_tipo_presupuesto.SelectedIndex >= 0)
+                {
 
-                if (conexion.querycomando("Insert into tbl_presupuestos(tipo_presupuesto,monto_presupuesto,monto_actual) VALUES('" + cb_tipo_presupuesto.SelectedItem.ToString() + "','" + tb_monto_presupuesto.Text + "','" + tb_monto_presupuesto.Text + "')"))
-                    MessageBox.Show("Se ha guardado correctamente");
+                    if (conexion.querycomando("Insert into tbl_presupuestos(tipo_presupuesto,monto_presupuesto,monto_actual) VALUES('" + cb_tipo_presupuesto.SelectedItem.ToString() + "','" + tb_monto_presupuesto.Text + "','" + tb_monto_presupuesto.Text + "')"))
+                        MessageBox.Show("Se ha guardado correctamente");
 
+                    else
+                        MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+
+                    actualizardato(dgv_presupuesto, "select id_presupuesto ,tipo_presupuesto as 'TIPO DE PRESUPUESTO',monto_presupuesto as MONTO,monto_actual as 'MONTO ACTUAL' from tbl_presupuestos");
+
+                    tb_monto_presupuesto.Clear();
+
+                    cb_tipo_presupuesto.SelectedIndex = 0;
+                    notificaciones("Remuneracion por vacaciones", lb_notificaciones_renumeracion, 5000000);
+                    notificaciones("Extras corrientes medicas", lb_notificacion_extras, 5000000);
+                    notificaciones("", lb_notificacion_accion_personal, 5000000);
+                    notificaciones("Extras", lb_notificacion_extraordinario, 5000000);
+                }
                 else
-                    MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
-
-                actualizardato(dgv_presupuesto, "select id_presupuesto ,tipo_presupuesto as 'TIPO DE PRESUPUESTO',monto_presupuesto as MONTO,monto_actual as 'MONTO ACTUAL' from tbl_presupuestos");
-
-                tb_monto_presupuesto.Clear();
-
-                cb_tipo_presupuesto.SelectedIndex = 0;
-                notificaciones("Remuneracion por vacaciones", lb_notificaciones_renumeracion, 5000000);
-                notificaciones("Extras corrientes medicas", lb_notificacion_extras, 5000000);
-                notificaciones("", lb_notificacion_accion_personal, 5000000);
-                notificaciones("Extras", lb_notificacion_extraordinario, 5000000);
+                    MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
             }
-            else
-                MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
         }
-
         private void button8_Click(object sender, EventArgs e)
         {
-            if (validartexbox(tb_monto_presupuesto) & cb_tipo_presupuesto.SelectedIndex >= 0)
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+   MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+   MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
+            {
+                if (validartexbox(tb_monto_presupuesto) & cb_tipo_presupuesto.SelectedIndex >= 0)
+                {
+                    if (seleccionarpresupuesto)
+                    {
+                        if (conexion.querycomando("Update tbl_presupuestos set monto_actual='" + tb_monto_actual_presupuesto.Text + "' ,tipo_presupuesto='" + cb_tipo_presupuesto.SelectedItem.ToString() + "',monto_presupuesto='" + double.Parse(tb_monto_presupuesto.Text) + "' WHERE id_presupuesto='" + ID_presupuesto.ToString() + "'"))
+                            MessageBox.Show("Se ha actualizado correctamente");
+                        else
+                            MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                    }
+                    else
+                        MessageBox.Show("Seleccione algun cliente para realizar esta accion");
+
+                    seleccionarpresupuesto = false;
+                    actualizardato(dgv_presupuesto, "select id_presupuesto ,tipo_presupuesto as 'TIPO DE PRESUPUESTO',monto_presupuesto as MONTO,monto_actual as 'MONTO ACTUAL' from tbl_presupuestos");
+
+                    tb_monto_presupuesto.Clear();
+
+                    cb_tipo_presupuesto.SelectedIndex = 0;
+                    notificaciones("Remuneracion por vacaciones", lb_notificaciones_renumeracion, 5000000);
+                    notificaciones("Extras corrientes medicas", lb_notificacion_extras, 5000000);
+                    notificaciones("", lb_notificacion_accion_personal, 5000000);
+                    notificaciones("Extras", lb_notificacion_extraordinario, 5000000);
+                }
+                else
+                    MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
+            }
+        }
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+   MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+   MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
                 if (seleccionarpresupuesto)
                 {
-                    if (conexion.querycomando("Update tbl_presupuestos set monto_actual='" + tb_monto_actual_presupuesto.Text + "' ,tipo_presupuesto='" + cb_tipo_presupuesto.SelectedItem.ToString() + "',monto_presupuesto='" + double.Parse(tb_monto_presupuesto.Text) + "' WHERE id_presupuesto='" + ID_presupuesto.ToString() + "'"))
-                        MessageBox.Show("Se ha actualizado correctamente");
+                    if (conexion.querycomando("DELETE FROM tbl_presupuestos WHERE id_presupuesto='" + ID_presupuesto.ToString() + "' "))
+                        MessageBox.Show("Se ha eliminado correctamente");
                     else
                         MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+
+
+                    seleccionarpresupuesto = false;
+                    actualizardato(dgv_presupuesto, "select id_presupuesto ,tipo_presupuesto as 'TIPO DE PRESUPUESTO',monto_presupuesto as MONTO,monto_actual as 'MONTO ACTUAL'  from tbl_presupuestos");
+                    notificaciones("Remuneracion por vacaciones", lb_notificaciones_renumeracion, 5000000);
+                    notificaciones("Extras corrientes medicas", lb_notificacion_extras, 5000000);
+                    notificaciones("", lb_notificacion_accion_personal, 5000000);
+                    notificaciones("Extras", lb_notificacion_extraordinario, 5000000);
+                    tb_monto_presupuesto.Clear();
+
+                    cb_tipo_presupuesto.SelectedIndex = 0;
                 }
                 else
-                    MessageBox.Show("Seleccione algun cliente para realizar esta accion");
-
-                seleccionarpresupuesto = false;
-                actualizardato(dgv_presupuesto, "select id_presupuesto ,tipo_presupuesto as 'TIPO DE PRESUPUESTO',monto_presupuesto as MONTO,monto_actual as 'MONTO ACTUAL' from tbl_presupuestos");
-
-                tb_monto_presupuesto.Clear();
-
-                cb_tipo_presupuesto.SelectedIndex = 0;
-                notificaciones("Remuneracion por vacaciones", lb_notificaciones_renumeracion, 5000000);
-                notificaciones("Extras corrientes medicas", lb_notificacion_extras, 5000000);
-                notificaciones("", lb_notificacion_accion_personal, 5000000);
-                notificaciones("Extras", lb_notificacion_extraordinario, 5000000);
+                    MessageBox.Show("Seleccione un empleado de la lista");
             }
-            else
-                MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            if (seleccionarpresupuesto)
-            {
-                if (conexion.querycomando("DELETE FROM tbl_presupuestos WHERE id_presupuesto='" + ID_presupuesto.ToString() + "' "))
-                    MessageBox.Show("Se ha eliminado correctamente");
-                else
-                    MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
-
-
-                seleccionarpresupuesto = false;
-                actualizardato(dgv_presupuesto, "select id_presupuesto ,tipo_presupuesto as 'TIPO DE PRESUPUESTO',monto_presupuesto as MONTO,monto_actual as 'MONTO ACTUAL'  from tbl_presupuestos");
-                notificaciones("Remuneracion por vacaciones", lb_notificaciones_renumeracion, 5000000);
-                notificaciones("Extras corrientes medicas", lb_notificacion_extras, 5000000);
-                notificaciones("", lb_notificacion_accion_personal, 5000000);
-                notificaciones("Extras", lb_notificacion_extraordinario, 5000000);
-                tb_monto_presupuesto.Clear();
-
-                cb_tipo_presupuesto.SelectedIndex = 0;
-            }
-            else
-                MessageBox.Show("Seleccione un empleado de la lista");
         }
 
         private void tb_busqueda_presupuesto_TextChanged(object sender, EventArgs e)
@@ -588,82 +623,90 @@ namespace RRHH
 
         private void button12_Click(object sender, EventArgs e)
         {
-
-            if (validartexbox(tb_monto_cancelar_extras) & validartexbox(tb_codigo_plaza_extras) & validartexbox(tb_cantidad_extras))
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+  MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+  MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
-                if (seleccionarempleado)
-                {
-                    if (actualizarmontodisminuir("Extras corrientes medicas", tb_monto_cancelar_extras))
-                    {
-                        if (conexion.querycomando("Insert into tbl_extras_medicas(fecha_pago,codigo_plaza,cantidad_horas,monto_cancelar,fecha_registro_extras) VALUES('" + DateTime.Parse(tb_fecha_pago_extras.Text).ToString("dd/M/yyyy HH:mm:ss") + "','" + tb_codigo_plaza_extras.Text.ToString() + "','" + tb_cantidad_extras.Text + "','" + tb_monto_cancelar_extras.Text + "',GETDATE())"))
-                        {
-                            DataSet ds;
-                            ds = conexion.sqlconsulta("SELECT * FROM tbl_extras_medicas WHERE id_extras = (SELECT MAX(id_extras) FROM tbl_extras_medicas)");
 
-                            conexion.querycomando("Insert into tbl_extras_medicas_empleados(fk_extras,fk_empleado) VALUES('" + ds.Tables[0].Rows[0].ItemArray[0].ToString() + "','" + ID_usuario + "')");
-                            conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario,fecha_registro) VALUES('" + ds.Tables[0].Rows[0].ItemArray[0].ToString() + "','EXTRAS','INSERTO UN REGISTRO','" + usuario + "',GETDATE())");
-                            MessageBox.Show("Se ha guardado correctamente");
+                if (validartexbox(tb_monto_cancelar_extras) & validartexbox(tb_codigo_plaza_extras) & validartexbox(tb_cantidad_extras))
+                {
+                    if (seleccionarempleado)
+                    {
+                        if (actualizarmontodisminuir("Extras corrientes medicas", tb_monto_cancelar_extras))
+                        {
+                            if (conexion.querycomando("Insert into tbl_extras_medicas(fecha_pago,codigo_plaza,cantidad_horas,monto_cancelar,fecha_registro_extras) VALUES('" + DateTime.Parse(tb_fecha_pago_extras.Text).ToString("dd/M/yyyy HH:mm:ss") + "','" + tb_codigo_plaza_extras.Text.ToString() + "','" + tb_cantidad_extras.Text + "','" + tb_monto_cancelar_extras.Text + "',GETDATE())"))
+                            {
+                                DataSet ds;
+                                ds = conexion.sqlconsulta("SELECT * FROM tbl_extras_medicas WHERE id_extras = (SELECT MAX(id_extras) FROM tbl_extras_medicas)");
+
+                                conexion.querycomando("Insert into tbl_extras_medicas_empleados(fk_extras,fk_empleado) VALUES('" + ds.Tables[0].Rows[0].ItemArray[0].ToString() + "','" + ID_usuario + "')");
+                                conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario,fecha_registro) VALUES('" + ds.Tables[0].Rows[0].ItemArray[0].ToString() + "','EXTRAS','INSERTO UN REGISTRO','" + usuario + "',GETDATE())");
+                                MessageBox.Show("Se ha guardado correctamente");
+                            }
+                            else
+                                MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
                         }
-                        else
-                            MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                        actualizardato(dgv_extras_corrientes, "Select id_extras,fecha_pago AS 'FECHA DE PAGO',codigo_plaza AS 'CODIGO DE PLAZA',cantidad_horas AS 'CANTIDAD DE HORAS',monto_cancelar AS 'MONTO A CANCELAR',te.nombre AS NOMBRE,te.apellido AS APELLIDO from tbl_extras_medicas INNER JOIN  tbl_extras_medicas_empleados  ON fk_extras=id_extras INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+                        actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
+                        tb_cantidad_extras.Clear();
+                        // tb_codigo_plaza_extras.Clear();
+                        tb_monto_cancelar_extras.Clear();
+                        notificaciones("Extras corrientes medicas", lb_notificacion_extras, 5000000);
+
+
                     }
+                    else
+                        MessageBox.Show("selecciona un empleado ");
+
+
+
+                }
+                else
+                    MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
+            }
+        }
+        private void button11_Click(object sender, EventArgs e)
+        {
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+  MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+  MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
+            {
+                if (validartexbox(tb_monto_cancelar_extras) & validartexbox(tb_codigo_plaza_extras) & validartexbox(tb_cantidad_extras))
+                {
+
+                    if (seleccionarextras)
+                    {
+                        string sql = "SELECT monto_cancelar FROM tbl_extras_medicas WHERE id_extras = '" + ID_extras.ToString() + "'";
+                        if (actualizarmontoaumentar(sql, "Extras corrientes medicas"))
+                        {
+                            actualizarmontodisminuir("Extras corrientes medicas", tb_monto_cancelar_extras);
+
+                            if (conexion.querycomando("Update tbl_extras_medicas set fecha_pago='" + DateTime.Parse(tb_fecha_pago_extras.Text).ToString("dd/M/yyyy HH:mm:ss") + "',codigo_plaza='" + tb_codigo_plaza_extras.Text + "', cantidad_horas='" + tb_cantidad_extras.Text + "', monto_cancelar='" + tb_monto_cancelar_extras.Text + "', WHERE id_extras='" + ID_extras.ToString() + "'"))
+                            {
+                                conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario) VALUES('" + ID_extras + "','EXTRAS','ACTUALIZO ESTE REGISTRO UN REGISTRO','" + usuario + "')");
+                                MessageBox.Show("Se ha actualizado correctamente");
+                            }
+                            else
+                                MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+
+                        }
+                    }
+                    else
+                        MessageBox.Show("Seleccione algun cliente para realizar esta accion");
+
+                    seleccionarextras = false;
                     actualizardato(dgv_extras_corrientes, "Select id_extras,fecha_pago AS 'FECHA DE PAGO',codigo_plaza AS 'CODIGO DE PLAZA',cantidad_horas AS 'CANTIDAD DE HORAS',monto_cancelar AS 'MONTO A CANCELAR',te.nombre AS NOMBRE,te.apellido AS APELLIDO from tbl_extras_medicas INNER JOIN  tbl_extras_medicas_empleados  ON fk_extras=id_extras INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
                     actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
                     tb_cantidad_extras.Clear();
-                    // tb_codigo_plaza_extras.Clear();
+                    //tb_codigo_plaza_extras.Clear();
                     tb_monto_cancelar_extras.Clear();
                     notificaciones("Extras corrientes medicas", lb_notificacion_extras, 5000000);
 
-
                 }
                 else
-                    MessageBox.Show("selecciona un empleado ");
-
-
-
+                    MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
             }
-            else
-                MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
         }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            if (validartexbox(tb_monto_cancelar_extras) & validartexbox(tb_codigo_plaza_extras) & validartexbox(tb_cantidad_extras))
-            {
-
-                if (seleccionarextras)
-                {
-                    string sql = "SELECT monto_cancelar FROM tbl_extras_medicas WHERE id_extras = '" + ID_extras.ToString() + "'";
-                    if (actualizarmontoaumentar(sql, "Extras corrientes medicas"))
-                    {
-                        actualizarmontodisminuir("Extras corrientes medicas", tb_monto_cancelar_extras);
-
-                        if (conexion.querycomando("Update tbl_extras_medicas set fecha_pago='" + DateTime.Parse(tb_fecha_pago_extras.Text).ToString("dd/M/yyyy HH:mm:ss") + "',codigo_plaza='" + tb_codigo_plaza_extras.Text + "', cantidad_horas='" + tb_cantidad_extras.Text + "', monto_cancelar='" + tb_monto_cancelar_extras.Text + "', WHERE id_extras='" + ID_extras.ToString() + "'"))
-                        {
-                            conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario) VALUES('" + ID_extras + "','EXTRAS','ACTUALIZO ESTE REGISTRO UN REGISTRO','" + usuario + "')");
-                            MessageBox.Show("Se ha actualizado correctamente");
-                        }
-                        else
-                            MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
-
-                    }
-                }
-                else
-                    MessageBox.Show("Seleccione algun cliente para realizar esta accion");
-
-                seleccionarextras = false;
-                actualizardato(dgv_extras_corrientes, "Select id_extras,fecha_pago AS 'FECHA DE PAGO',codigo_plaza AS 'CODIGO DE PLAZA',cantidad_horas AS 'CANTIDAD DE HORAS',monto_cancelar AS 'MONTO A CANCELAR',te.nombre AS NOMBRE,te.apellido AS APELLIDO from tbl_extras_medicas INNER JOIN  tbl_extras_medicas_empleados  ON fk_extras=id_extras INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
-                actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
-                tb_cantidad_extras.Clear();
-                //tb_codigo_plaza_extras.Clear();
-                tb_monto_cancelar_extras.Clear();
-                notificaciones("Extras corrientes medicas", lb_notificacion_extras, 5000000);
-
-            }
-            else
-                MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
-        }
-
         private void dgv_extras_corrientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -687,38 +730,42 @@ namespace RRHH
 
         private void button10_Click(object sender, EventArgs e)
         {
-            if (seleccionarextras)
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+  MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+  MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
-                string sql = "SELECT monto_cancelar FROM tbl_extras_medicas WHERE id_extras = '" + ID_extras.ToString() + "'";
-                if (actualizarmontoaumentar(sql, "Extras corrientes medicas"))
+                if (seleccionarextras)
                 {
-                    if (conexion.querycomando("DELETE FROM tbl_extras_medicas_empleados WHERE fk_extras='" + ID_extras.ToString() + "' "))
+                    string sql = "SELECT monto_cancelar FROM tbl_extras_medicas WHERE id_extras = '" + ID_extras.ToString() + "'";
+                    if (actualizarmontoaumentar(sql, "Extras corrientes medicas"))
                     {
-                        conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario,fecha_registro,registro) VALUES('" + ID_remuneracion.ToString() + "','EXTRAS','ELIMINO UN REGISTRO','" + usuario + "',GETDATE(),'" + " FECHA DE PAGO: " + tb_fecha_pago_extras.Text.ToString() + " CODIGO DE PLAZA: " + tb_codigo_plaza_extras.Text + " CANTIDAD DE HORAS: " + tb_cantidad_extras.Text + " MONTO: " + tb_monto_cancelar_extras.Text + "' )");
-                        if (conexion.querycomando("DELETE FROM tbl_extras_medicas WHERE id_extras='" + ID_extras.ToString() + "' "))
+                        if (conexion.querycomando("DELETE FROM tbl_extras_medicas_empleados WHERE fk_extras='" + ID_extras.ToString() + "' "))
                         {
+                            conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario,fecha_registro,registro) VALUES('" + ID_remuneracion.ToString() + "','EXTRAS','ELIMINO UN REGISTRO','" + usuario + "',GETDATE(),'" + " FECHA DE PAGO: " + tb_fecha_pago_extras.Text.ToString() + " CODIGO DE PLAZA: " + tb_codigo_plaza_extras.Text + " CANTIDAD DE HORAS: " + tb_cantidad_extras.Text + " MONTO: " + tb_monto_cancelar_extras.Text + "' )");
+                            if (conexion.querycomando("DELETE FROM tbl_extras_medicas WHERE id_extras='" + ID_extras.ToString() + "' "))
+                            {
 
-                            MessageBox.Show("Se ha eliminado correctamente");
+                                MessageBox.Show("Se ha eliminado correctamente");
+                            }
+                            else
+                                MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
                         }
                         else
                             MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
                     }
-                    else
-                        MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                    seleccionarextras = false;
+                    actualizardato(dgv_extras_corrientes, "Select id_extras,fecha_pago AS 'FECHA DE PAGO',codigo_plaza AS 'CODIGO DE PLAZA',cantidad_horas AS 'CANTIDAD DE HORAS',monto_cancelar AS 'MONTO A CANCELAR',te.nombre AS NOMBRE,te.apellido AS APELLIDO from tbl_extras_medicas INNER JOIN  tbl_extras_medicas_empleados  ON fk_extras=id_extras INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+                    actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
+                    tb_cantidad_extras.Clear();
+                    //tb_codigo_plaza_extras.Clear();
+                    tb_monto_cancelar_extras.Clear();
+                    notificaciones("Extras corrientes medicas", lb_notificacion_extras, 5000000);
+
                 }
-                seleccionarextras = false;
-                actualizardato(dgv_extras_corrientes, "Select id_extras,fecha_pago AS 'FECHA DE PAGO',codigo_plaza AS 'CODIGO DE PLAZA',cantidad_horas AS 'CANTIDAD DE HORAS',monto_cancelar AS 'MONTO A CANCELAR',te.nombre AS NOMBRE,te.apellido AS APELLIDO from tbl_extras_medicas INNER JOIN  tbl_extras_medicas_empleados  ON fk_extras=id_extras INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
-                actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
-                tb_cantidad_extras.Clear();
-                //tb_codigo_plaza_extras.Clear();
-                tb_monto_cancelar_extras.Clear();
-                notificaciones("Extras corrientes medicas", lb_notificacion_extras, 5000000);
-
+                else
+                    MessageBox.Show("Seleccione un empleado de la lista");
             }
-            else
-                MessageBox.Show("Seleccione un empleado de la lista");
         }
-
         private void tb_busqueda_extras_TextChanged(object sender, EventArgs e)
         {
             String selector = "";
@@ -753,149 +800,157 @@ namespace RRHH
 
         private void button15_Click(object sender, EventArgs e)
         {
-            Boolean error = false;
-            switch (cb_tipo_extraordinario.SelectedItem)
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+  MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+  MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
-                case "Extras":
-                    if (actualizarmontodisminuir("Extras", tb_monto_extraordinario))
-                    {
-                        error = true;
-                    }
-
-                    break;
-                case "Recargo Nocturno":
-                    if (actualizarmontodisminuir("Recargo nocturno", tb_monto_extraordinario))
-                    {
-                        error = true;
-                    }
-
-                    break;
-                case "Guardias Medicas":
-                    if (actualizarmontodisminuir("Guardias medicas", tb_monto_extraordinario))
-                    {
-                        error = true;
-                    }
-
-                    break;
-                case "Disponibilidades Medicas":
-
-                    error = true;
-
-
-                    break;
-
-            }
-            if (error)
-            {
-                if (validartexbox(tb_plaza_extraordinario) & validartexbox(tb_cantidad_extraordinario) & validartexbox(tb_monto_extraordinario))
+                Boolean error = false;
+                switch (cb_tipo_extraordinario.SelectedItem)
                 {
-                    if (seleccionarempleado)
-                    {
-                        if (conexion.querycomando("Insert into tbl_extraordinario(fecha_pago,codigo_plaza,cantidad_horas,monto,tipo_extraordinario,fk_departamento,fecha_registro_ordinario) VALUES('" + DateTime.Parse(tb_extraordinario.Text).ToString("dd/M/yyyy HH:mm:ss") + "','" + tb_plaza_extraordinario.Text.ToString() + "','" + tb_cantidad_extraordinario.Text + "','" + tb_monto_extraordinario.Text + "','" + cb_tipo_extraordinario.SelectedItem + "','" + cb_departamento_extraordinario.SelectedValue.ToString() + "',GETDATE())"))
+                    case "Extras":
+                        if (actualizarmontodisminuir("Extras", tb_monto_extraordinario))
                         {
-                            DataSet ds;
-                            ds = conexion.sqlconsulta("SELECT * FROM tbl_extraordinario WHERE id_extraordinario = (SELECT MAX(id_extraordinario) FROM tbl_extraordinario)");
+                            error = true;
+                        }
 
-                            conexion.querycomando("Insert into tbl_extraordinario_empleados(fk_extraordinario,fk_empleado) VALUES('" + ds.Tables[0].Rows[0].ItemArray[0].ToString() + "','" + ID_usuario + "')");
-                            conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario,fecha_registro) VALUES('" + ds.Tables[0].Rows[0].ItemArray[0].ToString() + "','EXTRAORDINARIO','INSERTO UN REGISTRO','" + usuario + "',GETDATE())");
-                            MessageBox.Show("Se ha guardado correctamente");
-                            notificaciones("Remuneracion por vacaciones", lb_notificaciones_renumeracion, 5000000);
-                            notificaciones("Extras corrientes medicas", lb_notificacion_extras, 5000000);
-                            notificaciones("", lb_notificacion_accion_personal, 5000000);
-                            notificaciones("Extras", lb_notificacion_extraordinario, 5000000);
+                        break;
+                    case "Recargo Nocturno":
+                        if (actualizarmontodisminuir("Recargo nocturno", tb_monto_extraordinario))
+                        {
+                            error = true;
+                        }
+
+                        break;
+                    case "Guardias Medicas":
+                        if (actualizarmontodisminuir("Guardias medicas", tb_monto_extraordinario))
+                        {
+                            error = true;
+                        }
+
+                        break;
+                    case "Disponibilidades Medicas":
+
+                        error = true;
+
+
+                        break;
+
+                }
+                if (error)
+                {
+                    if (validartexbox(tb_plaza_extraordinario) & validartexbox(tb_cantidad_extraordinario) & validartexbox(tb_monto_extraordinario))
+                    {
+                        if (seleccionarempleado)
+                        {
+                            if (conexion.querycomando("Insert into tbl_extraordinario(fecha_pago,codigo_plaza,cantidad_horas,monto,tipo_extraordinario,fk_departamento,fecha_registro_ordinario) VALUES('" + DateTime.Parse(tb_fecha_extraordinario.Text).ToString("dd/M/yyyy HH:mm:ss") + "','" + tb_plaza_extraordinario.Text.ToString() + "','" + tb_cantidad_extraordinario.Text + "','" + tb_monto_extraordinario.Text + "','" + cb_tipo_extraordinario.SelectedItem + "','" + cb_departamento_extraordinario.SelectedValue.ToString() + "',GETDATE())"))
+                            {
+                                DataSet ds;
+                                ds = conexion.sqlconsulta("SELECT * FROM tbl_extraordinario WHERE id_extraordinario = (SELECT MAX(id_extraordinario) FROM tbl_extraordinario)");
+
+                                conexion.querycomando("Insert into tbl_extraordinario_empleados(fk_extraordinario,fk_empleado) VALUES('" + ds.Tables[0].Rows[0].ItemArray[0].ToString() + "','" + ID_usuario + "')");
+                                conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario,fecha_registro) VALUES('" + ds.Tables[0].Rows[0].ItemArray[0].ToString() + "','EXTRAORDINARIO','INSERTO UN REGISTRO','" + usuario + "',GETDATE())");
+                                MessageBox.Show("Se ha guardado correctamente");
+                                notificaciones("Remuneracion por vacaciones", lb_notificaciones_renumeracion, 5000000);
+                                notificaciones("Extras corrientes medicas", lb_notificacion_extras, 5000000);
+                                notificaciones("", lb_notificacion_accion_personal, 5000000);
+                                notificaciones("Extras", lb_notificacion_extraordinario, 5000000);
+                            }
+                            else
+                                MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+
+                            actualizardato(dgv_extraordinario, "Select id_extraordinario,tipo_extraordinario AS 'TIPO DE EXTRAORDINARIO',fecha_pago AS 'FECHA DE PAGO',codigo_plaza AS 'CODIGO DE PLAZA',cantidad_horas AS 'CANTIDAD DE HORAS',monto AS MONTO,dp.nombre AS DEPARTAMENTO,te.nombre AS NOMBRE,te.apellido AS APELLIDO from tbl_extraordinario TEX INNER JOIN tbl_departamentos  as dp ON fk_departamento=id_departamento  INNER JOIN  tbl_extraordinario_empleados  ON fk_extraordinario=id_extraordinario INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+                            actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
+
+
+
                         }
                         else
-                            MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                            MessageBox.Show("selecciona un empleado ");
 
-                        actualizardato(dgv_extraordinario, "Select id_extraordinario,tipo_extraordinario AS 'TIPO DE EXTRAORDINARIO',fecha_pago AS 'FECHA DE PAGO',codigo_plaza AS 'CODIGO DE PLAZA',cantidad_horas AS 'CANTIDAD DE HORAS',monto AS MONTO,dp.nombre AS DEPARTAMENTO,te.nombre AS NOMBRE,te.apellido AS APELLIDO from tbl_extraordinario TEX INNER JOIN tbl_departamentos  as dp ON fk_departamento=id_departamento  INNER JOIN  tbl_extraordinario_empleados  ON fk_extraordinario=id_extraordinario INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
-                        actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
-                    
 
 
                     }
                     else
-                        MessageBox.Show("selecciona un empleado ");
-
-
-
+                        MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
                 }
-                else
-                    MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
             }
         }
-
         private void button14_Click(object sender, EventArgs e)
         {
-            Boolean error = false;
-            string sql = "SELECT monto FROM tbl_extraordinario WHERE id_extraordinario = '" + ID_extraordinario.ToString() + "'";
-
-            switch (cb_tipo_extraordinario.SelectedItem)
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+  MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+  MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
-                case "Extras":
+                Boolean error = false;
+                string sql = "SELECT monto FROM tbl_extraordinario WHERE id_extraordinario = '" + ID_extraordinario.ToString() + "'";
 
-                    if (actualizarmontoaumentar(sql, "Extras"))
-                    {
-                        actualizarmontodisminuir("Extras", tb_monto_extraordinario);
-                        error = true;
-                    }
-
-                    break;
-                case "Recargo Nocturno":
-                    if (actualizarmontoaumentar(sql, "Recargo nocturno"))
-                    {
-                        actualizarmontodisminuir("Recargo nocturno", tb_monto_extraordinario);
-                        error = true;
-                    }
-
-                    break;
-                case "Guardias Medicas":
-                    if (actualizarmontoaumentar(sql, "Guardias medicas"))
-                    {
-                        actualizarmontodisminuir("Guardias medicas", tb_monto_extraordinario);
-                        error = true;
-                    }
-
-                    break;
-                case "Disponibilidades Medicas":
-
-                    error = true;
-
-
-                    break;
-
-            }
-            if (error)
-            {
-                if (validartexbox(tb_plaza_extraordinario) & validartexbox(tb_cantidad_extraordinario) & validartexbox(tb_monto_extraordinario))
+                switch (cb_tipo_extraordinario.SelectedItem)
                 {
-                    if (seleccionarextraordinario)
-                    {
-                        if (conexion.querycomando("Update tbl_extraordinario set tipo_extraordinario='" + cb_tipo_extraordinario.SelectedItem + "', fecha_pago='" + DateTime.Parse(tb_extraordinario.Text).ToString("dd/M/yyyy HH:mm:ss") + "',codigo_plaza='" + tb_plaza_extraordinario.Text + "', cantidad_horas='" + tb_cantidad_extraordinario.Text + "', monto='" + tb_monto_extraordinario.Text + "',fk_departamento='" + cb_departamento_extraordinario.SelectedValue.ToString() + "' WHERE id_extraordinario='" + ID_extraordinario.ToString() + "'"))
-                        {
-                            conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario) VALUES('" + ID_extraordinario + "','EXTRAORDINARIO','ACTUALIZO UN REGISTRO','" + usuario + "')");
-                            MessageBox.Show("Se ha actualizado correctamente");
-                            notificaciones("Remuneracion por vacaciones", lb_notificaciones_renumeracion, 5000000);
-                            notificaciones("Extras corrientes medicas", lb_notificacion_extras, 5000000);
-                            notificaciones("", lb_notificacion_accion_personal, 5000000);
-                            notificaciones("Extras", lb_notificacion_extraordinario, 5000000);
-                        }
-                        else
-                            MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
-                    }
-                    else
-                        MessageBox.Show("Seleccione algun cliente para realizar esta accion");
+                    case "Extras":
 
-                    seleccionarextraordinario = false;
-                    actualizardato(dgv_extraordinario, "Select id_extraordinario,tipo_extraordinario AS 'TIPO DE EXTRAORDINARIO',fecha_pago AS 'FECHA DE PAGO',codigo_plaza AS 'CODIGO DE PLAZA',cantidad_horas AS 'CANTIDAD DE HORAS',monto AS MONTO,dp.nombre AS DEPARTAMENTO,te.nombre AS NOMBRE,te.apellido AS APELLIDO from tbl_extraordinario TEX INNER JOIN tbl_departamentos  as dp ON fk_departamento=id_departamento  INNER JOIN  tbl_extraordinario_empleados  ON fk_extraordinario=id_extraordinario INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
-                    actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
-               
+                        if (actualizarmontoaumentar(sql, "Extras"))
+                        {
+                            actualizarmontodisminuir("Extras", tb_monto_extraordinario);
+                            error = true;
+                        }
+
+                        break;
+                    case "Recargo Nocturno":
+                        if (actualizarmontoaumentar(sql, "Recargo nocturno"))
+                        {
+                            actualizarmontodisminuir("Recargo nocturno", tb_monto_extraordinario);
+                            error = true;
+                        }
+
+                        break;
+                    case "Guardias Medicas":
+                        if (actualizarmontoaumentar(sql, "Guardias medicas"))
+                        {
+                            actualizarmontodisminuir("Guardias medicas", tb_monto_extraordinario);
+                            error = true;
+                        }
+
+                        break;
+                    case "Disponibilidades Medicas":
+
+                        error = true;
+
+
+                        break;
 
                 }
-                else
-                    MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
+                if (error)
+                {
+                    if (validartexbox(tb_plaza_extraordinario) & validartexbox(tb_cantidad_extraordinario) & validartexbox(tb_monto_extraordinario))
+                    {
+                        if (seleccionarextraordinario)
+                        {
+                            if (conexion.querycomando("Update tbl_extraordinario set tipo_extraordinario='" + cb_tipo_extraordinario.SelectedItem + "', fecha_pago='" + DateTime.Parse(tb_fecha_extraordinario.Text).ToString("dd/M/yyyy HH:mm:ss") + "',codigo_plaza='" + tb_plaza_extraordinario.Text + "', cantidad_horas='" + tb_cantidad_extraordinario.Text + "', monto='" + tb_monto_extraordinario.Text + "',fk_departamento='" + cb_departamento_extraordinario.SelectedValue.ToString() + "' WHERE id_extraordinario='" + ID_extraordinario.ToString() + "'"))
+                            {
+                                conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario) VALUES('" + ID_extraordinario + "','EXTRAORDINARIO','ACTUALIZO UN REGISTRO','" + usuario + "')");
+                                MessageBox.Show("Se ha actualizado correctamente");
+                                notificaciones("Remuneracion por vacaciones", lb_notificaciones_renumeracion, 5000000);
+                                notificaciones("Extras corrientes medicas", lb_notificacion_extras, 5000000);
+                                notificaciones("", lb_notificacion_accion_personal, 5000000);
+                                notificaciones("Extras", lb_notificacion_extraordinario, 5000000);
+                            }
+                            else
+                                MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                        }
+                        else
+                            MessageBox.Show("Seleccione algun cliente para realizar esta accion");
+
+                        seleccionarextraordinario = false;
+                        actualizardato(dgv_extraordinario, "Select id_extraordinario,tipo_extraordinario AS 'TIPO DE EXTRAORDINARIO',fecha_pago AS 'FECHA DE PAGO',codigo_plaza AS 'CODIGO DE PLAZA',cantidad_horas AS 'CANTIDAD DE HORAS',monto AS MONTO,dp.nombre AS DEPARTAMENTO,te.nombre AS NOMBRE,te.apellido AS APELLIDO from tbl_extraordinario TEX INNER JOIN tbl_departamentos  as dp ON fk_departamento=id_departamento  INNER JOIN  tbl_extraordinario_empleados  ON fk_extraordinario=id_extraordinario INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+                        actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
+
+
+                    }
+                    else
+                        MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
+                }
             }
         }
-
         private void dgv_extraordinario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -903,7 +958,7 @@ namespace RRHH
                 seleccionarextraordinario = true;
                 ID_extraordinario = int.Parse(dgv_extraordinario.Rows[e.RowIndex].Cells[0].Value.ToString());
                 cb_tipo_extraordinario.SelectedItem = dgv_extraordinario.Rows[e.RowIndex].Cells[1].Value.ToString();
-                tb_extraordinario.Text = dgv_extraordinario.Rows[e.RowIndex].Cells[2].Value.ToString();
+                tb_fecha_extraordinario.Text = dgv_extraordinario.Rows[e.RowIndex].Cells[2].Value.ToString();
                 tb_plaza_extraordinario.Text = dgv_extraordinario.Rows[e.RowIndex].Cells[3].Value.ToString();
                 tb_cantidad_extraordinario.Text = dgv_extraordinario.Rows[e.RowIndex].Cells[4].Value.ToString();
                 tb_monto_extraordinario.Text = dgv_extraordinario.Rows[e.RowIndex].Cells[5].Value.ToString();
@@ -920,74 +975,78 @@ namespace RRHH
 
         private void button13_Click(object sender, EventArgs e)
         {
-            Boolean error = false;
-            string sql = "SELECT monto FROM tbl_extraordinario WHERE id_extraordinario = '" + ID_extraordinario.ToString() + "'";
-
-            switch (cb_tipo_extraordinario.SelectedItem)
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+  MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+  MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
-                case "Extras":
+                Boolean error = false;
+                string sql = "SELECT monto FROM tbl_extraordinario WHERE id_extraordinario = '" + ID_extraordinario.ToString() + "'";
 
-                    if (actualizarmontoaumentar(sql, "Extras"))
-                    {
-                        error = true;
-                    }
-
-                    break;
-                case "Recargo Nocturno":
-                    if (actualizarmontoaumentar(sql, "Recargo nocturno"))
-                    {
-                        error = true;
-                    }
-
-                    break;
-                case "Guardias Medicas":
-                    if (actualizarmontoaumentar(sql, "Guardias medicas"))
-                    {
-                        error = true;
-                    }
-
-                    break;
-                case "Disponibilidades Medicas":
-
-                    error = true;
-
-
-                    break;
-
-            }
-
-            if (error)
-            {
-
-                if (seleccionarextraordinario)
+                switch (cb_tipo_extraordinario.SelectedItem)
                 {
-                    if (conexion.querycomando("DELETE FROM tbl_extraordinario_empleados WHERE fk_extraordinario='" + ID_extraordinario.ToString() + "' "))
-                    {
-                        if (conexion.querycomando("DELETE FROM tbl_extraordinario WHERE id_extraordinario='" + ID_extraordinario.ToString() + "' "))
+                    case "Extras":
+
+                        if (actualizarmontoaumentar(sql, "Extras"))
                         {
-                            conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario) VALUES('" + ID_extraordinario + "','EXTRAORDINARIO','ELIMINO UN REGISTRO','" + usuario + "')");
-                            MessageBox.Show("Se ha eliminado correctamente");
-                            notificaciones("Remuneracion por vacaciones", lb_notificaciones_renumeracion, 5000000);
-                            notificaciones("Extras corrientes medicas", lb_notificacion_extras, 5000000);
-                            notificaciones("", lb_notificacion_accion_personal, 5000000);
-                            notificaciones("Extras", lb_notificacion_extraordinario, 5000000);
+                            error = true;
+                        }
+
+                        break;
+                    case "Recargo Nocturno":
+                        if (actualizarmontoaumentar(sql, "Recargo nocturno"))
+                        {
+                            error = true;
+                        }
+
+                        break;
+                    case "Guardias Medicas":
+                        if (actualizarmontoaumentar(sql, "Guardias medicas"))
+                        {
+                            error = true;
+                        }
+
+                        break;
+                    case "Disponibilidades Medicas":
+
+                        error = true;
+
+
+                        break;
+
+                }
+
+                if (error)
+                {
+
+                    if (seleccionarextraordinario)
+                    {
+                        if (conexion.querycomando("DELETE FROM tbl_extraordinario_empleados WHERE fk_extraordinario='" + ID_extraordinario.ToString() + "' "))
+                        {
+                            if (conexion.querycomando("DELETE FROM tbl_extraordinario WHERE id_extraordinario='" + ID_extraordinario.ToString() + "' "))
+                            {
+                                conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario) VALUES('" + ID_extraordinario + "','EXTRAORDINARIO','ELIMINO UN REGISTRO','" + usuario + "')");
+                                MessageBox.Show("Se ha eliminado correctamente");
+                                notificaciones("Remuneracion por vacaciones", lb_notificaciones_renumeracion, 5000000);
+                                notificaciones("Extras corrientes medicas", lb_notificacion_extras, 5000000);
+                                notificaciones("", lb_notificacion_accion_personal, 5000000);
+                                notificaciones("Extras", lb_notificacion_extraordinario, 5000000);
+                            }
+                            else
+                                MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
                         }
                         else
                             MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                        seleccionarextraordinario = false;
+                        actualizardato(dgv_extraordinario, "Select id_extraordinario,tipo_extraordinario AS 'TIPO DE EXTRAORDINARIO',fecha_pago AS 'FECHA DE PAGO',codigo_plaza AS 'CODIGO DE PLAZA',cantidad_horas AS 'CANTIDAD DE HORAS',monto AS MONTO,dp.nombre AS DEPARTAMENTO,te.nombre AS NOMBRE,te.apellido AS APELLIDO from tbl_extraordinario TEX INNER JOIN tbl_departamentos  as dp ON fk_departamento=id_departamento  INNER JOIN  tbl_extraordinario_empleados  ON fk_extraordinario=id_extraordinario INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+                        actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
+
+
                     }
                     else
-                        MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
-                    seleccionarextraordinario = false;
-                    actualizardato(dgv_extraordinario, "Select id_extraordinario,tipo_extraordinario AS 'TIPO DE EXTRAORDINARIO',fecha_pago AS 'FECHA DE PAGO',codigo_plaza AS 'CODIGO DE PLAZA',cantidad_horas AS 'CANTIDAD DE HORAS',monto AS MONTO,dp.nombre AS DEPARTAMENTO,te.nombre AS NOMBRE,te.apellido AS APELLIDO from tbl_extraordinario TEX INNER JOIN tbl_departamentos  as dp ON fk_departamento=id_departamento  INNER JOIN  tbl_extraordinario_empleados  ON fk_extraordinario=id_extraordinario INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
-                    actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
-             
-
+                        MessageBox.Show("Seleccione un empleado de la lista");
                 }
-                else
-                    MessageBox.Show("Seleccione un empleado de la lista");
             }
         }
-
         private void textBox16_TextChanged(object sender, EventArgs e)
         {
             string selector = "";
@@ -1028,131 +1087,144 @@ namespace RRHH
         }
 
         private void button18_Click(object sender, EventArgs e)
-            
-        {
-            
-       
-            if (validartexbox(tb_numero_accion_personal) & validartexbox(tb_costo_personal) & validartexbox(tb_codigo_personal) & validartexbox(tb_puesto_personal) & validartexbox(tb_dias_personal))
-            {
-                if (seleccionarempleado)
-                {
-                    if (conexion.querycomando("Insert into tbl_accion_personal(numero_accion,motivo,sustitucion,costo,codigo_plaza,puesto,rige_desde,rige_hasta,total_dias,fecha_ubicacion,fecha_vacaciones,fecha_pago,observaciones,fecha_registro_accion_personal) VALUES('" + tb_numero_accion_personal.Text + "','" + cb_motivo_personal.SelectedItem + "','" + cb_sustitucion_personal.SelectedItem + "','" + tb_costo_personal.Text + "','" + tb_codigo_personal.Text + "','" + tb_puesto_personal.Text + "','" + DateTime.Parse(tb_desde_personal.Text).ToString("dd/M/yyyy HH:mm:ss") + "','" + DateTime.Parse(tb_hasta_personal.Text).ToString("dd/M/yyyy HH:mm:ss") + "','" + tb_dias_personal.Text + "','" + DateTime.Parse(tb_fechaescala_personal.Text).ToString("dd/M/yyyy HH:mm:ss") + "','" + DateTime.Parse(tb_fechavacaciones_personal.Text).ToString("dd/M/yyyy HH:mm:ss") + "','" + DateTime.Parse(tb_fecha_pago_personal.Text).ToString("dd/M/yyyy HH:mm:ss") + "','" + rtb_observaciones_personal.Text + "',GETDATE())"))
-                    {
-                        DataSet ds;
-                        ds = conexion.sqlconsulta("SELECT * FROM tbl_accion_personal WHERE id_accion_personal = (SELECT MAX(id_accion_personal) FROM tbl_accion_personal)");
 
-                        conexion.querycomando("Insert into tbl_accion_personal_empleados(fk_accion_personal,fk_empleado) VALUES('" + ds.Tables[0].Rows[0].ItemArray[0].ToString() + "','" + ID_usuario + "')");
-                        conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario,fecha_registro) VALUES('" + ds.Tables[0].Rows[0].ItemArray[0].ToString() + "','ACCION DE PERSONAL','INSERTO UN REGISTRO','" + usuario + "',GETDATE())");
-                        MessageBox.Show("Se ha guardado correctamente");
-                        tb_numero_accion_personal.Clear();
-                        tb_costo_personal.Clear();
-                        tb_codigo_personal.Clear();
-                        tb_puesto_personal.Clear();
-                        tb_dias_personal.Clear();
-                        cb_motivo_personal.SelectedIndex = 0;
-                        cb_sustitucion_personal.SelectedIndex = 0;
-                        tb_desde_personal.Clear();
-                        tb_hasta_personal.Clear();
-                        tb_fechaescala_personal.Clear();
-                        tb_fechavacaciones_personal.Clear();
-                        tb_fecha_pago_personal.Clear();
-                        rtb_observaciones_personal.Clear();
+        {
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+  MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+  MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
+            {
+
+                if (validartexbox(tb_numero_accion_personal) & validartexbox(tb_costo_personal) & validartexbox(tb_codigo_personal) & validartexbox(tb_puesto_personal) & validartexbox(tb_dias_personal))
+                {
+                    if (seleccionarempleado)
+                    {
+                        if (conexion.querycomando("Insert into tbl_accion_personal(numero_accion,motivo,sustitucion,costo,codigo_plaza,puesto,rige_desde,rige_hasta,total_dias,fecha_ubicacion,fecha_vacaciones,fecha_pago,observaciones,fecha_registro_accion_personal) VALUES('" + tb_numero_accion_personal.Text + "','" + cb_motivo_personal.SelectedItem + "','" + cb_sustitucion_personal.SelectedItem + "','" + tb_costo_personal.Text + "','" + tb_codigo_personal.Text + "','" + tb_puesto_personal.Text + "','" + DateTime.Parse(tb_desde_personal.Text).ToString("dd/M/yyyy HH:mm:ss") + "','" + DateTime.Parse(tb_hasta_personal.Text).ToString("dd/M/yyyy HH:mm:ss") + "','" + tb_dias_personal.Text + "','" + DateTime.Parse(tb_fechaescala_personal.Text).ToString("dd/M/yyyy HH:mm:ss") + "','" + DateTime.Parse(tb_fechavacaciones_personal.Text).ToString("dd/M/yyyy HH:mm:ss") + "','" + DateTime.Parse(tb_fecha_pago_personal.Text).ToString("dd/M/yyyy HH:mm:ss") + "','" + rtb_observaciones_personal.Text + "',GETDATE())"))
+                        {
+                            DataSet ds;
+                            ds = conexion.sqlconsulta("SELECT * FROM tbl_accion_personal WHERE id_accion_personal = (SELECT MAX(id_accion_personal) FROM tbl_accion_personal)");
+
+                            conexion.querycomando("Insert into tbl_accion_personal_empleados(fk_accion_personal,fk_empleado) VALUES('" + ds.Tables[0].Rows[0].ItemArray[0].ToString() + "','" + ID_usuario + "')");
+                            conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario,fecha_registro) VALUES('" + ds.Tables[0].Rows[0].ItemArray[0].ToString() + "','ACCION DE PERSONAL','INSERTO UN REGISTRO','" + usuario + "',GETDATE())");
+                            MessageBox.Show("Se ha guardado correctamente");
+                            tb_numero_accion_personal.Clear();
+                            tb_costo_personal.Clear();
+                            tb_codigo_personal.Clear();
+                            tb_puesto_personal.Clear();
+                            tb_dias_personal.Clear();
+                            cb_motivo_personal.SelectedIndex = 0;
+                            cb_sustitucion_personal.SelectedIndex = 0;
+                            tb_desde_personal.Clear();
+                            tb_hasta_personal.Clear();
+                            tb_fechaescala_personal.Clear();
+                            tb_fechavacaciones_personal.Clear();
+                            tb_fecha_pago_personal.Clear();
+                            rtb_observaciones_personal.Clear();
+                        }
+                        else
+                            MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+
+                        actualizardato(dgv_personal, "Select id_accion_personal,numero_accion AS 'NUMERO DE ACCION',motivo AS MOTIVO,sustitucion AS SUSTITUCION,costo AS COSTO,codigo_plaza AS 'CODIGO DE PLAZA',TAP.puesto AS PUESTO,rige_desde AS 'RIGE DESDE',rige_hasta AS 'RIGE HASTA',total_dias AS 'TOTAL DE DIAS',fecha_ubicacion 'FECHA DE UBICACION',TAP.fecha_vacaciones AS 'FECHA DE VACACIONES',fecha_pago AS 'FECHA DE PAGO',observaciones AS 'OBSERVACIONES' from tbl_accion_personal TAP INNER JOIN  tbl_accion_personal_empleados  ON fk_accion_personal=id_accion_personal INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+                        actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
+
+
+
                     }
                     else
-                        MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                        MessageBox.Show("selecciona un empleado ");
 
-                    actualizardato(dgv_personal, "Select id_accion_personal,numero_accion AS 'NUMERO DE ACCION',motivo AS MOTIVO,sustitucion AS SUSTITUCION,costo AS COSTO,codigo_plaza AS 'CODIGO DE PLAZA',TAP.puesto AS PUESTO,rige_desde AS 'RIGE DESDE',rige_hasta AS 'RIGE HASTA',total_dias AS 'TOTAL DE DIAS',fecha_ubicacion 'FECHA DE UBICACION',TAP.fecha_vacaciones AS 'FECHA DE VACACIONES',fecha_pago AS 'FECHA DE PAGO',observaciones AS 'OBSERVACIONES' from tbl_accion_personal TAP INNER JOIN  tbl_accion_personal_empleados  ON fk_accion_personal=id_accion_personal INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
-                    actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
-              
 
 
                 }
                 else
-                    MessageBox.Show("selecciona un empleado ");
-
-
-
+                    MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
             }
-            else
-                MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
         }
-
         private void button17_Click(object sender, EventArgs e)
         {
-            if (validartexbox(tb_numero_accion_personal) & validartexbox(tb_costo_personal) & validartexbox(tb_codigo_personal) & validartexbox(tb_puesto_personal) & validartexbox(tb_dias_personal))
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+  MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+  MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
-                if (seleccionarpersonal)
+                if (validartexbox(tb_numero_accion_personal) & validartexbox(tb_costo_personal) & validartexbox(tb_codigo_personal) & validartexbox(tb_puesto_personal) & validartexbox(tb_dias_personal))
                 {
-                    if (conexion.querycomando("Update tbl_accion_personal set numero_accion='" + tb_numero_accion_personal.Text + "', motivo='" + cb_motivo_personal.SelectedItem + "',sustitucion='" + cb_sustitucion_personal.SelectedItem + "', costo='" + tb_costo_personal.Text + "', codigo_plaza='" + tb_codigo_personal.Text + "', puesto='" + tb_puesto_personal.Text + "', rige_desde='" + DateTime.Parse(tb_desde_personal.Text).ToString("dd/M/yyyy HH:mm:ss") + "', rige_hasta='" + DateTime.Parse(tb_hasta_personal.Text).ToString("dd/M/yyyy HH:mm:ss") + "', total_dias='" + tb_dias_personal.Text + "', fecha_ubicacion='" + DateTime.Parse(tb_fechaescala_personal.Text).ToString("dd/M/yyyy HH:mm:ss") + "', fecha_vacaciones='" + DateTime.Parse(tb_fechavacaciones_personal.Text).ToString("dd/M/yyyy HH:mm:ss") + "', fecha_pago='" + DateTime.Parse(tb_fecha_pago_personal.Text).ToString("dd/M/yyyy HH:mm:ss") + "', observaciones='" + rtb_observaciones_personal.Text + "' WHERE id_accion_personal='" + ID_personal.ToString() + "'"))
+                    if (seleccionarpersonal)
                     {
-                        conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario) VALUES('" + ID_personal + "','ACCION DE PERSONAL','ACTUALIZO UN REGISTRO','" + usuario + "')");
-                        MessageBox.Show("Se ha actualizado correctamente");
-                        tb_numero_accion_personal.Clear();
-                        tb_costo_personal.Clear();
-                        tb_codigo_personal.Clear();
-                        tb_puesto_personal.Clear();
-                        tb_dias_personal.Clear();
-                        cb_motivo_personal.SelectedIndex = 0;
-                        cb_sustitucion_personal.SelectedIndex = 0;
-                        tb_desde_personal.Clear();
-                        tb_hasta_personal.Clear();
-                        tb_fechaescala_personal.Clear();
-                        tb_fechavacaciones_personal.Clear();
-                        tb_fecha_pago_personal.Clear();
-                        rtb_observaciones_personal.Clear();
+                        if (conexion.querycomando("Update tbl_accion_personal set numero_accion='" + tb_numero_accion_personal.Text + "', motivo='" + cb_motivo_personal.SelectedItem + "',sustitucion='" + cb_sustitucion_personal.SelectedItem + "', costo='" + tb_costo_personal.Text + "', codigo_plaza='" + tb_codigo_personal.Text + "', puesto='" + tb_puesto_personal.Text + "', rige_desde='" + DateTime.Parse(tb_desde_personal.Text).ToString("dd/M/yyyy HH:mm:ss") + "', rige_hasta='" + DateTime.Parse(tb_hasta_personal.Text).ToString("dd/M/yyyy HH:mm:ss") + "', total_dias='" + tb_dias_personal.Text + "', fecha_ubicacion='" + DateTime.Parse(tb_fechaescala_personal.Text).ToString("dd/M/yyyy HH:mm:ss") + "', fecha_vacaciones='" + DateTime.Parse(tb_fechavacaciones_personal.Text).ToString("dd/M/yyyy HH:mm:ss") + "', fecha_pago='" + DateTime.Parse(tb_fecha_pago_personal.Text).ToString("dd/M/yyyy HH:mm:ss") + "', observaciones='" + rtb_observaciones_personal.Text + "' WHERE id_accion_personal='" + ID_personal.ToString() + "'"))
+                        {
+                            conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario) VALUES('" + ID_personal + "','ACCION DE PERSONAL','ACTUALIZO UN REGISTRO','" + usuario + "')");
+                            MessageBox.Show("Se ha actualizado correctamente");
+                            tb_numero_accion_personal.Clear();
+                            tb_costo_personal.Clear();
+                            tb_codigo_personal.Clear();
+                            tb_puesto_personal.Clear();
+                            tb_dias_personal.Clear();
+                            cb_motivo_personal.SelectedIndex = 0;
+                            cb_sustitucion_personal.SelectedIndex = 0;
+                            tb_desde_personal.Clear();
+                            tb_hasta_personal.Clear();
+                            tb_fechaescala_personal.Clear();
+                            tb_fechavacaciones_personal.Clear();
+                            tb_fecha_pago_personal.Clear();
+                            rtb_observaciones_personal.Clear();
+                        }
+                        else
+                            MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
                     }
                     else
-                        MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                        MessageBox.Show("Seleccione algun cliente para realizar esta accion");
+
+                    seleccionarpersonal = false;
+                    actualizardato(dgv_personal, "Select id_accion_personal,numero_accion AS 'NUMERO DE ACCION',motivo AS MOTIVO,sustitucion AS SUSTITUCION,costo AS COSTO,codigo_plaza AS 'CODIGO DE PLAZA',TAP.puesto AS PUESTO,rige_desde AS 'RIGE DESDE',rige_hasta AS 'RIGE HASTA',total_dias AS 'TOTAL DE DIAS',fecha_ubicacion 'FECHA DE UBICACION',TAP.fecha_vacaciones AS 'FECHA DE VACACIONES',fecha_pago AS 'FECHA DE PAGO',observaciones AS 'OBSERVACIONES' from tbl_accion_personal TAP INNER JOIN  tbl_accion_personal_empleados  ON fk_accion_personal=id_accion_personal INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+                    actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
+                    tb_numero_accion_personal.Clear();
+                    tb_costo_personal.Clear();
+                    tb_costo_personal.Clear();
+                    tb_puesto_personal.Clear();
+                    tb_dias_personal.Clear();
+                    cb_motivo_personal.SelectedIndex = 0;
+                    cb_sustitucion_personal.SelectedIndex = 0;
+
                 }
                 else
-                    MessageBox.Show("Seleccione algun cliente para realizar esta accion");
-
-                seleccionarpersonal = false;
-                actualizardato(dgv_personal, "Select id_accion_personal,numero_accion AS 'NUMERO DE ACCION',motivo AS MOTIVO,sustitucion AS SUSTITUCION,costo AS COSTO,codigo_plaza AS 'CODIGO DE PLAZA',TAP.puesto AS PUESTO,rige_desde AS 'RIGE DESDE',rige_hasta AS 'RIGE HASTA',total_dias AS 'TOTAL DE DIAS',fecha_ubicacion 'FECHA DE UBICACION',TAP.fecha_vacaciones AS 'FECHA DE VACACIONES',fecha_pago AS 'FECHA DE PAGO',observaciones AS 'OBSERVACIONES' from tbl_accion_personal TAP INNER JOIN  tbl_accion_personal_empleados  ON fk_accion_personal=id_accion_personal INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
-                actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
-                tb_numero_accion_personal.Clear();
-                tb_costo_personal.Clear();
-                tb_costo_personal.Clear();
-                tb_puesto_personal.Clear();
-                tb_dias_personal.Clear();
-                cb_motivo_personal.SelectedIndex = 0;
-                cb_sustitucion_personal.SelectedIndex = 0;
-
+                    MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
             }
-            else
-                MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            if (seleccionarpersonal)
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+  MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+  MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
-                if (conexion.querycomando("DELETE FROM tbl_accion_personal_empleados WHERE fk_accion_personal='" + ID_personal.ToString() + "' "))
+                if (seleccionarpersonal)
                 {
-                    if (conexion.querycomando("DELETE FROM tbl_accion_personal WHERE id_accion_personal='" + ID_personal.ToString() + "' "))
+                    if (conexion.querycomando("DELETE FROM tbl_accion_personal_empleados WHERE fk_accion_personal='" + ID_personal.ToString() + "' "))
                     {
-                        conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario) VALUES('" + ID_personal + "','ACCION DE PERSONAL','ELIMINO UN REGISTRO','" + usuario + "')");
-                        MessageBox.Show("Se ha eliminado correctamente");
+                        if (conexion.querycomando("DELETE FROM tbl_accion_personal WHERE id_accion_personal='" + ID_personal.ToString() + "' "))
+                        {
+                            conexion.querycomando("Insert into tbl_registros(numero_movimiento ,tipo_movimiento,accion,fk_usuario) VALUES('" + ID_personal + "','ACCION DE PERSONAL','ELIMINO UN REGISTRO','" + usuario + "')");
+                            MessageBox.Show("Se ha eliminado correctamente");
+                        }
+                        else
+                            MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
                     }
                     else
                         MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                    seleccionarpersonal = false;
+                    actualizardato(dgv_personal, "Select id_accion_personal,numero_accion AS 'NUMERO DE ACCION',motivo AS MOTIVO,sustitucion AS SUSTITUCION,costo AS COSTO,codigo_plaza AS 'CODIGO DE PLAZA',TAP.puesto AS PUESTO,rige_desde AS 'RIGE DESDE',rige_hasta AS 'RIGE HASTA',total_dias AS 'TOTAL DE DIAS',fecha_ubicacion 'FECHA DE UBICACION',TAP.fecha_vacaciones AS 'FECHA DE VACACIONES',fecha_pago AS 'FECHA DE PAGO',observaciones AS 'OBSERVACIONES' from tbl_accion_personal TAP INNER JOIN  tbl_accion_personal_empleados  ON fk_accion_personal=id_accion_personal INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+                    actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
+                    tb_numero_accion_personal.Clear();
+                    tb_costo_personal.Clear();
+                    tb_costo_personal.Clear();
+                    tb_puesto_personal.Clear();
+                    tb_dias_personal.Clear();
+                    cb_motivo_personal.SelectedIndex = 0;
+                    cb_sustitucion_personal.SelectedIndex = 0;
+
                 }
                 else
-                    MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
-                seleccionarpersonal = false;
-                actualizardato(dgv_personal, "Select id_accion_personal,numero_accion AS 'NUMERO DE ACCION',motivo AS MOTIVO,sustitucion AS SUSTITUCION,costo AS COSTO,codigo_plaza AS 'CODIGO DE PLAZA',TAP.puesto AS PUESTO,rige_desde AS 'RIGE DESDE',rige_hasta AS 'RIGE HASTA',total_dias AS 'TOTAL DE DIAS',fecha_ubicacion 'FECHA DE UBICACION',TAP.fecha_vacaciones AS 'FECHA DE VACACIONES',fecha_pago AS 'FECHA DE PAGO',observaciones AS 'OBSERVACIONES' from tbl_accion_personal TAP INNER JOIN  tbl_accion_personal_empleados  ON fk_accion_personal=id_accion_personal INNER JOIN  tbl_empleados as te on id_empleado = fk_empleado where id_empleado ='" + ID_usuario + "'  ");
-                actualizardato(dgv_registro, "Select id_registro,numero_movimiento 'NUMERO DE MOVIMIENTO',tipo_movimiento 'TIPO DE MOVIMIENTO',accion 'ACCCION',TU.nombre 'NOMBRE', fecha_registro AS 'FECHA DE REGISTRO',registro as REGISTRO ,TU.usuario AS 'USUARIO' FROM tbl_registros AS TE INNER JOIN tbl_usuarios AS TU on id_usuario=fk_usuario   ");
-                tb_numero_accion_personal.Clear();
-                tb_costo_personal.Clear();
-                tb_costo_personal.Clear();
-                tb_puesto_personal.Clear();
-                tb_dias_personal.Clear();
-                cb_motivo_personal.SelectedIndex = 0;
-                cb_sustitucion_personal.SelectedIndex = 0;
-
+                    MessageBox.Show("Seleccione un empleado de la lista");
             }
-            else
-                MessageBox.Show("Seleccione un empleado de la lista");
         }
 
         private void dgv_personal_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -2515,127 +2587,140 @@ namespace RRHH
 
         private void button19_Click(object sender, EventArgs e)
         {
-
-            if (validartexbox(tb_boleta_incapacidades) & validartexbox(tb_plaza_incapacidades) & validartexbox(tb_puesto_incapacidades))
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+  MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+  MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
-                if (seleccionarempleado)
+
+                if (validartexbox(tb_boleta_incapacidades) & validartexbox(tb_plaza_incapacidades) & validartexbox(tb_puesto_incapacidades))
                 {
-
-
-
-                    //renumeracion por maternidad
-                    if (conexion.querycomando("Insert into tbl_incapacidades(numero_boleta,tipo_incapacidad,fecha_pago,numero_plaza,puesto,fecha_registro) VALUES('" + tb_boleta_incapacidades.Text + "','" + cb_incapacidad.SelectedItem + "','" + dtp_fecha_pago_incapacidades.Value.Date + "','" + tb_plaza_incapacidades.Text + "','" + tb_puesto_incapacidades.Text + "',GETDATE() )"))
+                    if (seleccionarempleado)
                     {
-                        DataSet ds;
-                        ds = conexion.sqlconsulta("SELECT * FROM tbl_incapacidades WHERE id_incapacidad = (SELECT MAX(id_incapacidad) FROM tbl_incapacidades)");
 
-                        conexion.querycomando("Insert into tbl_incapacidades_empleados(fk_incapacidad,fk_empleado) VALUES('" + ds.Tables[0].Rows[0].ItemArray[0].ToString() + "','" + ID_usuario + "')");
-                        MessageBox.Show("Se ha guardado correctamente");
+
+
+                        //renumeracion por maternidad
+                        if (conexion.querycomando("Insert into tbl_incapacidades(numero_boleta,tipo_incapacidad,fecha_pago,numero_plaza,puesto,fecha_registro) VALUES('" + tb_boleta_incapacidades.Text + "','" + cb_incapacidad.SelectedItem + "','" + dtp_fecha_pago_incapacidades.Value.Date + "','" + tb_plaza_incapacidades.Text + "','" + tb_puesto_incapacidades.Text + "',GETDATE() )"))
+                        {
+                            DataSet ds;
+                            ds = conexion.sqlconsulta("SELECT * FROM tbl_incapacidades WHERE id_incapacidad = (SELECT MAX(id_incapacidad) FROM tbl_incapacidades)");
+
+                            conexion.querycomando("Insert into tbl_incapacidades_empleados(fk_incapacidad,fk_empleado) VALUES('" + ds.Tables[0].Rows[0].ItemArray[0].ToString() + "','" + ID_usuario + "')");
+                            MessageBox.Show("Se ha guardado correctamente");
+                        }
+                        else
+                            MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+
+
+
+
                     }
                     else
-                        MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                        MessageBox.Show("selecciona un empleado ");
 
 
+                    actualizardato(dgv_incapacidades, "Select id_incapacidad,numero_boleta as 'NUMERO BOLETA',tipo_incapacidad AS 'TIPO DE INCAPACIDAD' ,fecha_pago AS 'FECHA DE PAGO',numero_plaza AS 'NUMERO DE PLAZA',ti.puesto AS 'PUESTO' from tbl_incapacidades ti INNER JOIN  tbl_incapacidades_empleados  ON fk_incapacidad=id_incapacidad INNER JOIN  tbl_empleados as te on id_empleado =fk_empleado where id_empleado ='" + ID_usuario + "'  ");
 
+                    tb_boleta_incapacidades.Clear();
+                    tb_plaza_incapacidades.Clear();
+                    tb_puesto_incapacidades.Clear();
+
+                    cb_incapacidad.SelectedIndex = 0;
 
                 }
                 else
-                    MessageBox.Show("selecciona un empleado ");
-
-
-                actualizardato(dgv_incapacidades, "Select id_incapacidad,numero_boleta as 'NUMERO BOLETA',tipo_incapacidad AS 'TIPO DE INCAPACIDAD' ,fecha_pago AS 'FECHA DE PAGO',numero_plaza AS 'NUMERO DE PLAZA',ti.puesto AS 'PUESTO' from tbl_incapacidades ti INNER JOIN  tbl_incapacidades_empleados  ON fk_incapacidad=id_incapacidad INNER JOIN  tbl_empleados as te on id_empleado =fk_empleado where id_empleado ='" + ID_usuario + "'  ");
-
-                tb_boleta_incapacidades.Clear();
-                tb_plaza_incapacidades.Clear();
-                tb_puesto_incapacidades.Clear();
-
-                cb_incapacidad.SelectedIndex = 0;
-
+                    MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
             }
-            else
-                MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
         }
-
         private void button6_Click_1(object sender, EventArgs e)
         {
-            if (validartexbox(tb_boleta_incapacidades) & validartexbox(tb_plaza_incapacidades) & validartexbox(tb_puesto_incapacidades))
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+  MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+  MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
+            {
+                if (validartexbox(tb_boleta_incapacidades) & validartexbox(tb_plaza_incapacidades) & validartexbox(tb_puesto_incapacidades))
+                {
+                    if (seleccionarincapacidad)
+                    {
+
+
+                        if (conexion.querycomando("Update tbl_incapacidades set numero_boleta='" + tb_boleta_incapacidades.Text + "',tipo_incapacidad='" + cb_incapacidad.SelectedItem + "',fecha_pago='" + dtp_fecha_pago_incapacidades.Value.Date + "',numero_plaza='" + tb_plaza_incapacidades.Text + "', puesto='" + tb_puesto_incapacidades.Text + "' WHERE id_incapacidad='" + ID_incapacidad.ToString() + "'"))
+                            MessageBox.Show("Se ha actualizado correctamente");
+                        else
+                            MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+
+                    }
+                    else
+                        MessageBox.Show("Seleccione alguna incapacidad para realizar esta accion");
+
+                    seleccionarremuneracion = false;
+                    actualizardato(dgv_incapacidades, "Select id_incapacidad,numero_boleta as 'NUMERO BOLETA',tipo_incapacidad AS 'TIPO DE INCAPACIDAD' ,fecha_pago AS 'FECHA DE PAGO',numero_plaza AS 'NUMERO DE PLAZA',ti.puesto AS 'PUESTO' from tbl_incapacidades ti INNER JOIN  tbl_incapacidades_empleados  ON fk_incapacidad=id_incapacidad INNER JOIN  tbl_empleados as te on id_empleado =fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+
+
+                    tb_boleta_incapacidades.Clear();
+                    tb_plaza_incapacidades.Clear();
+                    tb_puesto_incapacidades.Clear();
+
+                    cb_incapacidad.SelectedIndex = 0;
+                }
+                else
+                    MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
+            }
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+  MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+  MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
                 if (seleccionarincapacidad)
                 {
 
+                    if (conexion.querycomando("DELETE FROM tbl_incapacidades_empleados WHERE fk_incapacidad='" + ID_incapacidad.ToString() + "' "))
+                    {
+                        if (conexion.querycomando("DELETE FROM tbl_incapacidades WHERE id_incapacidad='" + ID_incapacidad.ToString() + "' "))
+                            MessageBox.Show("Se ha eliminado correctamente");
+                        else
+                            MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                    }
 
-                    if (conexion.querycomando("Update tbl_incapacidades set numero_boleta='" + tb_boleta_incapacidades.Text + "',tipo_incapacidad='" + cb_incapacidad.SelectedItem + "',fecha_pago='" + dtp_fecha_pago_incapacidades.Value.Date + "',numero_plaza='" + tb_plaza_incapacidades.Text + "', puesto='" + tb_puesto_incapacidades.Text + "' WHERE id_incapacidad='" + ID_incapacidad.ToString() + "'"))
-                        MessageBox.Show("Se ha actualizado correctamente");
-                    else
-                        MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
 
+                    tb_boleta_incapacidades.Clear();
+                    tb_plaza_incapacidades.Clear();
+                    tb_puesto_incapacidades.Clear();
+
+                    cb_incapacidad.SelectedIndex = 0;
+                    actualizardato(dgv_incapacidades, "Select id_incapacidad,numero_boleta as 'NUMERO BOLETA',tipo_incapacidad AS 'TIPO DE INCAPACIDAD' ,fecha_pago AS 'FECHA DE PAGO',numero_plaza AS 'NUMERO DE PLAZA',ti.puesto AS 'PUESTO' from tbl_incapacidades ti INNER JOIN  tbl_incapacidades_empleados  ON fk_incapacidad=id_incapacidad INNER JOIN  tbl_empleados as te on id_empleado =fk_empleado where id_empleado ='" + ID_usuario + "'  ");
+
+                    seleccionarincapacidad = false;
                 }
                 else
-                    MessageBox.Show("Seleccione alguna incapacidad para realizar esta accion");
-
-                seleccionarremuneracion = false;
-                actualizardato(dgv_incapacidades, "Select id_incapacidad,numero_boleta as 'NUMERO BOLETA',tipo_incapacidad AS 'TIPO DE INCAPACIDAD' ,fecha_pago AS 'FECHA DE PAGO',numero_plaza AS 'NUMERO DE PLAZA',ti.puesto AS 'PUESTO' from tbl_incapacidades ti INNER JOIN  tbl_incapacidades_empleados  ON fk_incapacidad=id_incapacidad INNER JOIN  tbl_empleados as te on id_empleado =fk_empleado where id_empleado ='" + ID_usuario + "'  ");
-
-
-                tb_boleta_incapacidades.Clear();
-                tb_plaza_incapacidades.Clear();
-                tb_puesto_incapacidades.Clear();
-
-                cb_incapacidad.SelectedIndex = 0;
-            }
-            else
-                MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (seleccionarincapacidad)
-            {
-
-                if (conexion.querycomando("DELETE FROM tbl_incapacidades_empleados WHERE fk_incapacidad='" + ID_incapacidad.ToString() + "' "))
                 {
-                    if (conexion.querycomando("DELETE FROM tbl_incapacidades WHERE id_incapacidad='" + ID_incapacidad.ToString() + "' "))
-                        MessageBox.Show("Se ha eliminado correctamente");
-                    else
-                        MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                    MessageBox.Show("Seleccione un empleado de la lista");
                 }
-
-
-                tb_boleta_incapacidades.Clear();
-                tb_plaza_incapacidades.Clear();
-                tb_puesto_incapacidades.Clear();
-
-                cb_incapacidad.SelectedIndex = 0;
-                actualizardato(dgv_incapacidades, "Select id_incapacidad,numero_boleta as 'NUMERO BOLETA',tipo_incapacidad AS 'TIPO DE INCAPACIDAD' ,fecha_pago AS 'FECHA DE PAGO',numero_plaza AS 'NUMERO DE PLAZA',ti.puesto AS 'PUESTO' from tbl_incapacidades ti INNER JOIN  tbl_incapacidades_empleados  ON fk_incapacidad=id_incapacidad INNER JOIN  tbl_empleados as te on id_empleado =fk_empleado where id_empleado ='" + ID_usuario + "'  ");
-
-                seleccionarincapacidad = false;
-            }
-            else
-            {
-                MessageBox.Show("Seleccione un empleado de la lista");
             }
         }
 
-        private void dgv_incapacidades_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
+            private void dgv_incapacidades_CellClick(object sender, DataGridViewCellEventArgs e)
             {
-                seleccionarincapacidad = true;
-                ID_incapacidad = int.Parse(dgv_incapacidades.Rows[e.RowIndex].Cells[0].Value.ToString());
-                tb_boleta_incapacidades.Text = dgv_incapacidades.Rows[e.RowIndex].Cells[1].Value.ToString();
-                cb_incapacidad.SelectedItem = dgv_incapacidades.Rows[e.RowIndex].Cells[2].Value.ToString();
-                dtp_fecha_pago_incapacidades.Text = dgv_incapacidades.Rows[e.RowIndex].Cells[3].Value.ToString();
-                tb_plaza_incapacidades.Text = dgv_incapacidades.Rows[e.RowIndex].Cells[4].Value.ToString();
-                tb_puesto_incapacidades.Text = dgv_incapacidades.Rows[e.RowIndex].Cells[5].Value.ToString();
+                try
+                {
+                    seleccionarincapacidad = true;
+                    ID_incapacidad = int.Parse(dgv_incapacidades.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    tb_boleta_incapacidades.Text = dgv_incapacidades.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    cb_incapacidad.SelectedItem = dgv_incapacidades.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    dtp_fecha_pago_incapacidades.Text = dgv_incapacidades.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    tb_plaza_incapacidades.Text = dgv_incapacidades.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    tb_puesto_incapacidades.Text = dgv_incapacidades.Rows[e.RowIndex].Cells[5].Value.ToString();
 
 
 
+                }
+                catch (Exception ex)
+                {
+                }
             }
-            catch (Exception ex)
-            {
-            }
-        }
-
+        
         private void tb_plaza_incapacidades_TextChanged(object sender, EventArgs e)
         {
             DataGridView dgv = new DataGridView();
@@ -2916,7 +3001,7 @@ namespace RRHH
         {
             cb_departamento_extraordinario.SelectedIndex = 0;
             cb_tipo_extraordinario.SelectedIndex = 0;
-            tb_extraordinario.Clear();
+            tb_fecha_extraordinario.Clear();
             tb_monto_extraordinario.Clear();
            tb_plaza_extraordinario.Clear();
             tb_monto_extraordinario.Clear();
@@ -2943,14 +3028,14 @@ namespace RRHH
         {
             try
             {
-                if (tb_extraordinario.Text.Length >= 10)
+                if (tb_fecha_extraordinario.Text.Length >= 10)
                 {
 
                     //Store your database DateTime value into a variable
-                    DateTime yourDate = DateTime.Parse(tb_extraordinario.Text);
+                    DateTime yourDate = DateTime.Parse(tb_fecha_extraordinario.Text);
 
                     //Use the DateTime.ToString() method to store the value of the DateTime into your TextBox
-                    tb_extraordinario.Text = yourDate.ToString("dd/MM/yyyy");
+                    tb_fecha_extraordinario.Text = yourDate.ToString("dd/MM/yyyy");
                 }
             }
             catch (Exception ex)
@@ -2979,6 +3064,36 @@ namespace RRHH
                 MessageBox.Show("El formato de fecha es incorrecto este debe contener el siguiente formato (20-02-1978) por favor verificar");
 
             }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            tb_fecha_pago_extras.Text = dtp_fecha_pago_extras.Value.Date.ToString("dd/MM/yyyy");
+        }
+
+        private void dtp_fecha_extraordinario_ValueChanged(object sender, EventArgs e)
+        {
+            tb_fecha_extraordinario.Text = dtp_fecha_extraordinario.Value.Date.ToString("dd/MM/yyyy");
+        }
+
+        private void dtp_fecha_escala_personal_ValueChanged(object sender, EventArgs e)
+        {
+            tb_fechaescala_personal.Text = dtp_fecha_escala_personal.Value.Date.ToString("dd/MM/yyyy");
+        }
+
+        private void dtp_fecha_vaciones_personal_ValueChanged(object sender, EventArgs e)
+        {
+            tb_fechavacaciones_personal.Text = dtp_fecha_vaciones_personal.Value.Date.ToString("dd/MM/yyyy");
+        }
+
+        private void dtp_fecha_pago_personal_ValueChanged(object sender, EventArgs e)
+        {
+            tb_fecha_pago_personal.Text = dtp_fecha_pago_personal.Value.Date.ToString("dd/MM/yyyy");
+        }
+
+        private void dtp_rige_hasta_personal_ValueChanged(object sender, EventArgs e)
+        {
+            tb_hasta_personal.Text = dtp_rige_hasta_personal.Value.Date.ToString("dd/MM/yyyy");
         }
     }
     } 

@@ -29,7 +29,7 @@ namespace RRHH
             pictureBox1.Hide();
             PictureBox3.SetBounds(this.Width - 80, 25, PictureBox3.Width, PictureBox3.Height);
             Label6.Hide();
-            DataGridView1.Hide();
+            //DataGridView1.Hide();
             ComboBox1.SelectedIndex = 0;
                  conexion.llenarComboBox("SELECT * from tbl_departamentos", cb_departamento, "id_departamento", "nombre");
             if(cb_departamento.SelectedIndex>0 & cb_nombramiento.SelectedIndex >0)
@@ -86,26 +86,31 @@ namespace RRHH
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if ( validartexbox(tb_apellido) & validartexbox(tb_cedula) & validartexbox(tb_nombre))
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+  MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+  MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
-               
-                if (conexion.querycomando("Insert into tbl_empleados(fk_departamento,cedula,nombre,apellido,fecha_nacimiento,tipo_nombramiento,codigo,fecha_escala,fecha_vacaciones,puesto) VALUES('" + cb_departamento.SelectedValue.ToString() + "','" + tb_cedula.Text + "','" + tb_nombre.Text + "','" + tb_apellido.Text + "','" + dtp_fechanacimiento.Value.Date + "','" + cb_nombramiento.SelectedItem.ToString() + "','" + tb_codigo.Text + "','" + dtp_fechaescala.Value.Date + "','" + dtp_fechavacaciones.Value.Date + "','" + tb_puesto.Text + "')"))
-                    MessageBox.Show("Se ha guardado correctamente");
-                else
-                    MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                if (validartexbox(tb_apellido) & validartexbox(tb_cedula) & validartexbox(tb_nombre))
+                {
 
-                actualizardato();
-                
-                tb_apellido.Clear();
-                tb_nombre.Clear();
-                tb_cedula.Clear();
-                tb_codigo.Clear();
-                cb_nombramiento.SelectedIndex = 0;
-                cb_departamento.SelectedIndex = 0;
-                tb_puesto.Clear();
+                    if (conexion.querycomando("Insert into tbl_empleados(fk_departamento,cedula,nombre,apellido,fecha_nacimiento,tipo_nombramiento,codigo,fecha_escala,fecha_vacaciones,puesto) VALUES('" + cb_departamento.SelectedValue.ToString() + "','" + tb_cedula.Text + "','" + tb_nombre.Text + "','" + tb_apellido.Text + "','" + dtp_fechanacimiento.Value.Date + "','" + cb_nombramiento.SelectedItem.ToString() + "','" + tb_codigo.Text + "','" + dtp_fechaescala.Value.Date + "','" + dtp_fechavacaciones.Value.Date + "','" + tb_puesto.Text + "')"))
+                        MessageBox.Show("Se ha guardado correctamente");
+                    else
+                        MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+
+                    actualizardato();
+
+                    tb_apellido.Clear();
+                    tb_nombre.Clear();
+                    tb_cedula.Clear();
+                    tb_codigo.Clear();
+                    cb_nombramiento.SelectedIndex = 0;
+                    cb_departamento.SelectedIndex = 0;
+                    tb_puesto.Clear();
+                }
+                else
+                    MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
             }
-            else
-                MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
         }
         public void actualizardato()
         {
@@ -119,51 +124,59 @@ namespace RRHH
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            if ( validartexbox(tb_apellido) & validartexbox(tb_nombre) & validartexbox(tb_cedula))
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+  MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+  MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
+            {
+                if (validartexbox(tb_apellido) & validartexbox(tb_nombre) & validartexbox(tb_cedula))
+                {
+                    if (seleccionarusuario)
+                    {
+                        if (conexion.querycomando("Update tbl_empleados set cedula='" + tb_cedula.Text + "',nombre='" + tb_nombre.Text + "',apellido='" + tb_apellido.Text + "',fecha_nacimiento='" + dtp_fechanacimiento.Value.Date + "',tipo_nombramiento='" + cb_nombramiento.SelectedItem.ToString() + "',codigo='" + tb_codigo.Text + "',fecha_escala='" + dtp_fechaescala.Value.Date + "',fecha_vacaciones='" + dtp_fechavacaciones.Value.Date + "',puesto='" + tb_puesto.Text + "',fk_departamento='" + cb_departamento.SelectedValue.ToString() + "' WHERE id_empleado='" + ID_usuario.ToString() + "'"))
+                            MessageBox.Show("Se ha actualizado correctamente");
+                        else
+                            MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                    }
+                    else
+                        MessageBox.Show("Seleccione algun cliente para realizar esta accion");
+
+                    seleccionarusuario = false;
+                    actualizardato();
+
+                    tb_apellido.Clear();
+                    tb_nombre.Clear();
+                    tb_cedula.Clear();
+                    cb_departamento.SelectedIndex = 0;
+                }
+                else
+                    MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
+            }
+        }
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+  MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+  MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
                 if (seleccionarusuario)
                 {
-                    if (conexion.querycomando("Update tbl_empleados set cedula='" + tb_cedula.Text + "',nombre='" + tb_nombre.Text + "',apellido='" + tb_apellido.Text + "',fecha_nacimiento='" + dtp_fechanacimiento.Value.Date + "',tipo_nombramiento='" + cb_nombramiento.SelectedItem.ToString() + "',codigo='" + tb_codigo.Text + "',fecha_escala='" + dtp_fechaescala.Value.Date + "',fecha_vacaciones='" + dtp_fechavacaciones.Value.Date + "',puesto='" + tb_puesto.Text + "',fk_departamento='" + cb_departamento.SelectedValue.ToString() + "' WHERE id_empleado='" + ID_usuario.ToString() + "'"))
-                        MessageBox.Show("Se ha actualizado correctamente");
+                    if (conexion.querycomando("DELETE FROM tbl_empleados WHERE id_empleado='" + ID_usuario.ToString() + "' "))
+                        MessageBox.Show("Se ha eliminado correctamente");
                     else
                         MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+
+
+                    tb_apellido.Clear();
+                    tb_nombre.Clear();
+                    tb_cedula.Clear();
+                    cb_departamento.SelectedIndex = 0;
+                    actualizardato();
+                    seleccionarusuario = false;
                 }
                 else
-                    MessageBox.Show("Seleccione algun cliente para realizar esta accion");
-
-                seleccionarusuario = false;
-                actualizardato();
-
-                tb_apellido.Clear();
-                tb_nombre.Clear();
-                tb_cedula.Clear();
-                cb_departamento.SelectedIndex = 0;
+                    MessageBox.Show("Seleccione un empleado de la lista");
             }
-            else
-                MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
         }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            if (seleccionarusuario)
-            {
-                if (conexion.querycomando("DELETE FROM tbl_empleados WHERE id_empleado='" + ID_usuario.ToString() + "' "))
-                    MessageBox.Show("Se ha eliminado correctamente");
-                else
-                    MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
-
-               
-                tb_apellido.Clear();
-                tb_nombre.Clear();
-                tb_cedula.Clear();
-                cb_departamento.SelectedIndex = 0;
-                actualizardato();
-                seleccionarusuario = false;
-            }
-            else
-                MessageBox.Show("Seleccione un empleado de la lista");
-        }
-
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try

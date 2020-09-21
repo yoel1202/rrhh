@@ -36,7 +36,7 @@ namespace RRHH
             timer1.Start();
             // antes de iniciar el programa implementa parametros para acomodar la interfaz dependiendo de la pantalla de computador
             PictureBox1.SetBounds(Screen.PrimaryScreen.Bounds.Width - 150, 15, PictureBox1.Width, PictureBox1.Height);
-            PictureBox2.SetBounds(0, Screen.PrimaryScreen.Bounds.Height - 70, PictureBox2.Width, PictureBox2.Height);
+            pb_inicio.SetBounds(0, Screen.PrimaryScreen.Bounds.Height - 140, pb_inicio.Width, pb_inicio.Height);
             PictureBox3.SetBounds(Screen.PrimaryScreen.Bounds.Width - 60, 15, PictureBox3.Width, PictureBox3.Height);
             PictureBox4.SetBounds(10, 30, PictureBox4.Width, PictureBox4.Height);
             PictureBox5.SetBounds(this.Width - 200, this.Height - 100, PictureBox5.Width, PictureBox5.Height);
@@ -178,12 +178,12 @@ namespace RRHH
         // cambia la imagen por una mas grande cuando se acarca cuanto se acerca 
         private void PictureBox2_MouseMove(object sender, MouseEventArgs e)
         {
-            PictureBox2.Image = Image.FromFile("imagenes/OS_Windows_82.png");
+            pb_inicio.Image = Image.FromFile("imagenes/OS_Windows_82.png");
         }
         // cambia la imagen por una mas pequeña cuando se aleja el mouse
         private void PictureBox2_MouseLeave(object sender, EventArgs e)
         {
-            PictureBox2.Image = Image.FromFile("imagenes/OS_Windows_8.png");
+            pb_inicio.Image = Image.FromFile("imagenes/OS_Windows_8.png");
         }
 
         // cambia la imagen por una mas grande cuando se acarca cuanto se acerca 
@@ -390,6 +390,9 @@ namespace RRHH
 
             }else
             {
+
+                FRM_ACERCADE form = new FRM_ACERCADE();
+                form.Show();
               
         }
         }

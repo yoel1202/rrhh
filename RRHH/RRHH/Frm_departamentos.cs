@@ -85,21 +85,26 @@ namespace RRHH
         // cumple la funcion de guardar se llama el metodo querycomando de la clase conexion para insertar los datos 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (validartexbox(tb_codigo) & validartexbox(tb_nombre) )
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+  MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+  MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
-                if (conexion.querycomando("Insert into tbl_departamentos(nombre,codigo) VALUES('" + tb_nombre.Text + "','" + tb_codigo.Text + "')"))
-                    MessageBox.Show("Se ha guardado correctamente");
-                else
-                    MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                if (validartexbox(tb_codigo) & validartexbox(tb_nombre))
+                {
+                    if (conexion.querycomando("Insert into tbl_departamentos(nombre,codigo) VALUES('" + tb_nombre.Text + "','" + tb_codigo.Text + "')"))
+                        MessageBox.Show("Se ha guardado correctamente");
+                    else
+                        MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
 
-                actualizardato();
-                tb_codigo.Clear();
-                tb_nombre.Clear();
-              
-         
+                    actualizardato();
+                    tb_codigo.Clear();
+                    tb_nombre.Clear();
+
+
+                }
+                else
+                    MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
             }
-            else
-                MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
         }
         // metodo actualiza los datos de la lista que se encuentra en el datagrievew
         public void actualizardato()
@@ -114,50 +119,59 @@ namespace RRHH
         // metodo actualiza por medio de una consulta sql 
         private void Button3_Click(object sender, EventArgs e)
         {
-            if (validartexbox(tb_codigo) & validartexbox(tb_nombre)  )
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+  MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+  MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
-                if (seleccionarusuario)
+                if (validartexbox(tb_codigo) & validartexbox(tb_nombre))
                 {
-                    if (conexion.querycomando("Update tbl_departamentos set codigo='" + tb_codigo.Text + "',nombre='" + tb_nombre.Text + "'  WHERE id_departamento='" + ID_usuario.ToString() + "'"))
-                        MessageBox.Show("Se ha actualizado correctamente");
+                    if (seleccionarusuario)
+                    {
+                        if (conexion.querycomando("Update tbl_departamentos set codigo='" + tb_codigo.Text + "',nombre='" + tb_nombre.Text + "'  WHERE id_departamento='" + ID_usuario.ToString() + "'"))
+                            MessageBox.Show("Se ha actualizado correctamente");
+                        else
+                            MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                    }
                     else
-                        MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+                        MessageBox.Show("Seleccione algun cliente para realizar esta accion");
+
+                    seleccionarusuario = false;
+                    actualizardato();
+                    tb_codigo.Clear();
+                    tb_nombre.Clear();
+
+
                 }
                 else
-                    MessageBox.Show("Seleccione algun cliente para realizar esta accion");
-
-                seleccionarusuario = false;
-                actualizardato();
-                tb_codigo.Clear();
-                tb_nombre.Clear();
-              
-               
+                    MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
             }
-            else
-                MessageBox.Show("Hay campos en blanco no se puede guardar, por favor rellenar todos los campos pendientes");
         }
         // metodo elimina un registro de la base de datos por medio de una consulta sqk
         private void Button2_Click(object sender, EventArgs e)
         {
-            if (seleccionarusuario)
+            if ((MessageBox.Show("Si o No", "¿ Esta seguro que desea hacer esta accion ?",
+  MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+  MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
-                if (conexion.querycomando("DELETE FROM tbl_departamentos WHERE id_departamento='" + ID_usuario.ToString() + "' "))
-                    MessageBox.Show("Se ha eliminado correctamente");
+                if (seleccionarusuario)
+                {
+                    if (conexion.querycomando("DELETE FROM tbl_departamentos WHERE id_departamento='" + ID_usuario.ToString() + "' "))
+                        MessageBox.Show("Se ha eliminado correctamente");
+                    else
+                        MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
+
+                    tb_codigo.Clear();
+                    tb_nombre.Clear();
+
+
+
+                    actualizardato();
+                    seleccionarusuario = false;
+                }
                 else
-                    MessageBox.Show("Ocurrio un error a la hora de guardar esta operacion, puede ser un error por la cedula que se este duplicando o reintentelo de nuevo o contacte al servicio tecnico");
-
-                tb_codigo.Clear();
-                tb_nombre.Clear();
-               
-              
-              
-                actualizardato();
-                seleccionarusuario = false;
+                    MessageBox.Show("Seleccione un empleado de la lista");
             }
-            else
-                MessageBox.Show("Seleccione un empleado de la lista");
         }
-
         // metodo selecciona una celda de la datagridview y la muestra en los campo para poder actualizar o eliminar
 
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
