@@ -1,0 +1,5 @@
+Fondo:fondo 1.jpg
+apagarpantalla:False
+apagarprograma:False
+guardarusuario:True:1
+guardarpass:True:1
